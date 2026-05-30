@@ -1,98 +1,303 @@
-AC Super Market
-🛒 السلة
-0
-AC Super Market
-توصيل سريع لباب بيتك 🚀
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AC Super Market</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Cairo',sans-serif;background:#f5f5f0;color:#1a1a1a;min-height:100vh}
+  header{background:#fff;border-bottom:1px solid #e8e8e0;position:sticky;top:0;z-index:100;padding:0 1.5rem}
+  .header-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-size:22px;font-weight:700;color:#1a1a1a}
+  .logo span{color:#16a34a}
+  .cart-btn{display:flex;align-items:center;gap:8px;background:#16a34a;color:#fff;border:none;border-radius:10px;padding:10px 18px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:600}
+  .cart-badge{background:#fff;color:#16a34a;border-radius:50%;width:20px;height:20px;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700}
+  main{max-width:900px;margin:0 auto;padding:1.5rem}
+  .hero{background:linear-gradient(135deg,#16a34a,#15803d);border-radius:16px;padding:2rem;margin-bottom:1.5rem;color:#fff;display:flex;align-items:center;justify-content:space-between}
+  .hero h1{font-size:24px;font-weight:700;margin-bottom:6px}
+  .hero p{font-size:14px;opacity:0.85}
+  .hero-icon{font-size:64px}
+  .cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:1.5rem;scrollbar-width:none}
+  .cats::-webkit-scrollbar{display:none}
+  .cat{flex-shrink:0;background:#fff;border:1.5px solid #e8e8e0;border-radius:10px;padding:8px 16px;cursor:pointer;font-size:13px;font-weight:500;color:#555;white-space:nowrap;transition:all 0.15s}
+  .cat.active,.cat:hover{border-color:#16a34a;color:#16a34a;background:#f0fdf4}
+  .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+  .prod{background:#fff;border-radius:14px;border:1px solid #e8e8e0;padding:1rem;display:flex;flex-direction:column}
+  .prod-emoji{font-size:42px;margin-bottom:10px}
+  .prod-name{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:4px;flex:1}
+  .prod-price{font-size:15px;font-weight:700;color:#16a34a;margin-bottom:12px}
+  .add-btn{background:#16a34a;color:#fff;border:none;border-radius:8px;padding:9px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600;width:100%;transition:background 0.15s}
+  .add-btn:hover{background:#15803d}
+  .add-btn.added{background:#dcfce7;color:#16a34a}
+  .page{display:none}
+  .page.active{display:block}
+  .back{background:none;border:none;color:#16a34a;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:4px}
+  .page-title{font-size:18px;font-weight:700;margin-bottom:1rem}
+  .cart-list{display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
+  .ci{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;display:flex;align-items:center;gap:12px}
+  .ci-emoji{font-size:28px}
+  .ci-info{flex:1}
+  .ci-name{font-size:14px;font-weight:600}
+  .ci-price{font-size:13px;color:#888}
+  .qty-ctrl{display:flex;align-items:center;gap:8px}
+  .qb{width:30px;height:30px;border:1.5px solid #e8e8e0;border-radius:8px;background:none;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;font-weight:600}
+  .qn{font-size:14px;font-weight:700;min-width:20px;text-align:center}
+  .summary{background:#fff;border-radius:14px;border:1px solid #e8e8e0;padding:1.25rem;margin-bottom:1rem}
+  .srow{display:flex;justify-content:space-between;font-size:14px;color:#666;padding:5px 0}
+  .srow.total{font-size:16px;font-weight:700;color:#1a1a1a;border-top:1px solid #e8e8e0;margin-top:8px;padding-top:12px}
+  .wa-btn{width:100%;background:#25D366;color:#fff;border:none;border-radius:12px;padding:14px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px}
+  .wa-btn:hover{background:#22c55e}
+  .form-section{background:#fff;border-radius:14px;border:1px solid #e8e8e0;padding:1.25rem;margin-bottom:1rem}
+  .fl{font-size:13px;color:#666;margin-bottom:6px;display:block;font-weight:500}
+  .fi{width:100%;padding:10px 12px;border:1.5px solid #e8e8e0;border-radius:8px;font-family:'Cairo',sans-serif;font-size:14px;background:#fff;outline:none;margin-bottom:12px}
+  .fi:focus{border-color:#16a34a}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .empty{text-align:center;padding:3rem 1rem;color:#aaa}
+  .empty-icon{font-size:48px;margin-bottom:12px}
+  .success{text-align:center;padding:3rem 1rem}
+  .success-icon{font-size:64px;margin-bottom:1rem}
+  .success h2{font-size:22px;font-weight:700;margin-bottom:8px}
+  .success p{font-size:14px;color:#666;margin-bottom:1.5rem}
+  .new-order-btn{background:#16a34a;color:#fff;border:none;border-radius:12px;padding:12px 24px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700}
+  @media(max-width:500px){.hero-icon{display:none}.products-grid{grid-template-columns:repeat(2,1fr)}.frow{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
 
-🛍️
-🛒 الكل
-🌾 حبوب ونشويات
-🫙 زيوت
-🥛 ألبان وأجبان
-🥦 خضار وفواكه
-🥫 معلبات
-🧴 منظفات
-🍚
-أرز مصري 5 كيلو
-$4.50
-+ أضف للسلة
-🍝
-معكرونة بيني 500غ
-$1.20
-+ أضف للسلة
-🫘
-عدس أحمر 1 كيلو
-$2.00
-+ أضف للسلة
-🌾
-برغل خشن 1 كيلو
-$1.80
-+ أضف للسلة
-🫙
-زيت ذرة 1.5 لتر
-$3.80
-+ أضف للسلة
-🫒
-زيت زيتون 750 مل
-$6.50
-+ أضف للسلة
-🌻
-زيت عباد الشمس 1 لتر
-$3.20
-+ أضف للسلة
-🥛
-حليب كامل 1 لتر
-$1.50
-+ أضف للسلة
-🧀
-جبنة بيضاء 500غ
-$3.20
-+ أضف للسلة
-🥣
-لبنة 500غ
-$2.80
-+ أضف للسلة
-🧈
-زبدة 200غ
-$2.50
-+ أضف للسلة
-🍅
-طماطم 1 كيلو
-$1.00
-+ أضف للسلة
-🥔
-بطاطا 1 كيلو
-$0.90
-+ أضف للسلة
-🧅
-بصل 1 كيلو
-$0.70
-+ أضف للسلة
-🍌
-موز 1 كيلو
-$1.20
-+ أضف للسلة
-🥫
-فاصوليا معلبة 400غ
-$1.10
-+ أضف للسلة
-🐟
-تونة بالزيت 160غ
-$1.80
-+ أضف للسلة
-🍅
-صلصة طماطم 400غ
-$1.30
-+ أضف للسلة
-🧴
-صابون يدين 500مل
-$2.20
-+ أضف للسلة
-🪣
-منظف أرضيات 1 لتر
-$2.50
-+ أضف للسلة
-🫘
-عدس أحمر 900غ
-$1.89
-+ أضف للسلة
+<header>
+  <div class="header-inner">
+    <div class="logo">AC <span>Super Market</span></div>
+    <button class="cart-btn" onclick="showPage('cart')">
+      🛒 السلة
+      <span class="cart-badge" id="cartCount">0</span>
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="page active" id="shopPage">
+    <div class="hero">
+      <div>
+        <h1>AC Super Market</h1>
+        <p>توصيل سريع لباب بيتك 🚀</p>
+      </div>
+      <div class="hero-icon">🛍️</div>
+    </div>
+    <div class="cats" id="catList"></div>
+    <div class="products-grid" id="productList"></div>
+  </div>
+
+  <div class="page" id="cartPage">
+    <button class="back" onclick="showPage('shop')">← متابعة التسوق</button>
+    <div class="page-title">🛒 سلتك</div>
+    <div class="cart-list" id="cartList"></div>
+    <div class="summary" id="cartSummary"></div>
+    <button class="wa-btn" onclick="showPage('checkout')">📦 إكمال الطلب</button>
+  </div>
+
+  <div class="page" id="checkoutPage">
+    <button class="back" onclick="showPage('cart')">← الرجوع للسلة</button>
+    <div class="page-title">📋 بيانات التوصيل</div>
+    <div class="form-section">
+      <div class="frow">
+        <div><label class="fl">الاسم الأول</label><input class="fi" id="fname" placeholder="محمد" /></div>
+        <div><label class="fl">الاسم الأخير</label><input class="fi" id="lname" placeholder="الأحمد" /></div>
+      </div>
+      <label class="fl">رقم الهاتف</label>
+      <input class="fi" id="phone" placeholder="+961 70 000 000" />
+      <label class="fl">العنوان</label>
+      <input class="fi" id="address" placeholder="المنطقة، الشارع، المبنى، الطابق" />
+      <div class="frow">
+        <div><label class="fl">المدينة</label><input class="fi" id="city" placeholder="بيروت" /></div>
+        <div><label class="fl">المنطقة</label><input class="fi" id="area" placeholder="الأشرفية" /></div>
+      </div>
+      <label class="fl">ملاحظات (اختياري)</label>
+      <input class="fi" id="notes" placeholder="أي تعليمات للتوصيل..." />
+    </div>
+    <div class="summary" id="checkoutSummary"></div>
+    <button class="wa-btn" onclick="sendWhatsApp()">
+      📱 أرسل الطلب على WhatsApp
+    </button>
+  </div>
+
+  <div class="page" id="successPage">
+    <div class="success">
+      <div class="success-icon">✅</div>
+      <h2>تم إرسال طلبك!</h2>
+      <p>سيتم التواصل معك قريباً لتأكيد الطلب وموعد التوصيل</p>
+      <button class="new-order-btn" onclick="resetOrder()">طلب جديد</button>
+    </div>
+  </div>
+</main>
+
+<script>
+const WA_NUMBER = '96170258915';
+
+const cats = [
+  {id:'all',name:'🛒 الكل'},
+  {id:'grains',name:'🌾 حبوب ونشويات'},
+  {id:'oils',name:'🫙 زيوت'},
+  {id:'dairy',name:'🥛 ألبان وأجبان'},
+  {id:'vegs',name:'🥦 خضار وفواكه'},
+  {id:'canned',name:'🥫 معلبات'},
+  {id:'cleaning',name:'🧴 منظفات'},
+];
+
+const products = [
+  {id:1,name:'أرز مصري 5 كيلو',price:4.5,emoji:'🍚',cat:'grains'},
+  {id:2,name:'معكرونة بيني 500غ',price:1.2,emoji:'🍝',cat:'grains'},
+  {id:3,name:'عدس أحمر 1 كيلو',price:2.0,emoji:'🫘',cat:'grains'},
+  {id:4,name:'برغل خشن 1 كيلو',price:1.8,emoji:'🌾',cat:'grains'},
+  {id:5,name:'زيت ذرة 1.5 لتر',price:3.8,emoji:'🫙',cat:'oils'},
+  {id:6,name:'زيت زيتون 750 مل',price:6.5,emoji:'🫒',cat:'oils'},
+  {id:7,name:'زيت عباد الشمس 1 لتر',price:3.2,emoji:'🌻',cat:'oils'},
+  {id:8,name:'حليب كامل 1 لتر',price:1.5,emoji:'🥛',cat:'dairy'},
+  {id:9,name:'جبنة بيضاء 500غ',price:3.2,emoji:'🧀',cat:'dairy'},
+  {id:10,name:'لبنة 500غ',price:2.8,emoji:'🥣',cat:'dairy'},
+  {id:11,name:'زبدة 200غ',price:2.5,emoji:'🧈',cat:'dairy'},
+  {id:12,name:'طماطم 1 كيلو',price:1.0,emoji:'🍅',cat:'vegs'},
+  {id:13,name:'بطاطا 1 كيلو',price:0.9,emoji:'🥔',cat:'vegs'},
+  {id:14,name:'بصل 1 كيلو',price:0.7,emoji:'🧅',cat:'vegs'},
+  {id:15,name:'موز 1 كيلو',price:1.2,emoji:'🍌',cat:'vegs'},
+  {id:16,name:'فاصوليا معلبة 400غ',price:1.1,emoji:'🥫',cat:'canned'},
+  {id:17,name:'تونة بالزيت 160غ',price:1.8,emoji:'🐟',cat:'canned'},
+  {id:18,name:'صلصة طماطم 400غ',price:1.3,emoji:'🍅',cat:'canned'},
+  {id:19,name:'صابون يدين 500مل',price:2.2,emoji:'🧴',cat:'cleaning'},
+  {id:20,name:'منظف أرضيات 1 لتر',price:2.5,emoji:'🪣',cat:'cleaning'},
+  {id:21,name:'عدس أحمر 900غ',price:1.89,emoji:'🫘',cat:'grains'},
+];
+
+let cart = {};
+let activeCat = 'all';
+
+function renderCats() {
+  document.getElementById('catList').innerHTML = cats.map(c =>
+    `<div class="cat ${c.id===activeCat?'active':''}" onclick="filterCat('${c.id}')">${c.name}</div>`
+  ).join('');
+}
+
+function filterCat(id) {
+  activeCat = id;
+  renderCats();
+  renderProducts();
+}
+
+function renderProducts() {
+  const list = activeCat==='all' ? products : products.filter(p=>p.cat===activeCat);
+  document.getElementById('productList').innerHTML = list.map(p => `
+    <div class="prod">
+      <div class="prod-emoji">${p.emoji}</div>
+      <div class="prod-name">${p.name}</div>
+      <div class="prod-price">$${p.price.toFixed(2)}</div>
+      <button class="add-btn" onclick="addToCart(${p.id},this)">+ أضف للسلة</button>
+    </div>`).join('');
+}
+
+function addToCart(id, btn) {
+  cart[id] = (cart[id]||0) + 1;
+  updateCount();
+  btn.textContent = '✓ تمت الإضافة';
+  btn.classList.add('added');
+  setTimeout(()=>{ btn.textContent = '+ أضف للسلة'; btn.classList.remove('added'); }, 1200);
+}
+
+function updateCount() {
+  const t = Object.values(cart).reduce((a,b)=>a+b,0);
+  document.getElementById('cartCount').textContent = t;
+}
+
+function renderCart() {
+  const items = Object.entries(cart).filter(([,q])=>q>0);
+  const el = document.getElementById('cartList');
+  if (!items.length) {
+    el.innerHTML = '<div class="empty"><div class="empty-icon">🛒</div><p>السلة فارغة</p></div>';
+    document.getElementById('cartSummary').innerHTML = '';
+    return;
+  }
+  el.innerHTML = items.map(([id,qty])=>{
+    const p = products.find(x=>x.id==id);
+    return `<div class="ci">
+      <span class="ci-emoji">${p.emoji}</span>
+      <div class="ci-info"><div class="ci-name">${p.name}</div><div class="ci-price">$${p.price.toFixed(2)}</div></div>
+      <div class="qty-ctrl">
+        <button class="qb" onclick="changeQty(${id},-1)">−</button>
+        <span class="qn">${qty}</span>
+        <button class="qb" onclick="changeQty(${id},1)">+</button>
+      </div>
+    </div>`;
+  }).join('');
+  renderSummary('cartSummary');
+}
+
+function changeQty(id, delta) {
+  cart[id] = Math.max(0,(cart[id]||0)+delta);
+  if (!cart[id]) delete cart[id];
+  updateCount();
+  renderCart();
+}
+
+function renderSummary(elId) {
+  const sub = Object.entries(cart).reduce((s,[id,q])=>{ const p=products.find(x=>x.id==id); return s+(p?p.price*q:0); },0);
+  const del = sub>0?2:0;
+  document.getElementById(elId).innerHTML = `
+    <div class="srow"><span>المجموع الفرعي</span><span>$${sub.toFixed(2)}</span></div>
+    <div class="srow"><span>رسوم التوصيل</span><span>$${del.toFixed(2)}</span></div>
+    <div class="srow total"><span>المجموع الكلي</span><span>$${(sub+del).toFixed(2)}</span></div>`;
+}
+
+function sendWhatsApp() {
+  const fname = document.getElementById('fname').value;
+  const lname = document.getElementById('lname').value;
+  const phone = document.getElementById('phone').value;
+  const address = document.getElementById('address').value;
+  const city = document.getElementById('city').value;
+  const area = document.getElementById('area').value;
+  const notes = document.getElementById('notes').value;
+
+  if (!fname || !phone || !address) {
+    alert('يرجى تعبئة الاسم ورقم الهاتف والعنوان');
+    return;
+  }
+
+  const items = Object.entries(cart).filter(([,q])=>q>0);
+  const sub = items.reduce((s,[id,q])=>{ const p=products.find(x=>x.id==id); return s+(p?p.price*q:0); },0);
+  const total = sub + 2;
+
+  let msg = `🛒 *طلب جديد - AC Super Market*\n\n`;
+  msg += `👤 *الاسم:* ${fname} ${lname}\n`;
+  msg += `📞 *الهاتف:* ${phone}\n`;
+  msg += `📍 *العنوان:* ${address}، ${area}، ${city}\n`;
+  if (notes) msg += `📝 *ملاحظات:* ${notes}\n`;
+  msg += `\n*المنتجات:*\n`;
+  items.forEach(([id,qty])=>{
+    const p = products.find(x=>x.id==id);
+    msg += `• ${p.emoji} ${p.name} × ${qty} = $${(p.price*qty).toFixed(2)}\n`;
+  });
+  msg += `\n💰 *المجموع:* $${total.toFixed(2)} (شامل التوصيل)`;
+
+  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+  showPage('success');
+}
+
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(name+'Page').classList.add('active');
+  if (name==='cart') renderCart();
+  if (name==='checkout') renderSummary('checkoutSummary');
+  window.scrollTo(0,0);
+}
+
+function resetOrder() {
+  cart = {};
+  updateCount();
+  showPage('shop');
+}
+
+renderCats();
+renderProducts();
+</script>
+</body>
+</html>
