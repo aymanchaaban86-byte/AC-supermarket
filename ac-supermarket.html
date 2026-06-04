@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AC Super Market</title>
+<title>Souna 70258915</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
   *{box-sizing:border-box;margin:0;padding:0}
@@ -64,14 +64,14 @@
 <body>
 <header>
   <div class="header-inner">
-    <div class="logo">AC <span>Super Market</span></div>
+    <div class="logo"><span style="font-size:26px;font-weight:800;background:linear-gradient(135deg,#16a34a,#064e3b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px">Souna</span><span style="font-size:11px;color:#888;display:block;margin-top:-4px;font-weight:500;-webkit-text-fill-color:#888">سونا للتوصيل السريع 🚀</span></div>
     <button class="cart-btn" onclick="showPage('cart')">🛒 السلة<span class="cart-badge" id="cartCount">0</span></button>
   </div>
 </header>
 <main>
   <div class="page active" id="shopPage">
     <div class="hero">
-      <div><h1>AC Super Market</h1><p>توصيل سريع لباب بيتك 🚀</p></div>
+      <div><h1 style="font-size:28px;font-weight:800;letter-spacing:-0.5px">Souna 🛍️</h1><p>وصّلنا لبيتك بأسرع وقت ⚡</p></div>
       <div class="hero-icon">🛍️</div>
     </div>
     <div class="search-box">
@@ -517,7 +517,7 @@ function sendWhatsApp(){
   if(!fname||!phone||!address){alert('يرجى تعبئة الاسم ورقم الهاتف والعنوان');return;}
   const items=Object.entries(cart).filter(([,q])=>q>0);
   const sub=items.reduce((s,[id,q])=>{const p=products.find(x=>x.id==id);return s+(p?p.price*q:0);},0);
-  let msg=`🛒 *طلب جديد - AC Super Market*\n\n👤 *الاسم:* ${fname} ${lname}\n📞 *الهاتف:* ${phone}\n📍 *العنوان:* ${address}، ${area}، ${city}\n`;
+  let msg=`🛒 *طلب جديد - Souna*\n\n👤 *الاسم:* ${fname} ${lname}\n📞 *الهاتف:* ${phone}\n📍 *العنوان:* ${address}، ${area}، ${city}\n`;
   if(notes)msg+=`📝 *ملاحظات:* ${notes}\n`;
   msg+=`\n*المنتجات:*\n`;
   items.forEach(([id,qty])=>{const p=products.find(x=>x.id==id);msg+=`• ${p.name} × ${qty} = $${(p.price*qty).toFixed(2)}\n`;});
