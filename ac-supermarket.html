@@ -8,53 +8,56 @@
   @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Cairo',sans-serif;background:#f5f5f0;color:#1a1a1a;min-height:100vh}
-  header{background:#fff;border-bottom:1px solid #e8e8e0;position:sticky;top:0;z-index:100;padding:0 1.5rem}
-  .header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
-  .logo{font-size:22px;font-weight:700;color:#1a1a1a}.logo span{color:#16a34a}
-  .cart-btn{display:flex;align-items:center;gap:8px;background:#16a34a;color:#fff;border:none;border-radius:10px;padding:10px 18px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:600}
-  .cart-badge{background:#fff;color:#16a34a;border-radius:50%;width:20px;height:20px;font-size:11px;display:flex;align-items:center;justify-content:center;font-weight:700}
-  main{max-width:960px;margin:0 auto;padding:1.5rem}
-  .hero{background:linear-gradient(135deg,#16a34a,#15803d);border-radius:16px;padding:2rem;margin-bottom:1.5rem;color:#fff;display:flex;align-items:center;justify-content:space-between}
-  .hero h1{font-size:24px;font-weight:700;margin-bottom:6px}.hero p{font-size:14px;opacity:0.85}.hero-icon{font-size:64px}
-  .cats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:8px;margin-bottom:1.5rem}
-  .cat{background:#fff;border:2px solid #e8e8e0;border-radius:12px;padding:10px 8px;cursor:pointer;font-size:12px;font-weight:600;color:#555;text-align:center;transition:all 0.15s}
-  .cat-icon{font-size:22px;margin-bottom:4px}
+  header{background:#fff;border-bottom:1px solid #e8e8e0;position:sticky;top:0;z-index:100;padding:0 1rem}
+  .header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-size:20px;font-weight:700}.logo span{color:#16a34a}
+  .cart-btn{display:flex;align-items:center;gap:6px;background:#16a34a;color:#fff;border:none;border-radius:10px;padding:8px 14px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600}
+  .cart-badge{background:#fff;color:#16a34a;border-radius:50%;width:18px;height:18px;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700}
+  main{max-width:960px;margin:0 auto;padding:1rem}
+  .hero{background:linear-gradient(135deg,#16a34a,#15803d);border-radius:14px;padding:1.5rem;margin-bottom:1rem;color:#fff;display:flex;align-items:center;justify-content:space-between}
+  .hero h1{font-size:20px;font-weight:700;margin-bottom:4px}.hero p{font-size:13px;opacity:0.85}.hero-icon{font-size:48px}
+  .search-box{background:#fff;border:1.5px solid #e8e8e0;border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:8px;margin-bottom:1rem}
+  .search-box input{border:none;outline:none;font-family:'Cairo',sans-serif;font-size:14px;flex:1;background:transparent}
+  .cats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-bottom:1rem}
+  .cat{background:#fff;border:2px solid #e8e8e0;border-radius:10px;padding:8px 6px;cursor:pointer;font-size:11px;font-weight:600;color:#555;text-align:center;transition:all 0.15s}
+  .cat-icon{font-size:20px;margin-bottom:3px}
   .cat.active,.cat:hover{border-color:#16a34a;color:#16a34a;background:#f0fdf4}
-  .section-title{font-size:16px;font-weight:700;margin-bottom:1rem;color:#1a1a1a}
-  .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
-  .prod{background:#fff;border-radius:14px;border:1px solid #e8e8e0;overflow:hidden;display:flex;flex-direction:column}
-  .prod-img{width:100%;height:150px;object-fit:contain;background:#f8f8f8;padding:8px}
-  .prod-body{padding:10px}
-  .prod-name{font-size:12px;font-weight:600;color:#1a1a1a;margin-bottom:4px;line-height:1.4}
-  .prod-price{font-size:14px;font-weight:700;color:#16a34a;margin-bottom:10px}
-  .add-btn{background:#16a34a;color:#fff;border:none;border-radius:8px;padding:8px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:12px;font-weight:600;width:100%;transition:background 0.15s}
+  .section-title{font-size:15px;font-weight:700;margin-bottom:0.75rem;color:#1a1a1a}
+  .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px}
+  .prod{background:#fff;border-radius:12px;border:1px solid #e8e8e0;overflow:hidden;display:flex;flex-direction:column}
+  .prod-img{width:100%;height:130px;object-fit:contain;background:#f8f8f8;padding:6px}
+  .prod-body{padding:8px}
+  .prod-name{font-size:11px;font-weight:600;color:#1a1a1a;margin-bottom:3px;line-height:1.4;min-height:32px}
+  .prod-price{font-size:13px;font-weight:700;color:#16a34a;margin-bottom:8px}
+  .add-btn{background:#16a34a;color:#fff;border:none;border-radius:7px;padding:7px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:11px;font-weight:600;width:100%;transition:background 0.15s}
   .add-btn:hover{background:#15803d}.add-btn.added{background:#dcfce7;color:#16a34a}
   .page{display:none}.page.active{display:block}
-  .back{background:none;border:none;color:#16a34a;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:4px}
-  .page-title{font-size:18px;font-weight:700;margin-bottom:1rem}
-  .cart-list{display:flex;flex-direction:column;gap:10px;margin-bottom:1.5rem}
-  .ci{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;display:flex;align-items:center;gap:12px}
-  .ci-img{width:50px;height:50px;object-fit:contain;border-radius:8px;background:#f8f8f8;padding:4px}
-  .ci-info{flex:1}.ci-name{font-size:13px;font-weight:600}.ci-price{font-size:12px;color:#888}
-  .qty-ctrl{display:flex;align-items:center;gap:8px}
-  .qb{width:30px;height:30px;border:1.5px solid #e8e8e0;border-radius:8px;background:none;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;font-weight:600}
-  .qn{font-size:14px;font-weight:700;min-width:20px;text-align:center}
-  .summary{background:#fff;border-radius:14px;border:1px solid #e8e8e0;padding:1.25rem;margin-bottom:1rem}
-  .srow{display:flex;justify-content:space-between;font-size:14px;color:#666;padding:5px 0}
-  .srow.total{font-size:16px;font-weight:700;color:#1a1a1a;border-top:1px solid #e8e8e0;margin-top:8px;padding-top:12px}
-  .wa-btn{width:100%;background:#25D366;color:#fff;border:none;border-radius:12px;padding:14px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px}
-  .form-section{background:#fff;border-radius:14px;border:1px solid #e8e8e0;padding:1.25rem;margin-bottom:1rem}
-  .fl{font-size:13px;color:#666;margin-bottom:6px;display:block;font-weight:500}
-  .fi{width:100%;padding:10px 12px;border:1.5px solid #e8e8e0;border-radius:8px;font-family:'Cairo',sans-serif;font-size:14px;background:#fff;outline:none;margin-bottom:12px}
+  .back{background:none;border:none;color:#16a34a;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600;margin-bottom:0.75rem;display:flex;align-items:center;gap:4px}
+  .page-title{font-size:16px;font-weight:700;margin-bottom:0.75rem}
+  .cart-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
+  .ci{background:#fff;border-radius:10px;border:1px solid #e8e8e0;padding:0.75rem;display:flex;align-items:center;gap:10px}
+  .ci-img{width:44px;height:44px;object-fit:contain;border-radius:6px;background:#f8f8f8;padding:3px;flex-shrink:0}
+  .ci-info{flex:1}.ci-name{font-size:12px;font-weight:600}.ci-price{font-size:11px;color:#888}
+  .qty-ctrl{display:flex;align-items:center;gap:6px}
+  .qb{width:26px;height:26px;border:1.5px solid #e8e8e0;border-radius:6px;background:none;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;font-weight:600}
+  .qn{font-size:13px;font-weight:700;min-width:18px;text-align:center}
+  .summary{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;margin-bottom:0.75rem}
+  .srow{display:flex;justify-content:space-between;font-size:13px;color:#666;padding:4px 0}
+  .srow.total{font-size:15px;font-weight:700;color:#1a1a1a;border-top:1px solid #e8e8e0;margin-top:6px;padding-top:10px}
+  .wa-btn{width:100%;background:#25D366;color:#fff;border:none;border-radius:10px;padding:12px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px}
+  .form-section{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;margin-bottom:0.75rem}
+  .fl{font-size:12px;color:#666;margin-bottom:4px;display:block;font-weight:500}
+  .fi{width:100%;padding:8px 10px;border:1.5px solid #e8e8e0;border-radius:7px;font-family:'Cairo',sans-serif;font-size:13px;background:#fff;outline:none;margin-bottom:10px}
   .fi:focus{border-color:#16a34a}
-  .frow{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .empty{text-align:center;padding:3rem 1rem;color:#aaa}
-  .empty-icon{font-size:48px;margin-bottom:12px}
-  .success{text-align:center;padding:3rem 1rem}
-  .success-icon{font-size:64px;margin-bottom:1rem}
-  .success h2{font-size:22px;font-weight:700;margin-bottom:8px}
-  .success p{font-size:14px;color:#666;margin-bottom:1.5rem}
-  .new-order-btn{background:#16a34a;color:#fff;border:none;border-radius:12px;padding:12px 24px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .empty{text-align:center;padding:2rem 1rem;color:#aaa}
+  .empty-icon{font-size:40px;margin-bottom:10px}
+  .success{text-align:center;padding:2rem 1rem}
+  .success-icon{font-size:56px;margin-bottom:0.75rem}
+  .success h2{font-size:20px;font-weight:700;margin-bottom:6px}
+  .success p{font-size:13px;color:#666;margin-bottom:1rem}
+  .new-order-btn{background:#16a34a;color:#fff;border:none;border-radius:10px;padding:10px 20px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700}
+  .results-count{font-size:12px;color:#888;margin-bottom:0.5rem}
   @media(max-width:500px){.hero-icon{display:none}.products-grid{grid-template-columns:repeat(2,1fr)}.frow{grid-template-columns:1fr}.cats-grid{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
@@ -68,11 +71,16 @@
 <main>
   <div class="page active" id="shopPage">
     <div class="hero">
-      <div><h1>AC Super Market</h1><p> 70258915 توصيل سريع لباب بيتك 🚀</p></div>
+      <div><h1>AC Super Market</h1><p>توصيل سريع لباب بيتك 🚀</p></div>
       <div class="hero-icon">🛍️</div>
+    </div>
+    <div class="search-box">
+      <span>🔍</span>
+      <input type="text" id="searchInput" placeholder="ابحث عن منتج..." oninput="searchProducts()">
     </div>
     <div class="cats-grid" id="catList"></div>
     <div class="section-title" id="catTitle">كل المنتجات</div>
+    <div class="results-count" id="resultsCount"></div>
     <div class="products-grid" id="productList"></div>
   </div>
   <div class="page" id="cartPage">
@@ -111,86 +119,301 @@
   </div>
 </main>
 <script>
-const WA_NUMBER = '96170258915';
+const WA_NUMBER='96170258915';
+const IMG={
+  rice:'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&q=80',
+  bulgur:'https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=300&q=80',
+  legumes:'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=300&q=80',
+  sugar:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80',
+  flour:'https://images.unsplash.com/photo-1574323347407-f5e1c5a1f21e?w=300&q=80',
+  lentil:'https://images.unsplash.com/photo-1612257416648-11b2c8b2e0f5?w=300&q=80',
+  oats:'https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?w=300&q=80',
+  salt:'https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?w=300&q=80',
+  nuts:'https://images.unsplash.com/photo-1578688025958-d34f14e7b44a?w=300&q=80',
+  phone:'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=300&q=80',
+  headphones:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80',
+  powerbank:'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=300&q=80',
+  usb:'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300&q=80',
+};
 
-const cats = [
-  {id:'all',       name:'الكل',                   icon:'🛒'},
-  {id:'phones',    name:'مستلزمات هواتف',          icon:'📱'},
-  {id:'grains',    name:'حبوب',                   icon:'🌾'},
-  {id:'pasta',     name:'نشويات',                 icon:'🍝'},
-  {id:'oils',      name:'زيوت',                   icon:'🫙'},
-  {id:'canned',    name:'معلبات',                 icon:'🥫'},
-  {id:'dairy',     name:'ألبان وأجبان',            icon:'🧀'},
-  {id:'vegs',      name:'خضار وفواكه',             icon:'🥦'},
-  {id:'meat',      name:'دجاج ولحوم',             icon:'🍗'},
-  {id:'herbs',     name:'زعتر وملوخية',            icon:'🌿'},
-  {id:'spices',    name:'توابل',                  icon:'🫙'},
-  {id:'nuts',      name:'تمور ومكسرات وعسل',      icon:'🍯'},
-  {id:'pastry',    name:'معجنات ومقبلات',          icon:'🥐'},
-  {id:'sweets',    name:'حلويات',                 icon:'🍰'},
-  {id:'snacks',    name:'سكاكر وموالح',            icon:'🍬'},
-  {id:'drinks',    name:'مشروبات',                icon:'🥤'},
-  {id:'frozen',    name:'مفرزات',                 icon:'🧊'},
-  {id:'diapers',   name:'محارم وحفاضات',           icon:'🧻'},
-  {id:'cleaning',  name:'منظفات',                 icon:'🧴'},
-  {id:'pyjamas',   name:'بيجامات',                icon:'👘'},
-  {id:'underwear', name:'ألبسة داخلية',            icon:'👙'},
-  {id:'gifts',     name:'أكسسوارات وهدايا',        icon:'🎁'},
-  {id:'clothes',   name:'ألبسة خارجية',            icon:'👗'},
-  {id:'home',      name:'أدوات منزلية',            icon:'🏠'},
-  {id:'towels',    name:'مناشف وبياضات',           icon:'🛁'},
-  {id:'care',      name:'عناية شخصية',             icon:'💄'},
-  {id:'stationery',name:'قرطاسية',               icon:'✏️'},
-  {id:'toys',      name:'ألعاب',                  icon:'🧸'},
-  {id:'hijab',     name:'مستلزمات حجاب',           icon:'🧕'},
-  {id:'electric',  name:'أدوات كهربائية',          icon:'🔌'},
-  {id:'shoes',     name:'أحذية',                  icon:'👟'},
-  {id:'books',     name:'قصص تربوية',             icon:'📚'},
-  {id:'consumable',name:'مواد استهلاكية',          icon:'📦'},
-  {id:'bakery',    name:'المخبوزات',              icon:'🍞'},
-  {id:'daily',     name:'الطبق اليومي',            icon:'🍽️'},
-  {id:'cereal',    name:'حليب وكورن فليكس',        icon:'🥣'},
-  {id:'hotdrinks', name:'شاي وقهوة',              icon:'☕'},
-  {id:'salads',    name:'سلطات',                  icon:'🥗'},
-  {id:'perfume',   name:'عطورات',                 icon:'🌸'},
-  {id:'pets',      name:'مستلزمات حيوانات',        icon:'🐾'},
+const cats=[
+  {id:'all',name:'الكل',icon:'🛒'},
+  {id:'phones',name:'مستلزمات هواتف',icon:'📱'},
+  {id:'grains',name:'حبوب',icon:'🌾'},
+  {id:'pasta',name:'نشويات',icon:'🍝'},
+  {id:'oils',name:'زيوت',icon:'🫙'},
+  {id:'canned',name:'معلبات',icon:'🥫'},
+  {id:'dairy',name:'ألبان وأجبان',icon:'🧀'},
+  {id:'vegs',name:'خضار وفواكه',icon:'🥦'},
+  {id:'meat',name:'دجاج ولحوم',icon:'🍗'},
+  {id:'herbs',name:'زعتر وملوخية',icon:'🌿'},
+  {id:'spices',name:'توابل',icon:'🫙'},
+  {id:'nuts',name:'تمور ومكسرات وعسل',icon:'🍯'},
+  {id:'pastry',name:'معجنات ومقبلات',icon:'🥐'},
+  {id:'sweets',name:'حلويات',icon:'🍰'},
+  {id:'snacks',name:'سكاكر وموالح',icon:'🍬'},
+  {id:'drinks',name:'مشروبات',icon:'🥤'},
+  {id:'frozen',name:'مفرزات',icon:'🧊'},
+  {id:'diapers',name:'محارم وحفاضات',icon:'🧻'},
+  {id:'cleaning',name:'منظفات',icon:'🧴'},
+  {id:'pyjamas',name:'بيجامات',icon:'👘'},
+  {id:'underwear',name:'ألبسة داخلية',icon:'👙'},
+  {id:'gifts',name:'أكسسوارات وهدايا',icon:'🎁'},
+  {id:'clothes',name:'ألبسة خارجية',icon:'👗'},
+  {id:'home',name:'أدوات منزلية',icon:'🏠'},
+  {id:'towels',name:'مناشف وبياضات',icon:'🛁'},
+  {id:'care',name:'عناية شخصية',icon:'💄'},
+  {id:'stationery',name:'قرطاسية',icon:'✏️'},
+  {id:'toys',name:'ألعاب',icon:'🧸'},
+  {id:'hijab',name:'مستلزمات حجاب',icon:'🧕'},
+  {id:'electric',name:'أدوات كهربائية',icon:'🔌'},
+  {id:'shoes',name:'أحذية',icon:'👟'},
+  {id:'books',name:'قصص تربوية',icon:'📚'},
+  {id:'consumable',name:'مواد استهلاكية',icon:'📦'},
+  {id:'bakery',name:'المخبوزات',icon:'🍞'},
+  {id:'daily',name:'الطبق اليومي',icon:'🍽️'},
+  {id:'cereal',name:'حليب وكورن فليكس',icon:'🥣'},
+  {id:'hotdrinks',name:'شاي وقهوة',icon:'☕'},
+  {id:'salads',name:'سلطات',icon:'🥗'},
+  {id:'perfume',name:'عطورات',icon:'🌸'},
+  {id:'pets',name:'مستلزمات حيوانات',icon:'🐾'},
 ];
 
-const products = [
+const products=[
   // مستلزمات هواتف
-  {id:1,  name:'USB Flash Drive 128GB BOROFONE',           price:11.90, img:'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300&q=80', cat:'phones'},
-  {id:2,  name:'Power Bank 2 Cable Type C+ Lightning Clever', price:12.60, img:'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=300&q=80', cat:'phones'},
-  {id:3,  name:'Power Bank 10000 RPP23 REMAX',             price:8.44,  img:'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=300&q=80', cat:'phones'},
-  {id:4,  name:'Power Bank 10000 Fast Charging DP43 VDENMENV', price:5.53, img:'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=300&q=80', cat:'phones'},
-  {id:5,  name:'حاملة هاتف ملون طويل PHONE POCKET',       price:6.65,  img:'https://images.unsplash.com/photo-1583394293043-59e731b2a6c4?w=300&q=80', cat:'phones'},
-  {id:6,  name:'حاملة لتثبيت الهاتف ملونة',               price:0.50,  img:'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=300&q=80', cat:'phones'},
-  {id:7,  name:'تعليقة هاتف خرز ملون طويلة',              price:1.12,  img:'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=300&q=80', cat:'phones'},
-  {id:8,  name:'ادابتر سيارة 3 مخارج 55 واط Quick Charger', price:5.15, img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80', cat:'phones'},
-  {id:9,  name:'سماعات بلوتوث شكل قطة HOCO EW46',         price:11.70, img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80', cat:'phones'},
-  {id:10, name:'سماعات بلوتوث Borofone Noise Cancelation', price:10.50, img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80', cat:'phones'},
-  {id:11, name:'سماعات HOCO WIRELESS W35',                 price:12.60, img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80', cat:'phones'},
-  {id:12, name:'سماعات BOROFONE WIRELESS B023',            price:10.50, img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80', cat:'phones'},
-  {id:13, name:'شاحن 20 واط BOROFONE TYPE C BA81',         price:3.08,  img:'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=300&q=80', cat:'phones'},
-  {id:14, name:'شاحن 30 واط BOROFONE BAS45A',              price:5.25,  img:'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=300&q=80', cat:'phones'},
-  {id:15, name:'شاحن 18 واط BOROFONE BAS72A',              price:2.66,  img:'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=300&q=80', cat:'phones'},
-  {id:16, name:'سماعات وصلة ثقال HOCO M101',               price:1.54,  img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80', cat:'phones'},
-  {id:17, name:'شاحن سيارة BOROFONE IPHONE BZ12',          price:2.31,  img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80', cat:'phones'},
-  {id:18, name:'شاحن سيارة BOROFONE SAMSUNG BZ12A',        price:2.31,  img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80', cat:'phones'},
-  {id:19, name:'شاحن سيارة BOROFONE TYPE C BZ12A',         price:2.31,  img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80', cat:'phones'},
-  {id:20, name:'شاحن حديث 20 واط BOROFONE',                price:2.94,  img:'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=300&q=80', cat:'phones'},
-  {id:21, name:'وصلة اوكس 1 متر BOROFONE BL19',            price:0.98,  img:'https://images.unsplash.com/photo-1583394293043-59e731b2a6c4?w=300&q=80', cat:'phones'},
-  {id:22, name:'شاحن 20 واط BOROFONE BA81A C TO C',        price:3.99,  img:'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=300&q=80', cat:'phones'},
-  {id:23, name:'شاحن 18 واط MOXOM TYPE C',                 price:3.50,  img:'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=300&q=80', cat:'phones'},
-  {id:24, name:'شاحن 18 واط MOXOM SAMSUNG',                price:3.50,  img:'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=300&q=80', cat:'phones'},
-  // باقي الفئات - قريباً
-  {id:25, name:'أرز مصري 5 كيلو',    price:4.50, img:'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&q=80', cat:'grains'},
-  {id:26, name:'عدس أحمر 1 كيلو',    price:2.00, img:'https://images.unsplash.com/photo-1612257416648-11b2c8b2e0f5?w=300&q=80', cat:'grains'},
-  {id:27, name:'زيت زيتون 750 مل',   price:6.50, img:'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=300&q=80', cat:'oils'},
-  {id:28, name:'حليب كامل 1 لتر',    price:1.50, img:'https://images.unsplash.com/photo-1550583724-b2692b85b150?w=300&q=80', cat:'dairy'},
-  {id:29, name:'تونة بالزيت 160غ',   price:1.80, img:'https://images.unsplash.com/photo-1510130315132-072a9c6ba7cd?w=300&q=80', cat:'canned'},
+  {id:1,name:'USB Flash Drive 128GB BOROFONE',price:11.90,img:IMG.usb,cat:'phones'},
+  {id:2,name:'Power Bank 2 Cable Type C+ Lightning Clever',price:12.60,img:IMG.powerbank,cat:'phones'},
+  {id:3,name:'Power Bank 10000 RPP23 REMAX',price:8.44,img:IMG.powerbank,cat:'phones'},
+  {id:4,name:'Power Bank 10000 Fast Charging DP43 VDENMENV',price:5.53,img:IMG.powerbank,cat:'phones'},
+  {id:5,name:'حاملة هاتف ملون طويل PHONE POCKET',price:6.65,img:IMG.phone,cat:'phones'},
+  {id:6,name:'حاملة لتثبيت الهاتف ملونة',price:0.50,img:IMG.phone,cat:'phones'},
+  {id:7,name:'تعليقة هاتف خرز ملون طويلة',price:1.12,img:IMG.phone,cat:'phones'},
+  {id:8,name:'ادابتر سيارة 3 مخارج 55 واط Quick Charger',price:5.15,img:IMG.phone,cat:'phones'},
+  {id:9,name:'سماعات بلوتوث شكل قطة HOCO EW46',price:11.70,img:IMG.headphones,cat:'phones'},
+  {id:10,name:'سماعات بلوتوث Borofone Noise Cancelation',price:10.50,img:IMG.headphones,cat:'phones'},
+  {id:11,name:'سماعات HOCO WIRELESS W35',price:12.60,img:IMG.headphones,cat:'phones'},
+  {id:12,name:'سماعات BOROFONE WIRELESS B023',price:10.50,img:IMG.headphones,cat:'phones'},
+  {id:13,name:'شاحن 20 واط BOROFONE TYPE C BA81',price:3.08,img:IMG.phone,cat:'phones'},
+  {id:14,name:'شاحن 30 واط BOROFONE BAS45A',price:5.25,img:IMG.phone,cat:'phones'},
+  {id:15,name:'شاحن 18 واط BOROFONE BAS72A',price:2.66,img:IMG.phone,cat:'phones'},
+  {id:16,name:'سماعات وصلة ثقال HOCO M101',price:1.54,img:IMG.headphones,cat:'phones'},
+  {id:17,name:'شاحن سيارة BOROFONE IPHONE BZ12',price:2.31,img:IMG.phone,cat:'phones'},
+  {id:18,name:'شاحن سيارة BOROFONE SAMSUNG BZ12A',price:2.31,img:IMG.phone,cat:'phones'},
+  {id:19,name:'شاحن سيارة BOROFONE TYPE C BZ12A',price:2.31,img:IMG.phone,cat:'phones'},
+  {id:20,name:'شاحن حديث 20 واط BOROFONE',price:2.94,img:IMG.phone,cat:'phones'},
+  {id:21,name:'وصلة اوكس 1 متر BOROFONE BL19',price:0.98,img:IMG.phone,cat:'phones'},
+  {id:22,name:'شاحن 20 واط BOROFONE BA81A C TO C',price:3.99,img:IMG.phone,cat:'phones'},
+  {id:23,name:'شاحن 18 واط MOXOM TYPE C',price:3.50,img:IMG.phone,cat:'phones'},
+  {id:24,name:'شاحن 18 واط MOXOM SAMSUNG',price:3.50,img:IMG.phone,cat:'phones'},
+  // حبوب - أرز
+  {id:101,name:'أرز أمريكي نملية 900غ',price:1.067,img:IMG.rice,cat:'grains'},
+  {id:102,name:'أرز أسود TAJ 500غ',price:3.68,img:IMG.rice,cat:'grains'},
+  {id:103,name:'أرز أسمر TAJ 500غ',price:2.30,img:IMG.rice,cat:'grains'},
+  {id:104,name:'أرز أحمر TAJ 500غ',price:3.68,img:IMG.rice,cat:'grains'},
+  {id:105,name:'أرز إيطالي Riso della famiglia 900غ',price:1.348,img:IMG.rice,cat:'grains'},
+  {id:106,name:'أرز إيطالي بالدو Avila 900غ',price:2.574,img:IMG.rice,cat:'grains'},
+  {id:107,name:'أرز أمريكي Avila 900غ',price:1.386,img:IMG.rice,cat:'grains'},
+  {id:108,name:'أرز أمريكي Glob Garden 900غ',price:1.31,img:IMG.rice,cat:'grains'},
+  {id:109,name:'أرز إيطالي بالدو الجودة 5 كيلو',price:13.565,img:IMG.rice,cat:'grains'},
+  {id:110,name:'أرز إيطالي بالدو الجودة 2كغ Al Jouda',price:5.444,img:IMG.rice,cat:'grains'},
+  {id:111,name:'أرز إيطالي بالدو Holiday 900غ',price:1.617,img:IMG.rice,cat:'grains'},
+  {id:112,name:'أرز إيطالي بالدو Glob Garden 900غ',price:2.497,img:IMG.rice,cat:'grains'},
+  {id:113,name:'أرز إيطالي بالدو نملية 900غ',price:2.134,img:IMG.rice,cat:'grains'},
+  {id:114,name:'أرز إيطالي بالدو دمبول 900غ',price:1.973,img:IMG.rice,cat:'grains'},
+  {id:115,name:'أرز إيطالي بالدو دمبول 5 كيلو',price:9.603,img:IMG.rice,cat:'grains'},
+  {id:116,name:'أرز إيطالي بالدو الجودة 900غ',price:2.454,img:IMG.rice,cat:'grains'},
+  {id:117,name:'أرز إيطالي لوتو الجودة 900غ',price:1.875,img:IMG.rice,cat:'grains'},
+  {id:118,name:'أرز إيطالي لوتو Glob Garden 900غ',price:1.848,img:IMG.rice,cat:'grains'},
+  {id:119,name:'أرز إيطالي لوتو دمبول 900غ',price:1.494,img:IMG.rice,cat:'grains'},
+  {id:120,name:'أرز إيطالي دمبول 5 كيلو',price:7.822,img:IMG.rice,cat:'grains'},
+  {id:121,name:'أرز بسمتي Little India 4كغ',price:6.912,img:IMG.rice,cat:'grains'},
+  {id:122,name:'أرز إيطالي لوتو ديروني 900غ',price:1.109,img:IMG.rice,cat:'grains'},
+  {id:123,name:'أرز إيطالي لوتو دمبول 5كغ',price:5.867,img:IMG.rice,cat:'grains'},
+  {id:124,name:'أرز بسمتي الماس ديروني 4كغ',price:8.659,img:IMG.rice,cat:'grains'},
+  {id:125,name:'أرز بسمتي أسمر Little India 1كغ',price:2.80,img:IMG.rice,cat:'grains'},
+  {id:126,name:'أرز بسمتي أبو راشد 800غ',price:1.716,img:IMG.rice,cat:'grains'},
+  {id:127,name:'أرز بسمتي TAJ 800غ',price:2.596,img:IMG.rice,cat:'grains'},
+  {id:128,name:'أرز بسمتي هندي أكسترا Avila 5كلغ',price:10.454,img:IMG.rice,cat:'grains'},
+  {id:129,name:'أرز بسمتي سيلا فضي ديروني 4 كيلو',price:8.018,img:IMG.rice,cat:'grains'},
+  {id:130,name:'أرز بسمتي سلام 5 كيلو',price:8.461,img:IMG.rice,cat:'grains'},
+  {id:131,name:'أرز بسمتي الماس ديروني 800غ',price:1.848,img:IMG.rice,cat:'grains'},
+  {id:132,name:'أرز مصري Glob Garden 900غ',price:1.264,img:IMG.rice,cat:'grains'},
+  {id:133,name:'أرز مصري DILA 900غ',price:0.756,img:IMG.rice,cat:'grains'},
+  {id:134,name:'أرز مصري Glob Garden 5كغ',price:7.02,img:IMG.rice,cat:'grains'},
+  {id:135,name:'أرز تايلندي حبة طويلة دمبول 5كغ',price:5.205,img:IMG.rice,cat:'grains'},
+  {id:136,name:'أرز مصري نملية 5 كيلو',price:4.452,img:IMG.rice,cat:'grains'},
+  {id:137,name:'أرز مصري دمبول 900غ',price:0.891,img:IMG.rice,cat:'grains'},
+  {id:138,name:'أرز مصري دمبول 5كلغ',price:4.644,img:IMG.rice,cat:'grains'},
+  {id:139,name:'أرز مصري الجودة 900غ',price:1.339,img:IMG.rice,cat:'grains'},
+  {id:140,name:'رز بسمتي 900غ Little India',price:1.62,img:IMG.rice,cat:'grains'},
+  {id:141,name:'رز بسمتي براق 1كغ',price:1.72,img:IMG.rice,cat:'grains'},
+  {id:142,name:'رز بسمتي براق 5كغ',price:8.336,img:IMG.rice,cat:'grains'},
+  {id:143,name:'رز بسمتي سيلا فضي ديروني 800غ',price:1.632,img:IMG.rice,cat:'grains'},
+  {id:144,name:'رز سوشي 500غ Blue Dragon',price:5.348,img:IMG.rice,cat:'grains'},
+  // برغل
+  {id:145,name:'برغل أبيض خشن 900غ Avila',price:1.102,img:IMG.bulgur,cat:'grains'},
+  {id:146,name:'برغل أبيض خشن 900غ Glob Garden',price:1.232,img:IMG.bulgur,cat:'grains'},
+  {id:147,name:'برغل أبيض خشن دمبول 900غ',price:0.865,img:IMG.bulgur,cat:'grains'},
+  {id:148,name:'برغل أبيض خشن زماطي نملية 900غ',price:0.978,img:IMG.bulgur,cat:'grains'},
+  {id:149,name:'برغل أبيض زماطية 900غ Glob Garden',price:1.21,img:IMG.bulgur,cat:'grains'},
+  {id:150,name:'برغل أبيض ناعم 900غ Avila',price:1.102,img:IMG.bulgur,cat:'grains'},
+  {id:151,name:'برغل أبيض ناعم 900غ Glob Garden',price:1.265,img:IMG.bulgur,cat:'grains'},
+  {id:152,name:'برغل أبيض ناعم دمبول 900غ',price:0.865,img:IMG.bulgur,cat:'grains'},
+  {id:153,name:'برغل أبيض ناعم نملية 900غ',price:0.939,img:IMG.bulgur,cat:'grains'},
+  {id:154,name:'برغل أسمر خشن 900غ TRUST FOOD',price:0.670,img:IMG.bulgur,cat:'grains'},
+  {id:155,name:'برغل أسمر خشن الجودة 900غ',price:1.088,img:IMG.bulgur,cat:'grains'},
+  {id:156,name:'برغل أسمر خشن دمبول 900غ',price:0.833,img:IMG.bulgur,cat:'grains'},
+  {id:157,name:'برغل أسمر خشن ديروني 900غ',price:0.779,img:IMG.bulgur,cat:'grains'},
+  {id:158,name:'برغل أسمر خشن نملية 900غ',price:1.022,img:IMG.bulgur,cat:'grains'},
+  {id:159,name:'برغل خشن 900غ lebaytcom',price:0.632,img:IMG.bulgur,cat:'grains'},
+  {id:160,name:'برغل خشن أبيض زماطي ديروني 900غ',price:0.905,img:IMG.bulgur,cat:'grains'},
+  // بوشار/ترمس/حمص
+  {id:161,name:'بوشار دمبول 450غ',price:0.467,img:IMG.legumes,cat:'grains'},
+  {id:162,name:'بوشار دمبول 900غ',price:0.929,img:IMG.legumes,cat:'grains'},
+  {id:163,name:'ترمس حلو 500غ Avila',price:1.137,img:IMG.legumes,cat:'grains'},
+  {id:164,name:'ترمس حلو 500غ Glob Garden',price:1.142,img:IMG.legumes,cat:'grains'},
+  {id:165,name:'ترمس حلو نملية 900غ',price:1.327,img:IMG.legumes,cat:'grains'},
+  {id:166,name:'حمص 900غ lebaytcom',price:1.239,img:IMG.legumes,cat:'grains'},
+  {id:167,name:'حمص أمريكي 900غ Glob Garden',price:1.969,img:IMG.legumes,cat:'grains'},
+  {id:168,name:'حمص حب 900غ Dila',price:0.972,img:IMG.legumes,cat:'grains'},
+  {id:169,name:'حمص حب 900غ Prime',price:0.972,img:IMG.legumes,cat:'grains'},
+  {id:170,name:'حمص حب أكسترا ديروني 900غ',price:1.125,img:IMG.legumes,cat:'grains'},
+  {id:171,name:'حمص حب دمبول 900غ',price:1.296,img:IMG.legumes,cat:'grains'},
+  {id:172,name:'حمص حب فحلي ديروني 900غ',price:2.493,img:IMG.legumes,cat:'grains'},
+  {id:173,name:'حمص صغير 900غ Avila',price:1.584,img:IMG.legumes,cat:'grains'},
+  {id:174,name:'حمص فحلي 900غ Avila',price:2.944,img:IMG.legumes,cat:'grains'},
+  {id:175,name:'حمص فحلي 900غ Glob Garden',price:3.047,img:IMG.legumes,cat:'grains'},
+  {id:176,name:'حمص فحلي الجودة 900غ',price:3.177,img:IMG.legumes,cat:'grains'},
+  {id:177,name:'حمص فحلي دمبول 900غ',price:2.398,img:IMG.legumes,cat:'grains'},
+  {id:178,name:'حمص فحلي نملية 900غ',price:2.561,img:IMG.legumes,cat:'grains'},
+  {id:179,name:'حمص كندي الجودة 900غ',price:1.589,img:IMG.legumes,cat:'grains'},
+  {id:180,name:'حمص مفقوش الجودة 500غ',price:1.654,img:IMG.legumes,cat:'grains'},
+  {id:181,name:'حمص نملية 900غ',price:1.73,img:IMG.legumes,cat:'grains'},
+  // ذرة/خل
+  {id:182,name:'خل أبيض 1 ليتر Glob Garden',price:0.691,img:IMG.flour,cat:'grains'},
+  {id:183,name:'زعتر أحمر أكسترا نكهة حلب 400غ',price:2.745,img:IMG.oats,cat:'grains'},
+  {id:184,name:'ذرة بوشار 400غ Glob Garden',price:0.702,img:IMG.legumes,cat:'grains'},
+  {id:185,name:'ذرة بوشار 400غ lebaytcom',price:0.440,img:IMG.legumes,cat:'grains'},
+  {id:186,name:'ذرة بوشار 900غ Glob Garden',price:1.458,img:IMG.legumes,cat:'grains'},
+  {id:187,name:'ذرة بوشار الجودة 400غ',price:0.732,img:IMG.legumes,cat:'grains'},
+  {id:188,name:'ذرة بوشار الجودة 900غ',price:1.434,img:IMG.legumes,cat:'grains'},
+  {id:189,name:'ذرة بوشار ديروني 450غ',price:0.499,img:IMG.legumes,cat:'grains'},
+  // سكر
+  {id:190,name:'سكر أبيض 5كلغ PRIME LINE',price:3.528,img:IMG.sugar,cat:'grains'},
+  {id:191,name:'سكر أبيض 900غ DILA',price:0.644,img:IMG.sugar,cat:'grains'},
+  {id:192,name:'سكر أبيض الأسرة 2كلغ',price:1.671,img:IMG.sugar,cat:'grains'},
+  {id:193,name:'سكر أبيض الأسرة 5كلغ',price:4.177,img:IMG.sugar,cat:'grains'},
+  {id:194,name:'سكر أبيض دمبول 900غ',price:0.692,img:IMG.sugar,cat:'grains'},
+  {id:195,name:'سكر أبيض ديروني 5كلغ',price:3.931,img:IMG.sugar,cat:'grains'},
+  {id:196,name:'سكر أبيض ديروني 900غ',price:0.698,img:IMG.sugar,cat:'grains'},
+  {id:197,name:'سكر أبيض فرنسي 5كغ Avila',price:4.749,img:IMG.sugar,cat:'grains'},
+  {id:198,name:'سكر أبيض فرنسي الجودة 900غ',price:0.889,img:IMG.sugar,cat:'grains'},
+  {id:199,name:'سكر أبيض مكعبات الأسرة 500غ',price:2.141,img:IMG.sugar,cat:'grains'},
+  {id:200,name:'سكر أبيض مكعبات كريستال 1كغ',price:2.705,img:IMG.sugar,cat:'grains'},
+  {id:201,name:'سكر أبيض نملية 5 كيلو',price:3.841,img:IMG.sugar,cat:'grains'},
+  {id:202,name:'سكر أسمر 500غ Mauricio',price:1.950,img:IMG.sugar,cat:'grains'},
+  {id:203,name:'سكر أسمر مكعبات الأسرة 500غ',price:2.854,img:IMG.sugar,cat:'grains'},
+  {id:204,name:'سكر أسمر مكعبات كريستال 1كغ',price:3.073,img:IMG.sugar,cat:'grains'},
+  {id:205,name:'سكر فرنسي 900غ Glob Garden',price:0.853,img:IMG.sugar,cat:'grains'},
+  {id:206,name:'سكر قصب أبيض 10كلغ الأسرة',price:7.546,img:IMG.sugar,cat:'grains'},
+  {id:207,name:'سكر لايت Mauricio 500غ',price:1.950,img:IMG.sugar,cat:'grains'},
+  {id:208,name:'سكر من قصب السكر 500غ Mauricio',price:1.756,img:IMG.sugar,cat:'grains'},
+  {id:209,name:'سكر ناعم 400غ Glob Garden',price:0.745,img:IMG.sugar,cat:'grains'},
+  {id:210,name:'سكر ناعم 400غ lebaytcom',price:0.589,img:IMG.sugar,cat:'grains'},
+  {id:211,name:'سكر ناعم 900غ Glob Garden',price:1.624,img:IMG.sugar,cat:'grains'},
+  {id:212,name:'سكر ناعم الجودة 500غ',price:0.670,img:IMG.sugar,cat:'grains'},
+  {id:213,name:'سكر ناعم جودة 900غ',price:1.172,img:IMG.sugar,cat:'grains'},
+  // سمسم/سميد
+  {id:214,name:'سمسم مقشور 200غ Glob Garden',price:1.109,img:IMG.oats,cat:'grains'},
+  {id:215,name:'سمسم ني 500غ Lebaytcom',price:1.450,img:IMG.oats,cat:'grains'},
+  {id:216,name:'سميد خشن 1كغ Avila',price:1.392,img:IMG.flour,cat:'grains'},
+  {id:217,name:'سميد خشن 900غ Glob Garden',price:1.323,img:IMG.flour,cat:'grains'},
+  {id:218,name:'سميد خشن الجودة 900غ',price:1.310,img:IMG.flour,cat:'grains'},
+  {id:219,name:'سميد خشن حقول شتورة 900غ',price:1.183,img:IMG.flour,cat:'grains'},
+  {id:220,name:'سميد خشن نملية 900غ',price:1.018,img:IMG.flour,cat:'grains'},
+  {id:221,name:'سميد ناعم دمبول 900غ',price:1.032,img:IMG.flour,cat:'grains'},
+  {id:222,name:'سميد ناعم 1كغ Avila',price:1.392,img:IMG.flour,cat:'grains'},
+  {id:223,name:'سميد ناعم حقول شتورة 900غ',price:1.152,img:IMG.flour,cat:'grains'},
+  {id:224,name:'سميد ناعم فرخة نملية 900غ',price:1.018,img:IMG.flour,cat:'grains'},
+  // شوفان/طحين
+  {id:225,name:'شوفان 700غ Glob Garden',price:2.016,img:IMG.oats,cat:'grains'},
+  {id:226,name:'شوفان أبيض 500غ Healthy U',price:1.860,img:IMG.oats,cat:'grains'},
+  {id:227,name:'شوفان الجودة 700غ',price:2.247,img:IMG.oats,cat:'grains'},
+  {id:228,name:'طحين أبيض 900غ Flona',price:0.679,img:IMG.flour,cat:'grains'},
+  {id:229,name:'طحين أبيض أكسترا الجودة 900غ',price:0.943,img:IMG.flour,cat:'grains'},
+  {id:230,name:'طحين أبيض كاتو 1كغ Avila',price:1.276,img:IMG.flour,cat:'grains'},
+  {id:231,name:'طحين فرخة 900غ دمبول',price:1.003,img:IMG.flour,cat:'grains'},
+  {id:232,name:'طحين فرخة الجودة 900غ',price:1.310,img:IMG.flour,cat:'grains'},
+  // عدس
+  {id:233,name:'عدس أحمر مجروش 900غ Avila',price:1.677,img:IMG.lentil,cat:'grains'},
+  {id:234,name:'عدس أحمر مجروش 900غ Dila',price:1.053,img:IMG.lentil,cat:'grains'},
+  {id:235,name:'عدس أحمر مجروش أوبا 900غ',price:1.112,img:IMG.lentil,cat:'grains'},
+  {id:236,name:'عدس أحمر مجروش دمبول 900غ',price:1.199,img:IMG.lentil,cat:'grains'},
+  {id:237,name:'عدس أحمر مجروش ديروني 900غ',price:1.035,img:IMG.lentil,cat:'grains'},
+  {id:238,name:'عدس أحمر مجروش نملية 900غ',price:1.200,img:IMG.lentil,cat:'grains'},
+  {id:239,name:'عدس أحمر مقشور الجودة 900غ',price:1.799,img:IMG.lentil,cat:'grains'},
+  {id:240,name:'عدس أخضر 900غ Avila',price:2.044,img:IMG.lentil,cat:'grains'},
+  {id:241,name:'عدس أخضر رفيع الجودة 900غ',price:2.259,img:IMG.lentil,cat:'grains'},
+  {id:242,name:'عدس أخضر عريض 900غ Glob Garden',price:1.836,img:IMG.lentil,cat:'grains'},
+  {id:243,name:'عدس أخضر عريض الجودة 900غ',price:1.965,img:IMG.lentil,cat:'grains'},
+  {id:244,name:'عدس أخضر عريض ديروني 900غ',price:1.485,img:IMG.lentil,cat:'grains'},
+  {id:245,name:'عدس بلدي 900غ lebaytcom',price:0.890,img:IMG.lentil,cat:'grains'},
+  {id:246,name:'عدس مجروش 900غ Glob Garden',price:1.680,img:IMG.lentil,cat:'grains'},
+  // عروض/فاصوليا
+  {id:247,name:'عرض أرز أمريكي ديروني 4+1 كغ',price:4.371,img:IMG.rice,cat:'grains'},
+  {id:248,name:'عرض رز إيطالي بالدو هوليدي 5كغ+سكر+قهوة',price:10.428,img:IMG.rice,cat:'grains'},
+  {id:249,name:'عرض رز مصري ديروني 4+1 كغ',price:4.620,img:IMG.rice,cat:'grains'},
+  {id:250,name:'فاصوليا بيضاء دمبول 900غ',price:1.603,img:IMG.legumes,cat:'grains'},
+  {id:251,name:'فاصوليا بيضاء ديروني 900غ',price:1.555,img:IMG.legumes,cat:'grains'},
+  {id:252,name:'فاصوليا بيضاء صنوبرية 900غ Glob Garden',price:2.268,img:IMG.legumes,cat:'grains'},
+  {id:253,name:'فاصوليا بيضاء عريضة 400غ Glob Garden',price:2.052,img:IMG.legumes,cat:'grains'},
+  {id:254,name:'فاصوليا بيضاء عريضة دمبول 400غ',price:1.244,img:IMG.legumes,cat:'grains'},
+  {id:255,name:'فاصوليا بيضاء عريضة دمبول 800غ',price:2.650,img:IMG.legumes,cat:'grains'},
+  {id:256,name:'فاصوليا بيضاء نملية 900غ',price:1.860,img:IMG.legumes,cat:'grains'},
+  {id:257,name:'فاصوليا حمراء طويلة ديروني 900غ',price:1.879,img:IMG.legumes,cat:'grains'},
+  {id:258,name:'فاصوليا حمراء مدعبلة 900غ Avila',price:2.860,img:IMG.legumes,cat:'grains'},
+  {id:259,name:'فاصوليا حمراء مدعبلة 900غ Glob Garden',price:2.860,img:IMG.legumes,cat:'grains'},
+  {id:260,name:'فاصوليا حمراء مدعبلة دمبول 900غ',price:2.294,img:IMG.legumes,cat:'grains'},
+  {id:261,name:'فاصوليا حمراء مدعبلة ديروني 900غ',price:2.131,img:IMG.legumes,cat:'grains'},
+  {id:262,name:'فاصوليا حمراء نملية 900غ',price:2.361,img:IMG.legumes,cat:'grains'},
+  {id:263,name:'فاصوليا رفيعة مسلات 400غ Glob Garden',price:1.595,img:IMG.legumes,cat:'grains'},
+  {id:264,name:'فاصولياء صنوبرية حقول شتورة 900غ',price:1.465,img:IMG.legumes,cat:'grains'},
+  // فريكة/فول/قمح
+  {id:265,name:'فريكة 500غ Avila',price:1.985,img:IMG.bulgur,cat:'grains'},
+  {id:266,name:'فريكة 1كلغ Avila',price:3.958,img:IMG.bulgur,cat:'grains'},
+  {id:267,name:'فريكة دمبول 900غ',price:2.502,img:IMG.bulgur,cat:'grains'},
+  {id:268,name:'فول أبيض حب الجودة 900غ',price:1.387,img:IMG.legumes,cat:'grains'},
+  {id:269,name:'فول إنجليزي دمبول 900غ',price:1.120,img:IMG.legumes,cat:'grains'},
+  {id:270,name:'فول ديروني 900غ',price:1.157,img:IMG.legumes,cat:'grains'},
+  {id:271,name:'فول عريض 900غ Avila',price:2.461,img:IMG.legumes,cat:'grains'},
+  {id:272,name:'فول عريض دمبول 700غ',price:1.494,img:IMG.legumes,cat:'grains'},
+  {id:273,name:'فول ممتاز 900غ lebaytcom',price:1.230,img:IMG.legumes,cat:'grains'},
+  {id:274,name:'قمح حب 900غ Glob Garden',price:1.089,img:IMG.bulgur,cat:'grains'},
+  {id:275,name:'قمح مقشور 900غ Avila',price:1.002,img:IMG.bulgur,cat:'grains'},
+  {id:276,name:'قمح مقشور 900غ Glob Garden',price:1.174,img:IMG.bulgur,cat:'grains'},
+  {id:277,name:'قمح مقشور الجودة 900غ',price:1.088,img:IMG.bulgur,cat:'grains'},
+  {id:278,name:'قمح مقشور دمبول 900غ',price:0.869,img:IMG.bulgur,cat:'grains'},
+  // كاجو/كشك/كينوا/لوبيا/ماش/مغربية/ملح
+  {id:279,name:'كاجو 500غ lebaytcom',price:5.912,img:IMG.nuts,cat:'grains'},
+  {id:280,name:'كشك بقاعي باب أول 300غ',price:5.700,img:IMG.bulgur,cat:'grains'},
+  {id:281,name:'كشك بلدي الجودة 500غ',price:6.805,img:IMG.bulgur,cat:'grains'},
+  {id:282,name:'كينوا حمراء 150غ lebaytcom',price:1.647,img:IMG.oats,cat:'grains'},
+  {id:283,name:'لب دوار الشمس 150غ Lebaytcom',price:0.823,img:IMG.nuts,cat:'grains'},
+  {id:284,name:'لوبية حب نملية 500غ',price:1.272,img:IMG.legumes,cat:'grains'},
+  {id:285,name:'لوبية مسلات 500غ Avila',price:1.270,img:IMG.legumes,cat:'grains'},
+  {id:286,name:'ماش الجودة 500غ',price:2.231,img:IMG.legumes,cat:'grains'},
+  {id:287,name:'مغربية 900غ Glob Garden',price:2.050,img:IMG.bulgur,cat:'grains'},
+  {id:288,name:'مغربية دمبول 900غ',price:1.451,img:IMG.bulgur,cat:'grains'},
+  {id:289,name:'مغربية ديروني 900غ',price:1.553,img:IMG.bulgur,cat:'grains'},
+  {id:290,name:'مغربية نملية 500غ',price:0.859,img:IMG.bulgur,cat:'grains'},
+  {id:291,name:'ملح الهيمالايا الوردي الخشن دمبول 500غ',price:0.728,img:IMG.salt,cat:'grains'},
+  {id:292,name:'ملح خشن 1كغ Glob Garden',price:0.264,img:IMG.salt,cat:'grains'},
+  {id:293,name:'ملح ناعم دمبول 1كلغ',price:0.142,img:IMG.salt,cat:'grains'},
+  {id:294,name:'ملح ناعم دمبول 5كغ',price:0.768,img:IMG.salt,cat:'grains'},
+  {id:295,name:'ملح هملايا 500غ lebaytcom',price:1.021,img:IMG.salt,cat:'grains'},
 ];
 
-let cart={}, activeCat='all';
+let cart={},activeCat='all',searchTerm='';
 
 function renderCats(){
   document.getElementById('catList').innerHTML=cats.map(c=>
@@ -200,14 +423,34 @@ function renderCats(){
 }
 
 function filterCat(id,name){
-  activeCat=id; renderCats(); renderProducts();
+  activeCat=id;
+  document.getElementById('searchInput').value='';
+  searchTerm='';
+  renderCats();
+  renderProducts();
   document.getElementById('catTitle').textContent=id==='all'?'كل المنتجات':name;
 }
 
+function searchProducts(){
+  searchTerm=document.getElementById('searchInput').value.trim();
+  activeCat='all';
+  renderCats();
+  renderProducts();
+  document.getElementById('catTitle').textContent=searchTerm?`نتائج: "${searchTerm}"` :'كل المنتجات';
+}
+
+function getFilteredProducts(){
+  let list=products;
+  if(activeCat!=='all') list=list.filter(p=>p.cat===activeCat);
+  if(searchTerm) list=list.filter(p=>p.name.toLowerCase().includes(searchTerm.toLowerCase()));
+  return list;
+}
+
 function renderProducts(){
-  const list=activeCat==='all'?products:products.filter(p=>p.cat===activeCat);
+  const list=getFilteredProducts();
+  document.getElementById('resultsCount').textContent=list.length>0?`${list.length} منتج`:'';
   if(!list.length){
-    document.getElementById('productList').innerHTML='<div class="empty"><div class="empty-icon">📦</div><p>قريباً سيتم إضافة منتجات لهذه الفئة</p></div>';
+    document.getElementById('productList').innerHTML='<div class="empty"><div class="empty-icon">📦</div><p>لا يوجد منتجات في هذه الفئة حالياً</p></div>';
     return;
   }
   document.getElementById('productList').innerHTML=list.map(p=>`
@@ -222,8 +465,8 @@ function renderProducts(){
 }
 
 function addToCart(id,btn){
-  cart[id]=(cart[id]||0)+1; updateCount();
-  btn.textContent='✓ تمت الإضافة'; btn.classList.add('added');
+  cart[id]=(cart[id]||0)+1;updateCount();
+  btn.textContent='✓ تمت الإضافة';btn.classList.add('added');
   setTimeout(()=>{btn.textContent='+ أضف للسلة';btn.classList.remove('added');},1200);
 }
 
@@ -251,7 +494,7 @@ function renderCart(){
 
 function changeQty(id,delta){
   cart[id]=Math.max(0,(cart[id]||0)+delta);
-  if(!cart[id])delete cart[id]; updateCount(); renderCart();
+  if(!cart[id])delete cart[id];updateCount();renderCart();
 }
 
 function renderSummary(elId){
@@ -293,7 +536,7 @@ function showPage(name){
 
 function resetOrder(){cart={};updateCount();showPage('shop');}
 
-renderCats(); renderProducts();
+renderCats();renderProducts();
 </script>
 </body>
 </html>
