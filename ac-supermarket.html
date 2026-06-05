@@ -589,8 +589,9 @@ function searchProducts(){
   document.getElementById('catTitle').textContent=searchTerm?`نتائج: "${searchTerm}"` :'كل المنتجات';
 }
 
-function getFilteredProducts(){
-  let list=products;
+function getFilteredProducts() {
+    return products; // هذا سيعيد كل المنتجات دائماً بدون أي فلترة، لنتأكد أن الكود يعمل
+}  let list=products;
 if(activeCat !== 'all') list = list.filter(p => p.cat == activeCat || p.category == activeCat);        let pCat = (p.cat || p.category || "").toString().replace(/\s+/g, '').replace(/[^\u0621-\u064A]/g, '');
         let aCat = activeCat.toString().replace(/\s+/g, '').replace(/[^\u0621-\u064A]/g, '');
         return pCat === aCat;
