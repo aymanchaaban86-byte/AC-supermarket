@@ -593,6 +593,11 @@ function getFilteredProducts(){
   let list=products;
 if(activeCat !== 'all') {
     list = list.filter(p => {
+        let pCat = (p.cat || p.category || "").toString().replace(/\s+/g, '').replace(/[^\u0621-\u064A]/g, '');
+        let aCat = activeCat.toString().replace(/\s+/g, '').replace(/[^\u0621-\u064A]/g, '');
+        return pCat === aCat;
+    });
+}    list = list.filter(p => {
         let productCat = (p.cat || p.category || "").toString().toLowerCase().replace(/[^\u0621-\u064A]/g, '').trim();
         let selectedCat = activeCat.toString().toLowerCase().replace(/[^\u0621-\u064A]/g, '').trim();
         return productCat === selectedCat;
