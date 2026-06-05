@@ -686,7 +686,13 @@ function showPage(name){
 
 function resetOrder(){cart={};updateCount();showPage('shop');}
 
-renderCats();renderProducts();
+// ربط سحري: جلب المنتجات من لوحة التحكم وتحديث المتجر بها تلقائياً
+        let localProducts = JSON.parse(localStorage.getItem("my_products"));
+        if (localProducts && localProducts.length > 0) {
+            products.length = 0; 
+            localProducts.forEach(p => products.push(p));
+        }
+  renderCats();renderProducts();
 </script>
 </body>
 </html>
