@@ -591,8 +591,13 @@ function searchProducts(){
 
 function getFilteredProducts(){
   let list=products;
-if(activeCat!=='all') list = list.filter(p => (p.cat || p.category || "").toString().toLowerCase().trim().includes(activeCat.toLowerCase().trim()));
-function renderProducts(){
+if(activeCat !== 'all') {
+    list = list.filter(p => {
+        let productCat = (p.cat || p.category || "").toString().toLowerCase().replace(/[^\u0621-\u064A]/g, '').trim();
+        let selectedCat = activeCat.toString().toLowerCase().replace(/[^\u0621-\u064A]/g, '').trim();
+        return productCat === selectedCat;
+    });
+}function renderProducts(){
   const list=getFilteredProducts();
   document.getElementById('resultsCount').textContent=list.length>0?`${list.length} منتج`:'';
   if(!list.length){
