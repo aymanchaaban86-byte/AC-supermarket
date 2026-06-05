@@ -687,11 +687,18 @@ function showPage(name){
 function resetOrder(){cart={};updateCount();showPage('shop');}
 
 // ربط سحري: جلب المنتجات من لوحة التحكم وتحديث المتجر بها تلقائياً
-        let localProducts = JSON.parse(localStorage.getItem("my_products"));
-        if (localProducts && localProducts.length > 0) {
-             
-            localProducts.forEach(p => products.push(p));
-        }
+        let localProducts = JSON.parse(localStorage.getItem("products")) || JSON.parse(localStorage.getItem("my_products"));
+if (localProducts && localProducts.length > 0) {
+    localProducts.forEach(p => {
+        products.push({
+            id: p.id || Date.now() + Math.random(),
+            name: p.name || p.title,
+            price: p.price,
+            image: p.image || p.img || p.imageURL,
+            category: p.category || p.cat || p.section || "زيوت"
+        });
+    });
+}
   renderCats();renderProducts();
 </script>
 </body>
