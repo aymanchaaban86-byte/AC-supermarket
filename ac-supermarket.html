@@ -591,8 +591,7 @@ function searchProducts(){
 
 function getFilteredProducts(){
   let list=products;
-if(activeCat !== 'all') {
-    list = list.filter(p => {
+if(activeCat !== 'all') list = list.filter(p => (p.cat || p.category) == activeCat);    list = list.filter(p => {
         let pCat = (p.cat || p.category || "").toString().replace(/\s+/g, '').replace(/[^\u0621-\u064A]/g, '');
         let aCat = activeCat.toString().replace(/\s+/g, '').replace(/[^\u0621-\u064A]/g, '');
         return pCat === aCat;
