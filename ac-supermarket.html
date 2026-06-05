@@ -693,18 +693,27 @@ function resetOrder(){cart={};updateCount();showPage('shop');}
 
 // ربط سحري: جلب المنتجات من لوحة التحكم وتحديث المتجر بها تلقائياً
       // جلب المنتجات مع مقارنة مرنة للأقسام
+// حل نهائي: جلب المنتجات وإجبارها على الظهور
 let rawData = localStorage.getItem("products") || localStorage.getItem("my_products");
-    if (rawData) {
-        try {
-            let localProducts = JSON.parse(rawData);
-            if (Array.isArray(localProducts)) {
-                products = []; 
-                localProducts.forEach(p => {
-                    products.push({
-                        id: p.id || Date.now() + Math.random(),
-                        name: p.name || p.title || "منتج بدون اسم",
-                        price: parseFloat(p.price) || 0,
-                        image: p.image || p.img || p.imageURL || "",
+if (rawData) {
+    try {
+        let localProducts = JSON.parse(rawData);
+        if (Array.isArray(localProducts)) {
+            products = []; // تفريغ
+            localProducts.forEach(p => {
+                products.push({
+                    id: p.id || Math.random(),
+                    name: p.name || "منتج",
+                    price: parseFloat(p.price) || 0,
+                    image: p.image || "",
+                    category: (p.category || p.cat || "").toString().trim()
+                });
+            });
+            // إذا كان المتجر فارغاً، نعرض كل شيء
+            if(products.length > 0) renderProducts();
+        }
+    } catch (e) { console.log(e); }
+}
                         category: (p.category || p.cat || p.section || "غير مصنف").toString().trim()
                     });
                 });
