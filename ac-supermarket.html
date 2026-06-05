@@ -694,8 +694,24 @@ function resetOrder(){cart={};updateCount();showPage('shop');}
 // ربط سحري: جلب المنتجات من لوحة التحكم وتحديث المتجر بها تلقائياً
       // جلب المنتجات مع مقارنة مرنة للأقسام
 // حل نهائي: جلب المنتجات وإجبارها على الظهور
-let rawData = localStorage.getItem("products") || localStorage.getItem("my_products");
-if (rawData) {
+// كود جلب المنتجات المحدث
+let storedData = localStorage.getItem("products") || localStorage.getItem("my_products");
+if (storedData) {
+    try {
+        let parsed = JSON.parse(storedData);
+        let rawList = Array.isArray(parsed) ? parsed : [];
+        products = []; 
+        rawList.forEach(p => {
+            products.push({
+                id: p.id || Date.now() + Math.random(),
+                name: p.name || p.title || "منتج",
+                price: parseFloat(p.price) || 0,
+                image: p.image || p.img || p.imageURL || "",
+                category: (p.category || p.cat || p.section || "غير مصنف").toString().trim()
+            });
+        });
+    } catch (e) { console.error("خطأ:", e); }
+}if (rawData) {
     try {
         let localProducts = JSON.parse(rawData);
         if (Array.isArray(localProducts)) {
