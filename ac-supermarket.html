@@ -3,141 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Souna</title>
+<title>Souna Admin</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Cairo',sans-serif;background:#f5f5f0;color:#1a1a1a;min-height:100vh}
-  header{background:#fff;border-bottom:1px solid #e8e8e0;position:sticky;top:0;z-index:100;padding:0 1rem}
-  .header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
-  .logo{font-size:20px;font-weight:700}.logo span{color:#16a34a}
-  .cart-btn{display:flex;align-items:center;gap:6px;background:#16a34a;color:#fff;border:none;border-radius:10px;padding:8px 14px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600}
-  .cart-badge{background:#fff;color:#16a34a;border-radius:50%;width:18px;height:18px;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700}
-  main{max-width:960px;margin:0 auto;padding:1rem}
-  .hero{background:linear-gradient(135deg,#16a34a,#15803d);border-radius:14px;padding:1.5rem;margin-bottom:1rem;color:#fff;display:flex;align-items:center;justify-content:space-between}
-  .hero h1{font-size:20px;font-weight:700;margin-bottom:4px}.hero p{font-size:13px;opacity:0.85}.hero-icon{font-size:48px}
-  .search-box{background:#fff;border:1.5px solid #e8e8e0;border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:8px;margin-bottom:1rem}
-  .search-box input{border:none;outline:none;font-family:'Cairo',sans-serif;font-size:14px;flex:1;background:transparent}
-  .cats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-bottom:1rem}
-  .cat{background:#fff;border:2px solid #e8e8e0;border-radius:10px;padding:8px 6px;cursor:pointer;font-size:11px;font-weight:600;color:#555;text-align:center;transition:all 0.15s}
-  .cat-icon{font-size:20px;margin-bottom:3px}
-  .cat.active,.cat:hover{border-color:#16a34a;color:#16a34a;background:#f0fdf4}
-  .section-title{font-size:15px;font-weight:700;margin-bottom:0.75rem;color:#1a1a1a}
-  .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px}
-  .prod{background:#fff;border-radius:12px;border:1px solid #e8e8e0;overflow:hidden;display:flex;flex-direction:column}
-  .prod-img{width:100%;height:130px;object-fit:contain;background:#f8f8f8;padding:6px}
-  .prod-body{padding:8px}
-  .prod-name{font-size:11px;font-weight:600;color:#1a1a1a;margin-bottom:3px;line-height:1.4;min-height:32px}
-  .prod-price{font-size:13px;font-weight:700;color:#16a34a;margin-bottom:8px}
-  .add-btn{background:#16a34a;color:#fff;border:none;border-radius:7px;padding:7px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:11px;font-weight:600;width:100%;transition:background 0.15s}
-  .add-btn:hover{background:#15803d}.add-btn.added{background:#dcfce7;color:#16a34a}
-  .page{display:none}.page.active{display:block}
-  .back{background:none;border:none;color:#16a34a;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600;margin-bottom:0.75rem;display:flex;align-items:center;gap:4px}
-  .page-title{font-size:16px;font-weight:700;margin-bottom:0.75rem}
-  .cart-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
-  .ci{background:#fff;border-radius:10px;border:1px solid #e8e8e0;padding:0.75rem;display:flex;align-items:center;gap:10px}
-  .ci-img{width:44px;height:44px;object-fit:contain;border-radius:6px;background:#f8f8f8;padding:3px;flex-shrink:0}
-  .ci-info{flex:1}.ci-name{font-size:12px;font-weight:600}.ci-price{font-size:11px;color:#888}
-  .qty-ctrl{display:flex;align-items:center;gap:6px}
-  .qb{width:26px;height:26px;border:1.5px solid #e8e8e0;border-radius:6px;background:none;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;font-weight:600}
-  .qn{font-size:13px;font-weight:700;min-width:18px;text-align:center}
-  .summary{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;margin-bottom:0.75rem}
-  .srow{display:flex;justify-content:space-between;font-size:13px;color:#666;padding:4px 0}
-  .srow.total{font-size:15px;font-weight:700;color:#1a1a1a;border-top:1px solid #e8e8e0;margin-top:6px;padding-top:10px}
-  .wa-btn{width:100%;background:#25D366;color:#fff;border:none;border-radius:10px;padding:12px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px}
-  .form-section{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;margin-bottom:0.75rem}
-  .fl{font-size:12px;color:#666;margin-bottom:4px;display:block;font-weight:500}
-  .fi{width:100%;padding:8px 10px;border:1.5px solid #e8e8e0;border-radius:7px;font-family:'Cairo',sans-serif;font-size:13px;background:#fff;outline:none;margin-bottom:10px}
-  .fi:focus{border-color:#16a34a}
-  .frow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-  .empty{text-align:center;padding:2rem 1rem;color:#aaa}
-  .empty-icon{font-size:40px;margin-bottom:10px}
-  .success{text-align:center;padding:2rem 1rem}
-  .success-icon{font-size:56px;margin-bottom:0.75rem}
-  .success h2{font-size:20px;font-weight:700;margin-bottom:6px}
-  .success p{font-size:13px;color:#666;margin-bottom:1rem}
-  .new-order-btn{background:#16a34a;color:#fff;border:none;border-radius:10px;padding:10px 20px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700}
-  .results-count{font-size:12px;color:#888;margin-bottom:0.5rem}
-  @media(max-width:500px){.hero-icon{display:none}.products-grid{grid-template-columns:repeat(2,1fr)}.frow{grid-template-columns:1fr}.cats-grid{grid-template-columns:repeat(3,1fr)}}
+  .login{min-height:100vh;display:flex;align-items:center;justify-content:center}
+  .login-card{background:#fff;border-radius:16px;padding:2rem;width:340px;border:1px solid #e8e8e0;text-align:center}
+  .login-logo{font-size:32px;font-weight:800;color:#16a34a;margin-bottom:4px}
+  .login-sub{font-size:13px;color:#888;margin-bottom:1.5rem}
+  .inp{width:100%;padding:10px 12px;border:1.5px solid #e8e8e0;border-radius:8px;font-family:'Cairo',sans-serif;font-size:14px;outline:none;margin-bottom:12px}
+  .inp:focus{border-color:#16a34a}
+  .btn{width:100%;background:#16a34a;color:#fff;border:none;border-radius:8px;padding:11px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:600}
+  .btn:hover{background:#15803d}
+  .btn-sm{padding:6px 12px;font-size:12px;border-radius:6px;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-weight:600}
+  .btn-edit{background:#f0fdf4;color:#16a34a;border:1px solid #16a34a}
+  .btn-del{background:#fef2f2;color:#dc2626;border:1px solid #dc2626}
+  .btn-add{background:#16a34a;color:#fff;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600}
+  .btn-cancel{background:#f5f5f0;color:#555;border:1px solid #e8e8e0;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px}
+  .btn-export{background:#0ea5e9;color:#fff;border:none;border-radius:8px;padding:8px 16px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600}
+  header{background:#fff;border-bottom:1px solid #e8e8e0;padding:0 1.5rem;position:sticky;top:0;z-index:10}
+  .hinner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+  .logo{font-size:20px;font-weight:800;color:#16a34a}
+  .hbtns{display:flex;gap:8px;align-items:center}
+  main{max-width:1100px;margin:0 auto;padding:1.5rem}
+  .tabs{display:flex;gap:4px;background:#f5f5f0;border-radius:10px;padding:4px;margin-bottom:1.5rem;width:fit-content}
+  .tab{padding:7px 16px;border-radius:7px;cursor:pointer;font-size:13px;font-weight:600;color:#666;border:none;background:none;font-family:'Cairo',sans-serif}
+  .tab.active{background:#fff;color:#16a34a;box-shadow:0 1px 3px rgba(0,0,0,0.08)}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:1.5rem}
+  .stat{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;text-align:center}
+  .stat-num{font-size:28px;font-weight:700;color:#16a34a}
+  .stat-label{font-size:12px;color:#888;margin-top:2px}
+  .card{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1.25rem;margin-bottom:1rem}
+  .card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+  .card-title{font-size:15px;font-weight:700}
+  .search-bar{display:flex;align-items:center;gap:8px;background:#f5f5f0;border-radius:8px;padding:8px 12px;margin-bottom:1rem}
+  .search-bar input{border:none;outline:none;background:transparent;font-family:'Cairo',sans-serif;font-size:13px;flex:1}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:right;padding:10px 12px;font-size:12px;color:#888;font-weight:600;border-bottom:1px solid #f0f0f0}
+  td{padding:10px 12px;font-size:13px;border-bottom:1px solid #f9f9f9;vertical-align:middle}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:#fafaf8}
+  .prod-img-thumb{width:40px;height:40px;object-fit:contain;border-radius:6px;background:#f5f5f0;padding:4px}
+  .cat-badge{display:inline-block;background:#f0fdf4;color:#16a34a;border-radius:20px;padding:2px 10px;font-size:11px;font-weight:600}
+  .price-tag{font-weight:700;color:#16a34a}
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:50;display:flex;align-items:center;justify-content:center}
+  .modal{background:#fff;border-radius:16px;padding:1.5rem;width:480px;max-width:95vw;max-height:90vh;overflow-y:auto}
+  .modal h2{font-size:16px;font-weight:700;margin-bottom:1.25rem}
+  .form-group{margin-bottom:1rem}
+  .form-label{font-size:12px;color:#666;margin-bottom:5px;display:block;font-weight:600}
+  .form-input{width:100%;padding:9px 12px;border:1.5px solid #e8e8e0;border-radius:8px;font-family:'Cairo',sans-serif;font-size:13px;outline:none}
+  .form-input:focus{border-color:#16a34a}
+  select.form-input{background:#fff}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .img-preview{width:80px;height:80px;object-fit:contain;border-radius:8px;background:#f5f5f0;padding:6px;margin-top:6px}
+  .modal-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:1.25rem;border-top:1px solid #f0f0f0;padding-top:1rem}
+  .empty-state{text-align:center;padding:3rem;color:#aaa}
+  .empty-icon{font-size:40px;margin-bottom:8px}
+  .pagination{display:flex;gap:4px;justify-content:center;margin-top:1rem}
+  .page-btn{width:32px;height:32px;border:1px solid #e8e8e0;border-radius:6px;background:#fff;cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .page-btn.active{background:#16a34a;color:#fff;border-color:#16a34a}
+  .toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:10px 20px;border-radius:10px;font-size:13px;z-index:100;opacity:0;transition:opacity 0.3s}
+  .toast.show{opacity:1}
+  .filter-bar{display:flex;gap:8px;margin-bottom:1rem;flex-wrap:wrap}
+  .filter-btn{padding:5px 12px;border-radius:20px;border:1px solid #e8e8e0;background:#fff;font-size:12px;font-weight:600;cursor:pointer;color:#666;font-family:'Cairo',sans-serif}
+  .filter-btn.active{background:#16a34a;color:#fff;border-color:#16a34a}
 </style>
 </head>
 <body>
-<header>
-  <div class="header-inner">
-    <div class="logo"><span style="font-size:26px;font-weight:800;background:linear-gradient(135deg,#16a34a,#064e3b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-0.5px">Souna</span><span style="font-size:11px;color:#888;display:block;margin-top:-4px;font-weight:500;-webkit-text-fill-color:#888">سونا للتوصيل السريع 🚀</span></div>
-    <button class="cart-btn" onclick="showPage('cart')">🛒 السلة<span class="cart-badge" id="cartCount">0</span></button>
-  </div>
-</header>
-<main>
-  <div class="page active" id="shopPage">
-    <div class="hero">
-      <div><h1 style="font-size:28px;font-weight:800;letter-spacing:-0.5px">Souna 🛍️</h1><p>وصّلنا لبيتك بأسرع وقت ⚡</p></div>
-      <div class="hero-icon">🛍️</div>
-    </div>
-    <div class="search-box">
-      <span>🔍</span>
-      <input type="text" id="searchInput" placeholder="ابحث عن منتج..." oninput="searchProducts()">
-    </div>
-    <div class="cats-grid" id="catList"></div>
-    <div class="section-title" id="catTitle">كل المنتجات</div>
-    <div class="results-count" id="resultsCount"></div>
-    <div class="products-grid" id="productList"></div>
-  </div>
-  <div class="page" id="cartPage">
-    <button class="back" onclick="showPage('shop')">← متابعة التسوق</button>
-    <div class="page-title">🛒 سلتك</div>
-    <div class="cart-list" id="cartList"></div>
-    <div class="summary" id="cartSummary"></div>
-    <button class="wa-btn" onclick="showPage('checkout')">📦 إكمال الطلب</button>
-  </div>
-  <div class="page" id="checkoutPage">
-    <button class="back" onclick="showPage('cart')">← الرجوع للسلة</button>
-    <div class="page-title">📋 بيانات التوصيل</div>
-    <div class="form-section">
-      <div class="frow">
-        <div><label class="fl">الاسم الأول</label><input class="fi" id="fname" placeholder="محمد"/></div>
-        <div><label class="fl">الاسم الأخير</label><input class="fi" id="lname" placeholder="الأحمد"/></div>
-      </div>
-      <label class="fl">رقم الهاتف</label><input class="fi" id="phone" placeholder="+961 70 000 000"/>
-      <label class="fl">العنوان</label><input class="fi" id="address" placeholder="المنطقة، الشارع، المبنى، الطابق"/>
-      <div class="frow">
-        <div><label class="fl">المدينة</label><input class="fi" id="city" placeholder="طرابلس"/></div>
-        <div><label class="fl">المنطقة</label><input class="fi" id="area" placeholder="المنطقة"/></div>
-      </div>
-      <label class="fl">ملاحظات (اختياري)</label><input class="fi" id="notes" placeholder="أي تعليمات للتوصيل..."/>
-    </div>
-    <div class="summary" id="checkoutSummary"></div>
-    <button class="wa-btn" onclick="sendWhatsApp()">📱 أرسل الطلب على WhatsApp</button>
-  </div>
-  <div class="page" id="successPage">
-    <div class="success">
-      <div class="success-icon">✅</div>
-      <h2>تم إرسال طلبك!</h2>
-      <p>سيتم التواصل معك قريباً لتأكيد الطلب وموعد التوصيل</p>
-      <button class="new-order-btn" onclick="resetOrder()">طلب جديد</button>
-    </div>
-  </div>
-</main>
-<script>
-const WA_NUMBER='96170258915';
-const IMG={
-  rice:'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&q=80',
-  bulgur:'https://images.unsplash.com/photo-1541519227354-08fa5d50c820?w=300&q=80',
-  legumes:'https://images.unsplash.com/photo-1585032226651-759b368d7246?w=300&q=80',
-  sugar:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&q=80',
-  flour:'https://images.unsplash.com/photo-1574323347407-f5e1c5a1f21e?w=300&q=80',
-  lentil:'https://images.unsplash.com/photo-1612257416648-11b2c8b2e0f5?w=300&q=80',
-  oats:'https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?w=300&q=80',
-  salt:'https://images.unsplash.com/photo-1518110925495-5fe2fda0442c?w=300&q=80',
-  nuts:'https://images.unsplash.com/photo-1578688025958-d34f14e7b44a?w=300&q=80',
-  phone:'https://images.unsplash.com/photo-1601972602237-8c79241e468b?w=300&q=80',
-  headphones:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&q=80',
-  powerbank:'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=300&q=80',
-  usb:'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=300&q=80',
-};
 
-const cats=[
-  {id:'all',name:'الكل',icon:'🛒'},
+<div id="loginScreen" class="login">
+  <div class="login-card">
+    <div class="login-logo">Souna</div>
+    <div class="login-sub">لوحة تحكم المتجر</div>
+    <input class="inp" type="password" id="pwInput" placeholder="كلمة المرور" onkeydown="if(event.key==='Enter')login()">
+    <button class="btn" onclick="login()">دخول</button>
+    <p id="pwErr" style="color:#dc2626;font-size:12px;margin-top:8px;display:none">كلمة المرور غلط</p>
+  </div>
+</div>
+
+<div id="adminPanel" style="display:none">
+  <header>
+    <div class="hinner">
+      <div class="logo">Souna Admin</div>
+      <div class="hbtns">
+        <button class="btn-export" onclick="exportHTML()">⬇ تصدير الموقع</button>
+        <button class="btn-sm btn-del" onclick="logout()">خروج</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="stats" id="statsBar"></div>
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('products',this)">المنتجات</button>
+      <button class="tab" onclick="showTab('categories',this)">الفئات</button>
+    </div>
+    <div id="productsTab">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">قائمة المنتجات</span>
+          <button class="btn-add" onclick="openAddModal()">+ منتج جديد</button>
+        </div>
+        <div class="search-bar">
+          <span>🔍</span>
+          <input type="text" id="searchProd" placeholder="ابحث عن منتج..." oninput="renderTable()">
+        </div>
+        <div class="filter-bar" id="filterBar"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>صورة</th>
+              <th>اسم المنتج</th>
+              <th>الفئة</th>
+              <th>السعر</th>
+              <th>إجراءات</th>
+            </tr>
+          </thead>
+          <tbody id="productTable"></tbody>
+        </table>
+        <div class="pagination" id="pagination"></div>
+      </div>
+    </div>
+    <div id="categoriesTab" style="display:none">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">الفئات</span>
+          <button class="btn-add" onclick="openAddCatModal()">+ فئة جديدة</button>
+        </div>
+        <table>
+          <thead><tr><th>الأيقونة</th><th>اسم الفئة</th><th>عدد المنتجات</th><th>إجراءات</th></tr></thead>
+          <tbody id="catTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div id="modal" class="overlay" style="display:none">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PASS = 'souna123';
+
+const DEFAULT_CATS = [
   {id:'phones',name:'مستلزمات هواتف',icon:'📱'},
   {id:'grains',name:'حبوب',icon:'🌾'},
   {id:'pasta',name:'نشويات',icon:'🍝'},
@@ -179,364 +190,450 @@ const cats=[
   {id:'pets',name:'مستلزمات حيوانات',icon:'🐾'},
 ];
 
-const products=[
-  // مستلزمات هواتف
-  {id:1,name:'USB Flash Drive 128GB BOROFONE',price:11.90,img:IMG.usb,cat:'phones'},
-  {id:2,name:'Power Bank 2 Cable Type C+ Lightning Clever',price:12.60,img:IMG.powerbank,cat:'phones'},
-  {id:3,name:'Power Bank 10000 RPP23 REMAX',price:8.44,img:IMG.powerbank,cat:'phones'},
-  {id:4,name:'Power Bank 10000 Fast Charging DP43 VDENMENV',price:5.53,img:IMG.powerbank,cat:'phones'},
-  {id:5,name:'حاملة هاتف ملون طويل PHONE POCKET',price:6.65,img:IMG.phone,cat:'phones'},
-  {id:6,name:'حاملة لتثبيت الهاتف ملونة',price:0.50,img:IMG.phone,cat:'phones'},
-  {id:7,name:'تعليقة هاتف خرز ملون طويلة',price:1.12,img:IMG.phone,cat:'phones'},
-  {id:8,name:'ادابتر سيارة 3 مخارج 55 واط Quick Charger',price:5.15,img:IMG.phone,cat:'phones'},
-  {id:9,name:'سماعات بلوتوث شكل قطة HOCO EW46',price:11.70,img:IMG.headphones,cat:'phones'},
-  {id:10,name:'سماعات بلوتوث Borofone Noise Cancelation',price:10.50,img:IMG.headphones,cat:'phones'},
-  {id:11,name:'سماعات HOCO WIRELESS W35',price:12.60,img:IMG.headphones,cat:'phones'},
-  {id:12,name:'سماعات BOROFONE WIRELESS B023',price:10.50,img:IMG.headphones,cat:'phones'},
-  {id:13,name:'شاحن 20 واط BOROFONE TYPE C BA81',price:3.08,img:IMG.phone,cat:'phones'},
-  {id:14,name:'شاحن 30 واط BOROFONE BAS45A',price:5.25,img:IMG.phone,cat:'phones'},
-  {id:15,name:'شاحن 18 واط BOROFONE BAS72A',price:2.66,img:IMG.phone,cat:'phones'},
-  {id:16,name:'سماعات وصلة ثقال HOCO M101',price:1.54,img:IMG.headphones,cat:'phones'},
-  {id:17,name:'شاحن سيارة BOROFONE IPHONE BZ12',price:2.31,img:IMG.phone,cat:'phones'},
-  {id:18,name:'شاحن سيارة BOROFONE SAMSUNG BZ12A',price:2.31,img:IMG.phone,cat:'phones'},
-  {id:19,name:'شاحن سيارة BOROFONE TYPE C BZ12A',price:2.31,img:IMG.phone,cat:'phones'},
-  {id:20,name:'شاحن حديث 20 واط BOROFONE',price:2.94,img:IMG.phone,cat:'phones'},
-  {id:21,name:'وصلة اوكس 1 متر BOROFONE BL19',price:0.98,img:IMG.phone,cat:'phones'},
-  {id:22,name:'شاحن 20 واط BOROFONE BA81A C TO C',price:3.99,img:IMG.phone,cat:'phones'},
-  {id:23,name:'شاحن 18 واط MOXOM TYPE C',price:3.50,img:IMG.phone,cat:'phones'},
-  {id:24,name:'شاحن 18 واط MOXOM SAMSUNG',price:3.50,img:IMG.phone,cat:'phones'},
-  // حبوب - أرز
-  {id:101,name:'أرز أمريكي نملية 900غ',price:1.067,img:IMG.rice,cat:'grains'},
-  {id:102,name:'أرز أسود TAJ 500غ',price:3.68,img:IMG.rice,cat:'grains'},
-  {id:103,name:'أرز أسمر TAJ 500غ',price:2.30,img:IMG.rice,cat:'grains'},
-  {id:104,name:'أرز أحمر TAJ 500غ',price:3.68,img:IMG.rice,cat:'grains'},
-  {id:105,name:'أرز إيطالي Riso della famiglia 900غ',price:1.348,img:IMG.rice,cat:'grains'},
-  {id:106,name:'أرز إيطالي بالدو Avila 900غ',price:2.574,img:IMG.rice,cat:'grains'},
-  {id:107,name:'أرز أمريكي Avila 900غ',price:1.386,img:IMG.rice,cat:'grains'},
-  {id:108,name:'أرز أمريكي Glob Garden 900غ',price:1.31,img:IMG.rice,cat:'grains'},
-  {id:109,name:'أرز إيطالي بالدو الجودة 5 كيلو',price:13.565,img:IMG.rice,cat:'grains'},
-  {id:110,name:'أرز إيطالي بالدو الجودة 2كغ Al Jouda',price:5.444,img:IMG.rice,cat:'grains'},
-  {id:111,name:'أرز إيطالي بالدو Holiday 900غ',price:1.617,img:IMG.rice,cat:'grains'},
-  {id:112,name:'أرز إيطالي بالدو Glob Garden 900غ',price:2.497,img:IMG.rice,cat:'grains'},
-  {id:113,name:'أرز إيطالي بالدو نملية 900غ',price:2.134,img:IMG.rice,cat:'grains'},
-  {id:114,name:'أرز إيطالي بالدو دمبول 900غ',price:1.973,img:IMG.rice,cat:'grains'},
-  {id:115,name:'أرز إيطالي بالدو دمبول 5 كيلو',price:9.603,img:IMG.rice,cat:'grains'},
-  {id:116,name:'أرز إيطالي بالدو الجودة 900غ',price:2.454,img:IMG.rice,cat:'grains'},
-  {id:117,name:'أرز إيطالي لوتو الجودة 900غ',price:1.875,img:IMG.rice,cat:'grains'},
-  {id:118,name:'أرز إيطالي لوتو Glob Garden 900غ',price:1.848,img:IMG.rice,cat:'grains'},
-  {id:119,name:'أرز إيطالي لوتو دمبول 900غ',price:1.494,img:IMG.rice,cat:'grains'},
-  {id:120,name:'أرز إيطالي دمبول 5 كيلو',price:7.822,img:IMG.rice,cat:'grains'},
-  {id:121,name:'أرز بسمتي Little India 4كغ',price:6.912,img:IMG.rice,cat:'grains'},
-  {id:122,name:'أرز إيطالي لوتو ديروني 900غ',price:1.109,img:IMG.rice,cat:'grains'},
-  {id:123,name:'أرز إيطالي لوتو دمبول 5كغ',price:5.867,img:IMG.rice,cat:'grains'},
-  {id:124,name:'أرز بسمتي الماس ديروني 4كغ',price:8.659,img:IMG.rice,cat:'grains'},
-  {id:125,name:'أرز بسمتي أسمر Little India 1كغ',price:2.80,img:IMG.rice,cat:'grains'},
-  {id:126,name:'أرز بسمتي أبو راشد 800غ',price:1.716,img:IMG.rice,cat:'grains'},
-  {id:127,name:'أرز بسمتي TAJ 800غ',price:2.596,img:IMG.rice,cat:'grains'},
-  {id:128,name:'أرز بسمتي هندي أكسترا Avila 5كلغ',price:10.454,img:IMG.rice,cat:'grains'},
-  {id:129,name:'أرز بسمتي سيلا فضي ديروني 4 كيلو',price:8.018,img:IMG.rice,cat:'grains'},
-  {id:130,name:'أرز بسمتي سلام 5 كيلو',price:8.461,img:IMG.rice,cat:'grains'},
-  {id:131,name:'أرز بسمتي الماس ديروني 800غ',price:1.848,img:IMG.rice,cat:'grains'},
-  {id:132,name:'أرز مصري Glob Garden 900غ',price:1.264,img:IMG.rice,cat:'grains'},
-  {id:133,name:'أرز مصري DILA 900غ',price:0.756,img:IMG.rice,cat:'grains'},
-  {id:134,name:'أرز مصري Glob Garden 5كغ',price:7.02,img:IMG.rice,cat:'grains'},
-  {id:135,name:'أرز تايلندي حبة طويلة دمبول 5كغ',price:5.205,img:IMG.rice,cat:'grains'},
-  {id:136,name:'أرز مصري نملية 5 كيلو',price:4.452,img:IMG.rice,cat:'grains'},
-  {id:137,name:'أرز مصري دمبول 900غ',price:0.891,img:IMG.rice,cat:'grains'},
-  {id:138,name:'أرز مصري دمبول 5كلغ',price:4.644,img:IMG.rice,cat:'grains'},
-  {id:139,name:'أرز مصري الجودة 900غ',price:1.339,img:IMG.rice,cat:'grains'},
-  {id:140,name:'رز بسمتي 900غ Little India',price:1.62,img:IMG.rice,cat:'grains'},
-  {id:141,name:'رز بسمتي براق 1كغ',price:1.72,img:IMG.rice,cat:'grains'},
-  {id:142,name:'رز بسمتي براق 5كغ',price:8.336,img:IMG.rice,cat:'grains'},
-  {id:143,name:'رز بسمتي سيلا فضي ديروني 800غ',price:1.632,img:IMG.rice,cat:'grains'},
-  {id:144,name:'رز سوشي 500غ Blue Dragon',price:5.348,img:IMG.rice,cat:'grains'},
-  // برغل
-  {id:145,name:'برغل أبيض خشن 900غ Avila',price:1.102,img:IMG.bulgur,cat:'grains'},
-  {id:146,name:'برغل أبيض خشن 900غ Glob Garden',price:1.232,img:IMG.bulgur,cat:'grains'},
-  {id:147,name:'برغل أبيض خشن دمبول 900غ',price:0.865,img:IMG.bulgur,cat:'grains'},
-  {id:148,name:'برغل أبيض خشن زماطي نملية 900غ',price:0.978,img:IMG.bulgur,cat:'grains'},
-  {id:149,name:'برغل أبيض زماطية 900غ Glob Garden',price:1.21,img:IMG.bulgur,cat:'grains'},
-  {id:150,name:'برغل أبيض ناعم 900غ Avila',price:1.102,img:IMG.bulgur,cat:'grains'},
-  {id:151,name:'برغل أبيض ناعم 900غ Glob Garden',price:1.265,img:IMG.bulgur,cat:'grains'},
-  {id:152,name:'برغل أبيض ناعم دمبول 900غ',price:0.865,img:IMG.bulgur,cat:'grains'},
-  {id:153,name:'برغل أبيض ناعم نملية 900غ',price:0.939,img:IMG.bulgur,cat:'grains'},
-  {id:154,name:'برغل أسمر خشن 900غ TRUST FOOD',price:0.670,img:IMG.bulgur,cat:'grains'},
-  {id:155,name:'برغل أسمر خشن الجودة 900غ',price:1.088,img:IMG.bulgur,cat:'grains'},
-  {id:156,name:'برغل أسمر خشن دمبول 900غ',price:0.833,img:IMG.bulgur,cat:'grains'},
-  {id:157,name:'برغل أسمر خشن ديروني 900غ',price:0.779,img:IMG.bulgur,cat:'grains'},
-  {id:158,name:'برغل أسمر خشن نملية 900غ',price:1.022,img:IMG.bulgur,cat:'grains'},
-  {id:159,name:'برغل خشن 900غ lebaytcom',price:0.632,img:IMG.bulgur,cat:'grains'},
-  {id:160,name:'برغل خشن أبيض زماطي ديروني 900غ',price:0.905,img:IMG.bulgur,cat:'grains'},
-  // بوشار/ترمس/حمص
-  {id:161,name:'بوشار دمبول 450غ',price:0.467,img:IMG.legumes,cat:'grains'},
-  {id:162,name:'بوشار دمبول 900غ',price:0.929,img:IMG.legumes,cat:'grains'},
-  {id:163,name:'ترمس حلو 500غ Avila',price:1.137,img:IMG.legumes,cat:'grains'},
-  {id:164,name:'ترمس حلو 500غ Glob Garden',price:1.142,img:IMG.legumes,cat:'grains'},
-  {id:165,name:'ترمس حلو نملية 900غ',price:1.327,img:IMG.legumes,cat:'grains'},
-  {id:166,name:'حمص 900غ lebaytcom',price:1.239,img:IMG.legumes,cat:'grains'},
-  {id:167,name:'حمص أمريكي 900غ Glob Garden',price:1.969,img:IMG.legumes,cat:'grains'},
-  {id:168,name:'حمص حب 900غ Dila',price:0.972,img:IMG.legumes,cat:'grains'},
-  {id:169,name:'حمص حب 900غ Prime',price:0.972,img:IMG.legumes,cat:'grains'},
-  {id:170,name:'حمص حب أكسترا ديروني 900غ',price:1.125,img:IMG.legumes,cat:'grains'},
-  {id:171,name:'حمص حب دمبول 900غ',price:1.296,img:IMG.legumes,cat:'grains'},
-  {id:172,name:'حمص حب فحلي ديروني 900غ',price:2.493,img:IMG.legumes,cat:'grains'},
-  {id:173,name:'حمص صغير 900غ Avila',price:1.584,img:IMG.legumes,cat:'grains'},
-  {id:174,name:'حمص فحلي 900غ Avila',price:2.944,img:IMG.legumes,cat:'grains'},
-  {id:175,name:'حمص فحلي 900غ Glob Garden',price:3.047,img:IMG.legumes,cat:'grains'},
-  {id:176,name:'حمص فحلي الجودة 900غ',price:3.177,img:IMG.legumes,cat:'grains'},
-  {id:177,name:'حمص فحلي دمبول 900غ',price:2.398,img:IMG.legumes,cat:'grains'},
-  {id:178,name:'حمص فحلي نملية 900غ',price:2.561,img:IMG.legumes,cat:'grains'},
-  {id:179,name:'حمص كندي الجودة 900غ',price:1.589,img:IMG.legumes,cat:'grains'},
-  {id:180,name:'حمص مفقوش الجودة 500غ',price:1.654,img:IMG.legumes,cat:'grains'},
-  {id:181,name:'حمص نملية 900غ',price:1.73,img:IMG.legumes,cat:'grains'},
-  // ذرة/خل
-  {id:182,name:'خل أبيض 1 ليتر Glob Garden',price:0.691,img:IMG.flour,cat:'grains'},
-  {id:183,name:'زعتر أحمر أكسترا نكهة حلب 400غ',price:2.745,img:IMG.oats,cat:'grains'},
-  {id:184,name:'ذرة بوشار 400غ Glob Garden',price:0.702,img:IMG.legumes,cat:'grains'},
-  {id:185,name:'ذرة بوشار 400غ lebaytcom',price:0.440,img:IMG.legumes,cat:'grains'},
-  {id:186,name:'ذرة بوشار 900غ Glob Garden',price:1.458,img:IMG.legumes,cat:'grains'},
-  {id:187,name:'ذرة بوشار الجودة 400غ',price:0.732,img:IMG.legumes,cat:'grains'},
-  {id:188,name:'ذرة بوشار الجودة 900غ',price:1.434,img:IMG.legumes,cat:'grains'},
-  {id:189,name:'ذرة بوشار ديروني 450غ',price:0.499,img:IMG.legumes,cat:'grains'},
-  // سكر
-  {id:190,name:'سكر أبيض 5كلغ PRIME LINE',price:3.528,img:IMG.sugar,cat:'grains'},
-  {id:191,name:'سكر أبيض 900غ DILA',price:0.644,img:IMG.sugar,cat:'grains'},
-  {id:192,name:'سكر أبيض الأسرة 2كلغ',price:1.671,img:IMG.sugar,cat:'grains'},
-  {id:193,name:'سكر أبيض الأسرة 5كلغ',price:4.177,img:IMG.sugar,cat:'grains'},
-  {id:194,name:'سكر أبيض دمبول 900غ',price:0.692,img:IMG.sugar,cat:'grains'},
-  {id:195,name:'سكر أبيض ديروني 5كلغ',price:3.931,img:IMG.sugar,cat:'grains'},
-  {id:196,name:'سكر أبيض ديروني 900غ',price:0.698,img:IMG.sugar,cat:'grains'},
-  {id:197,name:'سكر أبيض فرنسي 5كغ Avila',price:4.749,img:IMG.sugar,cat:'grains'},
-  {id:198,name:'سكر أبيض فرنسي الجودة 900غ',price:0.889,img:IMG.sugar,cat:'grains'},
-  {id:199,name:'سكر أبيض مكعبات الأسرة 500غ',price:2.141,img:IMG.sugar,cat:'grains'},
-  {id:200,name:'سكر أبيض مكعبات كريستال 1كغ',price:2.705,img:IMG.sugar,cat:'grains'},
-  {id:201,name:'سكر أبيض نملية 5 كيلو',price:3.841,img:IMG.sugar,cat:'grains'},
-  {id:202,name:'سكر أسمر 500غ Mauricio',price:1.950,img:IMG.sugar,cat:'grains'},
-  {id:203,name:'سكر أسمر مكعبات الأسرة 500غ',price:2.854,img:IMG.sugar,cat:'grains'},
-  {id:204,name:'سكر أسمر مكعبات كريستال 1كغ',price:3.073,img:IMG.sugar,cat:'grains'},
-  {id:205,name:'سكر فرنسي 900غ Glob Garden',price:0.853,img:IMG.sugar,cat:'grains'},
-  {id:206,name:'سكر قصب أبيض 10كلغ الأسرة',price:7.546,img:IMG.sugar,cat:'grains'},
-  {id:207,name:'سكر لايت Mauricio 500غ',price:1.950,img:IMG.sugar,cat:'grains'},
-  {id:208,name:'سكر من قصب السكر 500غ Mauricio',price:1.756,img:IMG.sugar,cat:'grains'},
-  {id:209,name:'سكر ناعم 400غ Glob Garden',price:0.745,img:IMG.sugar,cat:'grains'},
-  {id:210,name:'سكر ناعم 400غ lebaytcom',price:0.589,img:IMG.sugar,cat:'grains'},
-  {id:211,name:'سكر ناعم 900غ Glob Garden',price:1.624,img:IMG.sugar,cat:'grains'},
-  {id:212,name:'سكر ناعم الجودة 500غ',price:0.670,img:IMG.sugar,cat:'grains'},
-  {id:213,name:'سكر ناعم جودة 900غ',price:1.172,img:IMG.sugar,cat:'grains'},
-  // سمسم/سميد
-  {id:214,name:'سمسم مقشور 200غ Glob Garden',price:1.109,img:IMG.oats,cat:'grains'},
-  {id:215,name:'سمسم ني 500غ Lebaytcom',price:1.450,img:IMG.oats,cat:'grains'},
-  {id:216,name:'سميد خشن 1كغ Avila',price:1.392,img:IMG.flour,cat:'grains'},
-  {id:217,name:'سميد خشن 900غ Glob Garden',price:1.323,img:IMG.flour,cat:'grains'},
-  {id:218,name:'سميد خشن الجودة 900غ',price:1.310,img:IMG.flour,cat:'grains'},
-  {id:219,name:'سميد خشن حقول شتورة 900غ',price:1.183,img:IMG.flour,cat:'grains'},
-  {id:220,name:'سميد خشن نملية 900غ',price:1.018,img:IMG.flour,cat:'grains'},
-  {id:221,name:'سميد ناعم دمبول 900غ',price:1.032,img:IMG.flour,cat:'grains'},
-  {id:222,name:'سميد ناعم 1كغ Avila',price:1.392,img:IMG.flour,cat:'grains'},
-  {id:223,name:'سميد ناعم حقول شتورة 900غ',price:1.152,img:IMG.flour,cat:'grains'},
-  {id:224,name:'سميد ناعم فرخة نملية 900غ',price:1.018,img:IMG.flour,cat:'grains'},
-  // شوفان/طحين
-  {id:225,name:'شوفان 700غ Glob Garden',price:2.016,img:IMG.oats,cat:'grains'},
-  {id:226,name:'شوفان أبيض 500غ Healthy U',price:1.860,img:IMG.oats,cat:'grains'},
-  {id:227,name:'شوفان الجودة 700غ',price:2.247,img:IMG.oats,cat:'grains'},
-  {id:228,name:'طحين أبيض 900غ Flona',price:0.679,img:IMG.flour,cat:'grains'},
-  {id:229,name:'طحين أبيض أكسترا الجودة 900غ',price:0.943,img:IMG.flour,cat:'grains'},
-  {id:230,name:'طحين أبيض كاتو 1كغ Avila',price:1.276,img:IMG.flour,cat:'grains'},
-  {id:231,name:'طحين فرخة 900غ دمبول',price:1.003,img:IMG.flour,cat:'grains'},
-  {id:232,name:'طحين فرخة الجودة 900غ',price:1.310,img:IMG.flour,cat:'grains'},
-  // عدس
-  {id:233,name:'عدس أحمر مجروش 900غ Avila',price:1.677,img:IMG.lentil,cat:'grains'},
-  {id:234,name:'عدس أحمر مجروش 900غ Dila',price:1.053,img:IMG.lentil,cat:'grains'},
-  {id:235,name:'عدس أحمر مجروش أوبا 900غ',price:1.112,img:IMG.lentil,cat:'grains'},
-  {id:236,name:'عدس أحمر مجروش دمبول 900غ',price:1.199,img:IMG.lentil,cat:'grains'},
-  {id:237,name:'عدس أحمر مجروش ديروني 900غ',price:1.035,img:IMG.lentil,cat:'grains'},
-  {id:238,name:'عدس أحمر مجروش نملية 900غ',price:1.200,img:IMG.lentil,cat:'grains'},
-  {id:239,name:'عدس أحمر مقشور الجودة 900غ',price:1.799,img:IMG.lentil,cat:'grains'},
-  {id:240,name:'عدس أخضر 900غ Avila',price:2.044,img:IMG.lentil,cat:'grains'},
-  {id:241,name:'عدس أخضر رفيع الجودة 900غ',price:2.259,img:IMG.lentil,cat:'grains'},
-  {id:242,name:'عدس أخضر عريض 900غ Glob Garden',price:1.836,img:IMG.lentil,cat:'grains'},
-  {id:243,name:'عدس أخضر عريض الجودة 900غ',price:1.965,img:IMG.lentil,cat:'grains'},
-  {id:244,name:'عدس أخضر عريض ديروني 900غ',price:1.485,img:IMG.lentil,cat:'grains'},
-  {id:245,name:'عدس بلدي 900غ lebaytcom',price:0.890,img:IMG.lentil,cat:'grains'},
-  {id:246,name:'عدس مجروش 900غ Glob Garden',price:1.680,img:IMG.lentil,cat:'grains'},
-  // عروض/فاصوليا
-  {id:247,name:'عرض أرز أمريكي ديروني 4+1 كغ',price:4.371,img:IMG.rice,cat:'grains'},
-  {id:248,name:'عرض رز إيطالي بالدو هوليدي 5كغ+سكر+قهوة',price:10.428,img:IMG.rice,cat:'grains'},
-  {id:249,name:'عرض رز مصري ديروني 4+1 كغ',price:4.620,img:IMG.rice,cat:'grains'},
-  {id:250,name:'فاصوليا بيضاء دمبول 900غ',price:1.603,img:IMG.legumes,cat:'grains'},
-  {id:251,name:'فاصوليا بيضاء ديروني 900غ',price:1.555,img:IMG.legumes,cat:'grains'},
-  {id:252,name:'فاصوليا بيضاء صنوبرية 900غ Glob Garden',price:2.268,img:IMG.legumes,cat:'grains'},
-  {id:253,name:'فاصوليا بيضاء عريضة 400غ Glob Garden',price:2.052,img:IMG.legumes,cat:'grains'},
-  {id:254,name:'فاصوليا بيضاء عريضة دمبول 400غ',price:1.244,img:IMG.legumes,cat:'grains'},
-  {id:255,name:'فاصوليا بيضاء عريضة دمبول 800غ',price:2.650,img:IMG.legumes,cat:'grains'},
-  {id:256,name:'فاصوليا بيضاء نملية 900غ',price:1.860,img:IMG.legumes,cat:'grains'},
-  {id:257,name:'فاصوليا حمراء طويلة ديروني 900غ',price:1.879,img:IMG.legumes,cat:'grains'},
-  {id:258,name:'فاصوليا حمراء مدعبلة 900غ Avila',price:2.860,img:IMG.legumes,cat:'grains'},
-  {id:259,name:'فاصوليا حمراء مدعبلة 900غ Glob Garden',price:2.860,img:IMG.legumes,cat:'grains'},
-  {id:260,name:'فاصوليا حمراء مدعبلة دمبول 900غ',price:2.294,img:IMG.legumes,cat:'grains'},
-  {id:261,name:'فاصوليا حمراء مدعبلة ديروني 900غ',price:2.131,img:IMG.legumes,cat:'grains'},
-  {id:262,name:'فاصوليا حمراء نملية 900غ',price:2.361,img:IMG.legumes,cat:'grains'},
-  {id:263,name:'فاصوليا رفيعة مسلات 400غ Glob Garden',price:1.595,img:IMG.legumes,cat:'grains'},
-  {id:264,name:'فاصولياء صنوبرية حقول شتورة 900غ',price:1.465,img:IMG.legumes,cat:'grains'},
-  // فريكة/فول/قمح
-  {id:265,name:'فريكة 500غ Avila',price:1.985,img:IMG.bulgur,cat:'grains'},
-  {id:266,name:'فريكة 1كلغ Avila',price:3.958,img:IMG.bulgur,cat:'grains'},
-  {id:267,name:'فريكة دمبول 900غ',price:2.502,img:IMG.bulgur,cat:'grains'},
-  {id:268,name:'فول أبيض حب الجودة 900غ',price:1.387,img:IMG.legumes,cat:'grains'},
-  {id:269,name:'فول إنجليزي دمبول 900غ',price:1.120,img:IMG.legumes,cat:'grains'},
-  {id:270,name:'فول ديروني 900غ',price:1.157,img:IMG.legumes,cat:'grains'},
-  {id:271,name:'فول عريض 900غ Avila',price:2.461,img:IMG.legumes,cat:'grains'},
-  {id:272,name:'فول عريض دمبول 700غ',price:1.494,img:IMG.legumes,cat:'grains'},
-  {id:273,name:'فول ممتاز 900غ lebaytcom',price:1.230,img:IMG.legumes,cat:'grains'},
-  {id:274,name:'قمح حب 900غ Glob Garden',price:1.089,img:IMG.bulgur,cat:'grains'},
-  {id:275,name:'قمح مقشور 900غ Avila',price:1.002,img:IMG.bulgur,cat:'grains'},
-  {id:276,name:'قمح مقشور 900غ Glob Garden',price:1.174,img:IMG.bulgur,cat:'grains'},
-  {id:277,name:'قمح مقشور الجودة 900غ',price:1.088,img:IMG.bulgur,cat:'grains'},
-  {id:278,name:'قمح مقشور دمبول 900غ',price:0.869,img:IMG.bulgur,cat:'grains'},
-  // كاجو/كشك/كينوا/لوبيا/ماش/مغربية/ملح
-  {id:279,name:'كاجو 500غ lebaytcom',price:5.912,img:IMG.nuts,cat:'grains'},
-  {id:280,name:'كشك بقاعي باب أول 300غ',price:5.700,img:IMG.bulgur,cat:'grains'},
-  {id:281,name:'كشك بلدي الجودة 500غ',price:6.805,img:IMG.bulgur,cat:'grains'},
-  {id:282,name:'كينوا حمراء 150غ lebaytcom',price:1.647,img:IMG.oats,cat:'grains'},
-  {id:283,name:'لب دوار الشمس 150غ Lebaytcom',price:0.823,img:IMG.nuts,cat:'grains'},
-  {id:284,name:'لوبية حب نملية 500غ',price:1.272,img:IMG.legumes,cat:'grains'},
-  {id:285,name:'لوبية مسلات 500غ Avila',price:1.270,img:IMG.legumes,cat:'grains'},
-  {id:286,name:'ماش الجودة 500غ',price:2.231,img:IMG.legumes,cat:'grains'},
-  {id:287,name:'مغربية 900غ Glob Garden',price:2.050,img:IMG.bulgur,cat:'grains'},
-  {id:288,name:'مغربية دمبول 900غ',price:1.451,img:IMG.bulgur,cat:'grains'},
-  {id:289,name:'مغربية ديروني 900غ',price:1.553,img:IMG.bulgur,cat:'grains'},
-  {id:290,name:'مغربية نملية 500غ',price:0.859,img:IMG.bulgur,cat:'grains'},
-  {id:291,name:'ملح الهيمالايا الوردي الخشن دمبول 500غ',price:0.728,img:IMG.salt,cat:'grains'},
-  {id:292,name:'ملح خشن 1كغ Glob Garden',price:0.264,img:IMG.salt,cat:'grains'},
-  {id:293,name:'ملح ناعم دمبول 1كلغ',price:0.142,img:IMG.salt,cat:'grains'},
-  {id:294,name:'ملح ناعم دمبول 5كغ',price:0.768,img:IMG.salt,cat:'grains'},
-  {id:295,name:'ملح هملايا 500غ lebaytcom',price:1.021,img:IMG.salt,cat:'grains'},
-];
+const DEFAULT_IMG = 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&q=80';
 
-let cart={},activeCat='all',searchTerm='';
+let products = [], cats = [...DEFAULT_CATS];
+let editId = null, currentPage = 1, filterCat = 'all';
+const PER_PAGE = 20;
 
-function renderCats(){
-  document.getElementById('catList').innerHTML=cats.map(c=>
-    `<div class="cat ${c.id===activeCat?'active':''}" onclick="filterCat('${c.id}','${c.name}')">
-      <div class="cat-icon">${c.icon}</div><div>${c.name}</div>
-    </div>`).join('');
+async function loadData() {
+  try {
+    const pr = await window.storage.get('souna-products');
+    const cr = await window.storage.get('souna-cats');
+    if (pr) products = JSON.parse(pr.value);
+    if (cr) cats = JSON.parse(cr.value);
+  } catch(e) {}
 }
 
-function filterCat(id,name){
-  activeCat=id;
-  document.getElementById('searchInput').value='';
-  searchTerm='';
-  renderCats();
-  renderProducts();
-  document.getElementById('catTitle').textContent=id==='all'?'كل المنتجات':name;
+async function saveProducts() {
+  try { await window.storage.set('souna-products', JSON.stringify(products)); } catch(e){}
 }
 
-function searchProducts(){
-  searchTerm=document.getElementById('searchInput').value.trim();
-  activeCat='all';
-  renderCats();
-  renderProducts();
-  document.getElementById('catTitle').textContent=searchTerm?`نتائج: "${searchTerm}"` :'كل المنتجات';
+async function saveCats() {
+  try { await window.storage.set('souna-cats', JSON.stringify(cats)); } catch(e){}
 }
 
-function getFilteredProducts(){
-  let list=products;
-  if(activeCat!=='all') list=list.filter(p=>p.cat===activeCat);
-  if(searchTerm) list=list.filter(p=>p.name.toLowerCase().includes(searchTerm.toLowerCase()));
-  return list;
-}
-
-function renderProducts(){
-  const list=getFilteredProducts();
-  document.getElementById('resultsCount').textContent=list.length>0?`${list.length} منتج`:'';
-  if(!list.length){
-    document.getElementById('productList').innerHTML='<div class="empty"><div class="empty-icon">📦</div><p>لا يوجد منتجات في هذه الفئة حالياً</p></div>';
-    return;
+function login() {
+  const pw = document.getElementById('pwInput').value;
+  if (pw === PASS) {
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('adminPanel').style.display = 'block';
+    init();
+  } else {
+    document.getElementById('pwErr').style.display = 'block';
   }
-  document.getElementById('productList').innerHTML=list.map(p=>`
-    <div class="prod">
-      <img class="prod-img" src="${p.img}" alt="${p.name}" onerror="this.style.display='none'">
-      <div class="prod-body">
-        <div class="prod-name">${p.name}</div>
-        <div class="prod-price">$${p.price.toFixed(2)}</div>
-        <button class="add-btn" onclick="addToCart(${p.id},this)">+ أضف للسلة</button>
+}
+
+function logout() {
+  document.getElementById('loginScreen').style.display = 'flex';
+  document.getElementById('adminPanel').style.display = 'none';
+}
+
+async function init() {
+  await loadData();
+  renderStats();
+  renderFilterBar();
+  renderTable();
+  renderCatTable();
+}
+
+function renderStats() {
+  const total = products.length;
+  const catCount = cats.length;
+  const minPrice = products.length ? Math.min(...products.map(p=>p.price)).toFixed(2) : '0';
+  const maxPrice = products.length ? Math.max(...products.map(p=>p.price)).toFixed(2) : '0';
+  document.getElementById('statsBar').innerHTML = `
+    <div class="stat"><div class="stat-num">${total}</div><div class="stat-label">منتج</div></div>
+    <div class="stat"><div class="stat-num">${catCount}</div><div class="stat-label">فئة</div></div>
+    <div class="stat"><div class="stat-num">$${minPrice}</div><div class="stat-label">أقل سعر</div></div>
+    <div class="stat"><div class="stat-num">$${maxPrice}</div><div class="stat-label">أعلى سعر</div></div>
+  `;
+}
+
+function renderFilterBar() {
+  const bar = document.getElementById('filterBar');
+  bar.innerHTML = `<button class="filter-btn ${filterCat==='all'?'active':''}" onclick="setFilter('all')">الكل (${products.length})</button>` +
+    cats.map(c => {
+      const count = products.filter(p=>p.cat===c.id).length;
+      return `<button class="filter-btn ${filterCat===c.id?'active':''}" onclick="setFilter('${c.id}')">${c.icon} ${c.name} (${count})</button>`;
+    }).join('');
+}
+
+function setFilter(cat) {
+  filterCat = cat;
+  currentPage = 1;
+  renderFilterBar();
+  renderTable();
+}
+
+function renderTable() {
+  const search = document.getElementById('searchProd').value.toLowerCase();
+  let list = products;
+  if (filterCat !== 'all') list = list.filter(p => p.cat === filterCat);
+  if (search) list = list.filter(p => p.name.toLowerCase().includes(search));
+  
+  const total = list.length;
+  const pages = Math.ceil(total / PER_PAGE);
+  const start = (currentPage - 1) * PER_PAGE;
+  const paged = list.slice(start, start + PER_PAGE);
+  
+  const tbody = document.getElementById('productTable');
+  if (!paged.length) {
+    tbody.innerHTML = `<tr><td colspan="5"><div class="empty-state"><div class="empty-icon">📦</div><p>لا يوجد منتجات</p></div></td></tr>`;
+  } else {
+    tbody.innerHTML = paged.map(p => {
+      const cat = cats.find(c=>c.id===p.cat);
+      return `<tr>
+        <td><img class="prod-img-thumb" src="${p.img||DEFAULT_IMG}" onerror="this.src='${DEFAULT_IMG}'"></td>
+        <td>${p.name}</td>
+        <td><span class="cat-badge">${cat?cat.icon+' '+cat.name:'—'}</span></td>
+        <td><span class="price-tag">$${p.price.toFixed(2)}</span></td>
+        <td style="display:flex;gap:6px;">
+          <button class="btn-sm btn-edit" onclick="openEditModal(${p.id})">✏️ تعديل</button>
+          <button class="btn-sm btn-del" onclick="deleteProduct(${p.id})">🗑 حذف</button>
+        </td>
+      </tr>`;
+    }).join('');
+  }
+  
+  const pag = document.getElementById('pagination');
+  if (pages <= 1) { pag.innerHTML = ''; return; }
+  pag.innerHTML = Array.from({length:pages},(_,i)=>
+    `<button class="page-btn ${currentPage===i+1?'active':''}" onclick="goPage(${i+1})">${i+1}</button>`
+  ).join('');
+}
+
+function goPage(p) { currentPage = p; renderTable(); }
+
+function renderCatTable() {
+  document.getElementById('catTable').innerHTML = cats.map(c => {
+    const count = products.filter(p=>p.cat===c.id).length;
+    return `<tr>
+      <td style="font-size:20px">${c.icon}</td>
+      <td>${c.name}</td>
+      <td>${count} منتج</td>
+      <td style="display:flex;gap:6px;">
+        <button class="btn-sm btn-edit" onclick="openEditCatModal('${c.id}')">✏️ تعديل</button>
+        <button class="btn-sm btn-del" onclick="deleteCat('${c.id}')">🗑 حذف</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function showTab(tab, btn) {
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('productsTab').style.display = tab==='products'?'block':'none';
+  document.getElementById('categoriesTab').style.display = tab==='categories'?'block':'none';
+}
+
+function openAddModal() {
+  editId = null;
+  document.getElementById('modalContent').innerHTML = buildProductForm(null);
+  document.getElementById('modal').style.display = 'flex';
+}
+
+function openEditModal(id) {
+  editId = id;
+  const p = products.find(x=>x.id===id);
+  document.getElementById('modalContent').innerHTML = buildProductForm(p);
+  document.getElementById('modal').style.display = 'flex';
+}
+
+function buildProductForm(p) {
+  const catOptions = cats.map(c=>`<option value="${c.id}" ${p&&p.cat===c.id?'selected':''}>${c.icon} ${c.name}</option>`).join('');
+  return `
+    <h2>${p?'✏️ تعديل المنتج':'➕ منتج جديد'}</h2>
+    <div class="form-group">
+      <label class="form-label">اسم المنتج</label>
+      <input class="form-input" id="fName" value="${p?p.name:''}" placeholder="اسم المنتج">
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">السعر ($)</label>
+        <input class="form-input" id="fPrice" type="number" step="0.001" value="${p?p.price:''}" placeholder="0.00">
       </div>
-    </div>`).join('');
-}
-
-function addToCart(id,btn){
-  cart[id]=(cart[id]||0)+1;updateCount();
-  btn.textContent='✓ تمت الإضافة';btn.classList.add('added');
-  setTimeout(()=>{btn.textContent='+ أضف للسلة';btn.classList.remove('added');},1200);
-}
-
-function updateCount(){
-  document.getElementById('cartCount').textContent=Object.values(cart).reduce((a,b)=>a+b,0);
-}
-
-function renderCart(){
-  const items=Object.entries(cart).filter(([,q])=>q>0);
-  const el=document.getElementById('cartList');
-  if(!items.length){el.innerHTML='<div class="empty"><div class="empty-icon">🛒</div><p>السلة فارغة</p></div>';document.getElementById('cartSummary').innerHTML='';return;}
-  el.innerHTML=items.map(([id,qty])=>{
-    const p=products.find(x=>x.id==id);
-    return `<div class="ci">
-      <img class="ci-img" src="${p.img}" alt="${p.name}" onerror="this.style.display='none'">
-      <div class="ci-info"><div class="ci-name">${p.name}</div><div class="ci-price">$${p.price.toFixed(2)}</div></div>
-      <div class="qty-ctrl">
-        <button class="qb" onclick="changeQty(${id},-1)">−</button>
-        <span class="qn">${qty}</span>
-        <button class="qb" onclick="changeQty(${id},1)">+</button>
+      <div class="form-group">
+        <label class="form-label">الفئة</label>
+        <select class="form-input" id="fCat">${catOptions}</select>
       </div>
-    </div>`;}).join('');
-  renderSummary('cartSummary');
+    </div>
+    <div class="form-group">
+      <label class="form-label">رابط الصورة (URL)</label>
+      <input class="form-input" id="fImg" value="${p?p.img||'':''}" placeholder="https://..." oninput="previewImg(this.value)">
+      <img id="imgPreview" class="img-preview" src="${p&&p.img?p.img:DEFAULT_IMG}" onerror="this.src='${DEFAULT_IMG}'">
+    </div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal()">إلغاء</button>
+      <button class="btn-add" onclick="saveProduct()">💾 حفظ</button>
+    </div>`;
 }
 
-function changeQty(id,delta){
-  cart[id]=Math.max(0,(cart[id]||0)+delta);
-  if(!cart[id])delete cart[id];updateCount();renderCart();
+function previewImg(url) {
+  if(url) document.getElementById('imgPreview').src = url;
 }
 
-function renderSummary(elId){
-  const sub=Object.entries(cart).reduce((s,[id,q])=>{const p=products.find(x=>x.id==id);return s+(p?p.price*q:0);},0);
-  const del=sub>0?2:0;
-  document.getElementById(elId).innerHTML=`
-    <div class="srow"><span>المجموع الفرعي</span><span>$${sub.toFixed(2)}</span></div>
-    <div class="srow"><span>رسوم التوصيل</span><span>$${del.toFixed(2)}</span></div>
-    <div class="srow total"><span>المجموع الكلي</span><span>$${(sub+del).toFixed(2)}</span></div>`;
+async function saveProduct() {
+  const name = document.getElementById('fName').value.trim();
+  const price = parseFloat(document.getElementById('fPrice').value);
+  const cat = document.getElementById('fCat').value;
+  const img = document.getElementById('fImg').value.trim() || DEFAULT_IMG;
+  if (!name || isNaN(price)) { toast('يرجى تعبئة الاسم والسعر'); return; }
+  if (editId) {
+    const p = products.find(x=>x.id===editId);
+    p.name=name; p.price=price; p.cat=cat; p.img=img;
+    toast('✅ تم التعديل');
+  } else {
+    const newId = products.length ? Math.max(...products.map(p=>p.id))+1 : 1;
+    products.push({id:newId,name,price,img,cat});
+    toast('✅ تم الإضافة');
+  }
+  await saveProducts();
+  closeModal();
+  renderStats();
+  renderFilterBar();
+  renderTable();
+  renderCatTable();
 }
 
-function sendWhatsApp(){
-  const fname=document.getElementById('fname').value;
-  const lname=document.getElementById('lname').value;
-  const phone=document.getElementById('phone').value;
-  const address=document.getElementById('address').value;
-  const city=document.getElementById('city').value;
-  const area=document.getElementById('area').value;
-  const notes=document.getElementById('notes').value;
-  if(!fname||!phone||!address){alert('يرجى تعبئة الاسم ورقم الهاتف والعنوان');return;}
-  const items=Object.entries(cart).filter(([,q])=>q>0);
-  const sub=items.reduce((s,[id,q])=>{const p=products.find(x=>x.id==id);return s+(p?p.price*q:0);},0);
-  let msg=`🛒 *طلب جديد - Souna*\n\n👤 *الاسم:* ${fname} ${lname}\n📞 *الهاتف:* ${phone}\n📍 *العنوان:* ${address}، ${area}، ${city}\n`;
-  if(notes)msg+=`📝 *ملاحظات:* ${notes}\n`;
-  msg+=`\n*المنتجات:*\n`;
-  items.forEach(([id,qty])=>{const p=products.find(x=>x.id==id);msg+=`• ${p.name} × ${qty} = $${(p.price*qty).toFixed(2)}\n`;});
-  msg+=`\n💰 *المجموع:* $${(sub+2).toFixed(2)} (شامل التوصيل)`;
-  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,'_blank');
-  showPage('success');
+async function deleteProduct(id) {
+  if (!confirm('تأكيد الحذف؟')) return;
+  products = products.filter(p=>p.id!==id);
+  await saveProducts();
+  renderStats();
+  renderFilterBar();
+  renderTable();
+  renderCatTable();
+  toast('🗑 تم الحذف');
 }
 
-function showPage(name){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(name+'Page').classList.add('active');
-  if(name==='cart')renderCart();
-  if(name==='checkout')renderSummary('checkoutSummary');
-  window.scrollTo(0,0);
+function openAddCatModal() {
+  document.getElementById('modalContent').innerHTML = buildCatForm(null);
+  document.getElementById('modal').style.display = 'flex';
 }
 
+function openEditCatModal(id) {
+  const c = cats.find(x=>x.id===id);
+  document.getElementById('modalContent').innerHTML = buildCatForm(c);
+  document.getElementById('modal').style.display = 'flex';
+}
+
+function buildCatForm(c) {
+  return `
+    <h2>${c?'✏️ تعديل الفئة':'➕ فئة جديدة'}</h2>
+    <div class="form-group">
+      <label class="form-label">اسم الفئة</label>
+      <input class="form-input" id="fcName" value="${c?c.name:''}" placeholder="اسم الفئة">
+    </div>
+    <div class="form-group">
+      <label class="form-label">الأيقونة (emoji)</label>
+      <input class="form-input" id="fcIcon" value="${c?c.icon:'🛒'}" placeholder="🛒">
+    </div>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal()">إلغاء</button>
+      <button class="btn-add" onclick="saveCat('${c?c.id:''}')">💾 حفظ</button>
+    </div>`;
+}
+
+async function saveCat(existingId) {
+  const name = document.getElementById('fcName').value.trim();
+  const icon = document.getElementById('fcIcon').value.trim();
+  if (!name) { toast('يرجى كتابة اسم الفئة'); return; }
+  if (existingId) {
+    const c = cats.find(x=>x.id===existingId);
+    c.name=name; c.icon=icon;
+    toast('✅ تم التعديل');
+  } else {
+    const newId = name.toLowerCase().replace(/\s+/g,'_') + '_' + Date.now();
+    cats.push({id:newId,name,icon});
+    toast('✅ تم الإضافة');
+  }
+  await saveCats();
+  closeModal();
+  renderFilterBar();
+  renderCatTable();
+}
+
+async function deleteCat(id) {
+  if (!confirm('تأكيد حذف الفئة؟')) return;
+  cats = cats.filter(c=>c.id!==id);
+  await saveCats();
+  renderFilterBar();
+  renderCatTable();
+  toast('🗑 تم الحذف');
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+  editId = null;
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2500);
+}
+
+function exportHTML() {
+  const productsJS = JSON.stringify(products, null, 2);
+  const catsJS = JSON.stringify(cats, null, 2);
+  
+  const html = generateStoreHTML(productsJS, catsJS);
+  const blob = new Blob([html], {type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'souna-store.html';
+  a.click();
+  toast('✅ تم تصدير الموقع!');
+}
+
+function generateStoreHTML(productsData, catsData) {
+  return `<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Souna | سونا</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cairo',sans-serif;background:#f5f5f0;color:#1a1a1a;min-height:100vh}
+header{background:#fff;border-bottom:1px solid #e8e8e0;position:sticky;top:0;z-index:100;padding:0 1rem}
+.header-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo span{color:#16a34a;font-size:26px;font-weight:800}
+.logo-sub{font-size:11px;color:#888;display:block;margin-top:-4px}
+.cart-btn{display:flex;align-items:center;gap:6px;background:#16a34a;color:#fff;border:none;border-radius:10px;padding:8px 14px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600}
+.cart-badge{background:#fff;color:#16a34a;border-radius:50%;width:18px;height:18px;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700}
+main{max-width:960px;margin:0 auto;padding:1rem}
+.hero{background:linear-gradient(135deg,#16a34a,#15803d);border-radius:14px;padding:1.5rem;margin-bottom:1rem;color:#fff;display:flex;align-items:center;justify-content:space-between}
+.hero h1{font-size:28px;font-weight:800;letter-spacing:-1px}.hero p{font-size:13px;opacity:0.85}.hero-icon{font-size:48px}
+.search-box{background:#fff;border:1.5px solid #e8e8e0;border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:8px;margin-bottom:1rem}
+.search-box input{border:none;outline:none;font-family:'Cairo',sans-serif;font-size:14px;flex:1;background:transparent}
+.cats-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-bottom:1rem}
+.cat{background:#fff;border:2px solid #e8e8e0;border-radius:10px;padding:8px 6px;cursor:pointer;font-size:11px;font-weight:600;color:#555;text-align:center;transition:all 0.15s}
+.cat-icon{font-size:20px;margin-bottom:3px}
+.cat.active,.cat:hover{border-color:#16a34a;color:#16a34a;background:#f0fdf4}
+.section-title{font-size:15px;font-weight:700;margin-bottom:0.75rem}
+.results-count{font-size:12px;color:#888;margin-bottom:0.5rem}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px}
+.prod{background:#fff;border-radius:12px;border:1px solid #e8e8e0;overflow:hidden;display:flex;flex-direction:column}
+.prod-img{width:100%;height:130px;object-fit:contain;background:#f8f8f8;padding:6px}
+.prod-body{padding:8px}
+.prod-name{font-size:11px;font-weight:600;color:#1a1a1a;margin-bottom:3px;line-height:1.4;min-height:32px}
+.prod-price{font-size:13px;font-weight:700;color:#16a34a;margin-bottom:8px}
+.add-btn{background:#16a34a;color:#fff;border:none;border-radius:7px;padding:7px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:11px;font-weight:600;width:100%}
+.add-btn.added{background:#dcfce7;color:#16a34a}
+.page{display:none}.page.active{display:block}
+.back{background:none;border:none;color:#16a34a;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600;margin-bottom:0.75rem;display:flex;align-items:center;gap:4px}
+.page-title{font-size:16px;font-weight:700;margin-bottom:0.75rem}
+.cart-list{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
+.ci{background:#fff;border-radius:10px;border:1px solid #e8e8e0;padding:0.75rem;display:flex;align-items:center;gap:10px}
+.ci-img{width:44px;height:44px;object-fit:contain;border-radius:6px;background:#f8f8f8;padding:3px;flex-shrink:0}
+.ci-info{flex:1}.ci-name{font-size:12px;font-weight:600}.ci-price{font-size:11px;color:#888}
+.qty-ctrl{display:flex;align-items:center;gap:6px}
+.qb{width:26px;height:26px;border:1.5px solid #e8e8e0;border-radius:6px;background:none;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;font-weight:600}
+.qn{font-size:13px;font-weight:700;min-width:18px;text-align:center}
+.summary{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;margin-bottom:0.75rem}
+.srow{display:flex;justify-content:space-between;font-size:13px;color:#666;padding:4px 0}
+.srow.total{font-size:15px;font-weight:700;color:#1a1a1a;border-top:1px solid #e8e8e0;margin-top:6px;padding-top:10px}
+.wa-btn{width:100%;background:#25D366;color:#fff;border:none;border-radius:10px;padding:12px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px}
+.form-section{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;margin-bottom:0.75rem}
+.fl{font-size:12px;color:#666;margin-bottom:4px;display:block;font-weight:500}
+.fi{width:100%;padding:8px 10px;border:1.5px solid #e8e8e0;border-radius:7px;font-family:'Cairo',sans-serif;font-size:13px;background:#fff;outline:none;margin-bottom:10px}
+.fi:focus{border-color:#16a34a}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.empty{text-align:center;padding:2rem 1rem;color:#aaa}
+.success{text-align:center;padding:2rem 1rem}
+.new-order-btn{background:#16a34a;color:#fff;border:none;border-radius:10px;padding:10px 20px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700}
+@media(max-width:500px){.hero-icon{display:none}.products-grid{grid-template-columns:repeat(2,1fr)}.frow{grid-template-columns:1fr}.cats-grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo"><span>Souna</span><span class="logo-sub">سونا · توصيل سريع 🚀</span></div>
+    <button class="cart-btn" onclick="showPage('cart')">🛒 السلة<span class="cart-badge" id="cartCount">0</span></button>
+  </div>
+</header>
+<main>
+  <div class="page active" id="shopPage">
+    <div class="hero">
+      <div><h1>Souna 🛍️</h1><p>وصّلنا لبيتك بأسرع وقت ⚡</p></div>
+      <div class="hero-icon">🛍️</div>
+    </div>
+    <div class="search-box"><span>🔍</span><input type="text" id="searchInput" placeholder="ابحث عن منتج..." oninput="searchProducts()"></div>
+    <div class="cats-grid" id="catList"></div>
+    <div class="section-title" id="catTitle">كل المنتجات</div>
+    <div class="results-count" id="resultsCount"></div>
+    <div class="products-grid" id="productList"></div>
+  </div>
+  <div class="page" id="cartPage">
+    <button class="back" onclick="showPage('shop')">← متابعة التسوق</button>
+    <div class="page-title">🛒 سلتك</div>
+    <div class="cart-list" id="cartList"></div>
+    <div class="summary" id="cartSummary"></div>
+    <button class="wa-btn" onclick="showPage('checkout')">📦 إكمال الطلب</button>
+  </div>
+  <div class="page" id="checkoutPage">
+    <button class="back" onclick="showPage('cart')">← الرجوع للسلة</button>
+    <div class="page-title">📋 بيانات التوصيل</div>
+    <div class="form-section">
+      <div class="frow">
+        <div><label class="fl">الاسم الأول</label><input class="fi" id="fname" placeholder="محمد"/></div>
+        <div><label class="fl">الاسم الأخير</label><input class="fi" id="lname" placeholder="الأحمد"/></div>
+      </div>
+      <label class="fl">رقم الهاتف</label><input class="fi" id="phone" placeholder="+961 70 000 000"/>
+      <label class="fl">العنوان</label><input class="fi" id="address" placeholder="المنطقة، الشارع، المبنى"/>
+      <div class="frow">
+        <div><label class="fl">المدينة</label><input class="fi" id="city" placeholder="طرابلس"/></div>
+        <div><label class="fl">المنطقة</label><input class="fi" id="area" placeholder="المنطقة"/></div>
+      </div>
+      <label class="fl">ملاحظات</label><input class="fi" id="notes" placeholder="أي تعليمات..."/>
+    </div>
+    <div class="summary" id="checkoutSummary"></div>
+    <button class="wa-btn" onclick="sendWhatsApp()">📱 أرسل الطلب على WhatsApp</button>
+  </div>
+  <div class="page" id="successPage">
+    <div class="success">
+      <div style="font-size:56px;margin-bottom:0.75rem">✅</div>
+      <h2 style="font-size:20px;font-weight:700;margin-bottom:6px">تم إرسال طلبك!</h2>
+      <p style="font-size:13px;color:#666;margin-bottom:1rem">سيتم التواصل معك قريباً</p>
+      <button class="new-order-btn" onclick="resetOrder()">طلب جديد</button>
+    </div>
+  </div>
+</main>
+<script>
+const WA_NUMBER='96170258915';
+const cats=${catsData};
+const products=${productsData};
+let cart={},activeCat='all',searchTerm='';
+function renderCats(){document.getElementById('catList').innerHTML=[{id:'all',name:'الكل',icon:'🛒'},...cats].map(c=>\`<div class="cat \${c.id===activeCat?'active':''}" onclick="filterCat('\${c.id}','\${c.name}')"><div class="cat-icon">\${c.icon}</div><div>\${c.name}</div></div>\`).join('');}
+function filterCat(id,name){activeCat=id;document.getElementById('searchInput').value='';searchTerm='';renderCats();renderProducts();document.getElementById('catTitle').textContent=id==='all'?'كل المنتجات':name;}
+function searchProducts(){searchTerm=document.getElementById('searchInput').value.trim();activeCat='all';renderCats();renderProducts();document.getElementById('catTitle').textContent=searchTerm?\`نتائج: "\${searchTerm}"\`:'كل المنتجات';}
+function getFiltered(){let l=products;if(activeCat!=='all')l=l.filter(p=>p.cat===activeCat);if(searchTerm)l=l.filter(p=>p.name.toLowerCase().includes(searchTerm.toLowerCase()));return l;}
+function renderProducts(){const list=getFiltered();document.getElementById('resultsCount').textContent=list.length?\`\${list.length} منتج\`:'';if(!list.length){document.getElementById('productList').innerHTML='<div class="empty"><p>📦 لا يوجد منتجات</p></div>';return;}document.getElementById('productList').innerHTML=list.map(p=>\`<div class="prod"><img class="prod-img" src="\${p.img}" alt="\${p.name}" onerror="this.src='https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&q=80'"><div class="prod-body"><div class="prod-name">\${p.name}</div><div class="prod-price">$\${p.price.toFixed(2)}</div><button class="add-btn" onclick="addToCart(\${p.id},this)">+ أضف للسلة</button></div></div>\`).join('');}
+function addToCart(id,btn){cart[id]=(cart[id]||0)+1;updateCount();btn.textContent='✓ تمت الإضافة';btn.classList.add('added');setTimeout(()=>{btn.textContent='+ أضف للسلة';btn.classList.remove('added');},1200);}
+function updateCount(){document.getElementById('cartCount').textContent=Object.values(cart).reduce((a,b)=>a+b,0);}
+function renderCart(){const items=Object.entries(cart).filter(([,q])=>q>0);const el=document.getElementById('cartList');if(!items.length){el.innerHTML='<div class="empty">🛒 السلة فارغة</div>';document.getElementById('cartSummary').innerHTML='';return;}el.innerHTML=items.map(([id,qty])=>{const p=products.find(x=>x.id==id);return \`<div class="ci"><img class="ci-img" src="\${p.img}" onerror="this.style.display='none'"><div class="ci-info"><div class="ci-name">\${p.name}</div><div class="ci-price">$\${p.price.toFixed(2)}</div></div><div class="qty-ctrl"><button class="qb" onclick="changeQty(\${id},-1)">−</button><span class="qn">\${qty}</span><button class="qb" onclick="changeQty(\${id},1)">+</button></div></div>\`;}).join('');renderSummary('cartSummary');}
+function changeQty(id,delta){cart[id]=Math.max(0,(cart[id]||0)+delta);if(!cart[id])delete cart[id];updateCount();renderCart();}
+function renderSummary(elId){const sub=Object.entries(cart).reduce((s,[id,q])=>{const p=products.find(x=>x.id==id);return s+(p?p.price*q:0);},0);const del=sub>0?2:0;document.getElementById(elId).innerHTML=\`<div class="srow"><span>المجموع الفرعي</span><span>$\${sub.toFixed(2)}</span></div><div class="srow"><span>رسوم التوصيل</span><span>$\${del.toFixed(2)}</span></div><div class="srow total"><span>المجموع الكلي</span><span>$\${(sub+del).toFixed(2)}</span></div>\`;}
+function sendWhatsApp(){const fname=document.getElementById('fname').value;const phone=document.getElementById('phone').value;const address=document.getElementById('address').value;if(!fname||!phone||!address){alert('يرجى تعبئة الاسم ورقم الهاتف والعنوان');return;}const items=Object.entries(cart).filter(([,q])=>q>0);const sub=items.reduce((s,[id,q])=>{const p=products.find(x=>x.id==id);return s+(p?p.price*q:0);},0);let msg=\`🛒 *طلب جديد - Souna*\\n\\n👤 *الاسم:* \${fname} \${document.getElementById('lname').value}\\n📞 *الهاتف:* \${phone}\\n📍 *العنوان:* \${address}، \${document.getElementById('area').value}، \${document.getElementById('city').value}\\n\`;const notes=document.getElementById('notes').value;if(notes)msg+=\`📝 *ملاحظات:* \${notes}\\n\`;msg+=\`\\n*المنتجات:*\\n\`;items.forEach(([id,qty])=>{const p=products.find(x=>x.id==id);msg+=\`• \${p.name} × \${qty} = $\${(p.price*qty).toFixed(2)}\\n\`;});msg+=\`\\n💰 *المجموع:* $\${(sub+2).toFixed(2)} (شامل التوصيل)\`;window.open(\`https://wa.me/\${WA_NUMBER}?text=\${encodeURIComponent(msg)}\`,'_blank');showPage('success');}
+function showPage(name){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(name+'Page').classList.add('active');if(name==='cart')renderCart();if(name==='checkout')renderSummary('checkoutSummary');window.scrollTo(0,0);}
 function resetOrder(){cart={};updateCount();showPage('shop');}
-
 renderCats();renderProducts();
+<\/script>
+</body>
+</html>`;
+}
+
+document.getElementById('modal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+document.getElementById('pwInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') login();
+});
 </script>
 </body>
 </html>
