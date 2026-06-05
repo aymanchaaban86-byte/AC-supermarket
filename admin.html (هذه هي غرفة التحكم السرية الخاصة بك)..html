@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>غرفة التحكم - سوبرماركت AC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #1a342a;
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+        button {
+            background-color: #1a343a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #244952;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+        th {
+            background-color: #1a343a;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>غرفة الإدارة والتحكم ⚙️</h1>
+
+    <div class="form-container">
+        <h3>إضافة صنف جديد</h3>
+
+        <div class="form-group">
+            <label>اسم المنتج:</label>
+            <input type="text" id="product-name" placeholder="مثال: رذاذ لورباك، علبة حليب...">
+        </div>
+
+        <div class="form-group">
+            <label>السعر ($):</label>
+            <input type="number" id="product-price" step="0.001" placeholder="مثال: 7.712">
+        </div>
+
+        <div class="form-group">
+            <label>القسم:</label>
+            <select id="product-category">
+                <option value="دجاج ولحوم">🍗 دجاج ولحوم</option>
+                <option value="زعتر وملوخية">🌿 زعتر وملوخية</option>
+                <option value="توابل">🫙 توابل</option>
+                <option value="تمور ومكسرات وعسل">🍯 تمور ومكسرات وعسل</option>
+                <option value="معجنات ومقبلات">🥐 معجنات ومقبلات</option>
+                <option value="حلويات">🍰 حلويات</option>
+                <option value="سكاكر وموالح">🍬 سكاكر وموالح</option>
+                <option value="مشروبات">🥤 مشروبات</option>
+                <option value="مفرزات">🧊 مفرزات</option>
+                <option value="محارم وحفاضات">🧻 محارم وحفاضات</option>
+                <option value="منظفات">🧴 منظفات</option>
+                <option value="بيجامات">👘 بيجامات</option>
+                <option value="ألبسة داخلية">👙 ألبسة داخلية</option>
+                <option value="أكسسوارات وهدايا">🎁 أكسسوارات وهدايا</option>
+                <option value="ألبسة خارجية">👗 ألبسة خارجية</option>
+                <option value="أدوات منزلية">🏠 أدوات منزلية</option>
+                <option value="مناشف وبياضات">🛁 مناشف وبياضات</option>
+                <option value="عناية شخصية">💄 عناية شخصية</option>
+                <option value="قرطاسية">✏️ قرطاسية</option>
+                <option value="ألعاب">🧸 ألعاب</option>
+                <option value="مستلزمات حجاب">🧕 مستلزمات حجاب</option>
+                <option value="أدوات كهربائية">🔌 أدوات كهربائية</option>
+                <option value="أحذية">👟 أحذية</option>
+                <option value="قصص تربوية">📚 قصص تربوية</option>
+                <option value="مواد استهلاكية">📦 مواد استهلاكية</option>
+                <option value="المخبوزات">🍞 المخبوزات</option>
+                <option value="الطبق اليومي">🍽️ الطبق اليومي</option>
+                <option value="حليب وكورن فليكس">🥣 حليب وكورن فليكس</option>
+                <option value="شاي وقهوة">☕ شاي وقهوة</option>
+                <option value="سلطات">🥗 سلطات</option>
+                <option value="عطورات">🌸 عطورات</option>
+                <option value="مستلزمات حيوانات">🐾 مستلزمات حيوانات</option>
+                <option value="مستلزمات هواتف">📱 مستلزمات هواتف</option>
+                <option value="حبوب">🌾 حبوب</option>
+                <option value="نشويات">🍝 نشويات</option>
+                <option value="زيوت">🫙 زيوت</option>
+                <option value="معلبات">🥫 معلبات</option>
+                <option value="ألبان وأجبان">🧀 ألبان وأجبان</option>
+                <option value="خضار وفواكه">🥦 خضار وفواكه</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>رابط صورة المنتج:</label>
+            <input type="text" id="product-image" placeholder="ضع رابط الصورة المنسوخ هنا">
+        </div>
+
+        <button id="add-btn">أضف المنتج إلى المتجر ➕</button>
+    </div>
+
+    <h2>المنتجات المتوفرة حالياً:</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>الصورة</th>
+                <th>اسم المنتج</th>
+                <th>السعر</th>
+                <th>القسم</th>
+                <th>إجراءات التحكم</th>
+            </tr>
+        </thead>
+        <tbody id="products-table-body">
+            </tbody>
+    </table>
+
+    <script>
+        let products = JSON.parse(localStorage.getItem("my_products")) || [];
+        displayProducts();
+
+        document.getElementById("add-btn").addEventListener("click", function() {
+            let name = document.getElementById("product-name").value;
+            let price = document.getElementById("product-price").value;
+            let category = document.getElementById("product-category").value;
+            let image = document.getElementById("product-image").value;
+
+            if (name === "" || price === "") {
+                alert("الرجاء كتابة اسم المنتج والسعر أولاً!");
+                return;
+            }
+
+            let newProduct = {
+                id: Date.now(),
+                name: name,
+                price: price,
+                category: category,
+                image: image || "https://via.placeholder.com/50"
+            };
+
+            products.push(newProduct);
+            localStorage.setItem("my_products", JSON.stringify(products));
+
+            document.getElementById("product-name").value = "";
+            document.getElementById("product-price").value = "";
+            document.getElementById("product-image").value = "";
+
+            displayProducts();
+        });
+
+        function displayProducts() {
+            let tableBody = document.getElementById("products-table-body");
+            tableBody.innerHTML = ""; 
+
+            products.forEach(function(prod) {
+                tableBody.innerHTML += `
+                    <tr>
+                        <td><img src="${prod.image}" width="50" height="50" style="object-fit:cover; border-radius:4px;"></td>
+                        <td>${prod.name}</td>
+                        <td>${prod.price} $</td>
+                        <td>${prod.category}</td>
+                        <td>
+                            <button onclick="editProduct(${prod.id})" style="background-color: #ffaa00; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius:4px; width:auto; display:inline-block;">تعديل ✏️</button>
+                            <button onclick="deleteProduct(${prod.id})" style="background-color: #ff4d4d; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius:4px; width:auto; display:inline-block;">حذف 🗑️</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function deleteProduct(id) {
+            if(confirm("هل أنت متأكد من حذف هذا المنتج؟")) {
+                products = products.filter(p => p.id !== id);
+                localStorage.setItem("my_products", JSON.stringify(products));
+                displayProducts();
+            }
+        }
+
+        function editProduct(id) {
+            let prod = products.find(p => p.id === id);
+            if (prod) {
+                let newName = prompt("تعديل اسم المنتج:", prod.name);
+                let newPrice = prompt("تعديل السعر ($):", prod.price);
+                if (newName !== null && newName.trim() !== "") prod.name = newName;
+                if (newPrice !== null && newPrice.trim() !== "") prod.price = newPrice;
+                localStorage.setItem("my_products", JSON.stringify(products));
+                displayProducts();
+            }
+        }
+    </script>
+
+</body>
+</html>
