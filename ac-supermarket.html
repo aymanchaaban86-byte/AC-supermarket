@@ -591,8 +591,7 @@ function searchProducts(){
 
 function getFilteredProducts(){
   let list=products;
-if(activeCat!=='all') list=list.filter(p=>((p.cat || p.category || "").toString().trim().includes(activeCat.trim())));}
-
+if(activeCat!=='all') list = list.filter(p => (p.cat || p.category || "").toString().toLowerCase().trim().includes(activeCat.toLowerCase().trim()));
 function renderProducts(){
   const list=getFilteredProducts();
   document.getElementById('resultsCount').textContent=list.length>0?`${list.length} منتج`:'';
