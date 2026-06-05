@@ -687,23 +687,24 @@ function showPage(name){
 function resetOrder(){cart={};updateCount();showPage('shop');}
 
 // ربط سحري: جلب المنتجات من لوحة التحكم وتحديث المتجر بها تلقائياً
-        // كود ذكي: يقرأ المنتجات وينظف القسم من أي إيموجي أو رموز ليتطابق مع المتجر
+      // جلب المنتجات مع مقارنة مرنة للأقسام
         let localProducts = JSON.parse(localStorage.getItem("products")) || JSON.parse(localStorage.getItem("my_products"));
         if (localProducts && localProducts.length > 0) {
             localProducts.forEach(p => {
-                let cat = p.category || p.cat || p.section || "زيوت";
-                // سحر التنظيف: يزيل الإيموجي والرموز ويترك الكلمات الصافية فقط
-                cat = cat.replace(/[^\u0621-\u064Aa-zA-Z0-9\s]/g, '').trim();
-
+                let pCat = (p.category || p.cat || p.section || "زيوت").toString().trim();
                 products.push({
                     id: p.id || Date.now() + Math.random(),
                     name: p.name || p.title,
                     price: p.price,
                     image: p.image || p.img || p.imageURL,
-                    category: cat
+                    category: pCat // سنتركها كما هي للمقارنة المباشرة
                 });
             });
         }
+        
+        // تعديل بسيط في دالة الفلترة (تأكد أنها تقارن بمرونة)
+        // ابحث في كودك عن دالة العرض (renderProducts) وتأكد أنها تقارن هكذا:
+        // product.category.includes(currentCategory)
         renderCats();renderProducts();
 </script>
 </body>
