@@ -591,8 +591,7 @@ function searchProducts(){
 
 function getFilteredProducts(){
   let list=products;
-  if(activeCat!=='all') list=list.filter(p=>p.cat===activeCat);
-  if(searchTerm) list=list.filter(p=>p.name.toLowerCase().includes(searchTerm.toLowerCase()));
+if(activeCat!=='all') list=list.filter(p=>(p.cat || p.category) == activeCat);  if(searchTerm) list=list.filter(p=>p.name.toLowerCase().includes(searchTerm.toLowerCase()));
   return list;
 }
 
