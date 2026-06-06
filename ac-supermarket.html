@@ -68,7 +68,7 @@ main{max-width:960px;margin:0 auto;padding:1rem}
 <main>
   <div class="page active" id="shopPage">
     <div class="hero">
-      <div><h1>Souna 🛍️</h1><p>منوصل لبيتك بأسرع وقت 70258915 ⚡</p></div>
+      <div><h1>Souna 🛍️</h1><p>وصّلنا لبيتك بأسرع وقت ⚡</p></div>
       <div class="hero-icon">🛍️</div>
     </div>
     <div class="search-box"><span>🔍</span><input type="text" id="searchInput" placeholder="ابحث عن منتج..." oninput="searchProducts()"></div>
@@ -89,8 +89,8 @@ main{max-width:960px;margin:0 auto;padding:1rem}
     <div class="page-title">📋 بيانات التوصيل</div>
     <div class="form-section">
       <div class="frow">
-        <div><label class="fl">الاسم الأول</label><input class="fi" id="fname" placeholder="أيمن"/></div>
-        <div><label class="fl">الاسم الأخير</label><input class="fi" id="lname" placeholder="الشعبان"/></div>
+        <div><label class="fl">الاسم الأول</label><input class="fi" id="fname" placeholder="محمد"/></div>
+        <div><label class="fl">الاسم الأخير</label><input class="fi" id="lname" placeholder="الأحمد"/></div>
       </div>
       <label class="fl">رقم الهاتف</label><input class="fi" id="phone" placeholder="+961 70 000 000"/>
       <label class="fl">العنوان</label><input class="fi" id="address" placeholder="المنطقة، الشارع، المبنى"/>
@@ -314,409 +314,255 @@ const cats=[
 const products=[
   {
     "id": 1,
-    "name": "زبدة غير مملحة 1000غ golden plate",
-    "price": 12.305,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fcee2e535-be55-4eed-87c4-ddbf407ea4fd.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "POWER BANK 10000 FAST CHARGING DP43 VDENMENV",
+    "price": 5.525,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F71a77cb0-30b4-4b06-a03b-93d9aeadaadc.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 2,
-    "name": "زبدة غير مملحة 100غ Lurpak",
-    "price": 1.679,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-24%20at%205.06.52%20PM.jpeg&w=1920&q=75",
-    "cat": "oils"
+    "name": "Power Bank With 2 Cable Type C+ Lightning Clever+",
+    "price": 12.6,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9f0c30d6-4eea-47a9-a90e-b9623d3d4b1b.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 3,
-    "name": "زبدة غير مملحة 200غ golden plate",
-    "price": 2.396,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F859f8bf2-9af0-4cbe-8398-7f1fad691963.jfif&w=1920&q=75",
-    "cat": "oils"
+    "name": "USB FLASH DRIVE 128GB BOROFONE",
+    "price": 11.9,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F667363d8-8d6b-455d-8bea-5f9f74b42159.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 4,
-    "name": "زبدة غير مملحة 200غ Lurpak",
-    "price": 2.944,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-07%20at%206.40.41%20PM.jpeg&w=1920&q=75",
-    "cat": "oils"
+    "name": "ادابتر سيارة 3 مخارج 55 واط Quick Charger",
+    "price": 5.152,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Faa3bd519-c3bf-4b11-8d66-3ea39e235014.jfif&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 5,
-    "name": "زبدة غير مملحة 200غ Plein Soleil",
-    "price": 2.156,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-19%20at%209.31.08%20PM.jpeg&w=1920&q=75",
-    "cat": "oils"
+    "name": "حاملة لتثبيت الهاتف ملونة",
+    "price": 0.5,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4aa50e64-d655-4b32-9516-cd5b42aec7fa.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 6,
-    "name": "زبدة غير مملحة 200غ President",
-    "price": 2.703,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2ed79a1d-729e-4af5-8bbc-2766b770ef49.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "سماعات BOROFONE WIRELESS B023",
+    "price": 10.5,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F34c0fc2a-f369-43ca-be81-e233dba03a88.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 7,
-    "name": "زبدة غير مملحة 400غ Lurpak",
-    "price": 5.704,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-24%20at%205.06.32%20PM.jpeg&w=1920&q=75",
-    "cat": "oils"
+    "name": "سماعات HOCO WIRELESS W35",
+    "price": 12.6,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4deb042c-bf54-4d97-a828-df067f10f0ad.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 8,
-    "name": "زبدة فرنسية 10غ *10 President",
-    "price": 0.863,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2ab7c990-7b9c-4768-9b87-6f79492f7a36.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "سماعات بلوتوث Borofone Noise Cancelation",
+    "price": 10.5,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb924b5e0-2886-4773-890e-2f876510733c.jfif&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 9,
-    "name": "زبدة نباتية 200غ Luna",
-    "price": 0.49,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%84%D9%88%D9%86%D8%A7%2014-12.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "سماعات بلوتوث شكل قطة HOCO EW46",
+    "price": 11.7,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F63686032-eada-44e8-ad3b-2c2579baac97.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 10,
-    "name": "زيت دوار الشمس 1.8 ل plein soleil",
-    "price": 5.189,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F93cce37a-6660-41d2-b87e-8eade790ca53.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "شاحن 18 واط BOROFONE BAS72A",
+    "price": 2.66,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F29f913ca-c157-4185-97e0-1cd80535ab5d.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 11,
-    "name": "زيت دوار الشمس 1ل Plein Soleil",
-    "price": 3.194,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8e70b5c6-c026-4267-91fc-acefd9fb13ab.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "شاحن 30 واط BOROFONE BAS45A",
+    "price": 5.25,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fcb0b2b82-d3c9-4b91-9edd-2ad2ccec8d18.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 12,
-    "name": "زيت دوار الشمس 3 ل Plein Soleil",
-    "price": 8.434,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3566e03f-bdb8-4a97-b00b-35c93517cf77.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "شاحن حديث 20 واط BOROFONE TYPE C BA81",
+    "price": 3.08,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F5bf2199f-9359-4be9-958d-d0e95a89fe92.jfif&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 13,
-    "name": "زيت دوار الشمس 5 ليتر Mirasol",
-    "price": 10.232,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F40b311cb-8ee0-4f28-9fea-60b7cacb9c34.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "شاحن حديث 20واط BOROFONE",
+    "price": 2.94,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%AF%D8%A8%D8%AA%D8%B1%20%D8%AD%D8%AF%D9%8A%D8%AB%2020%D9%88%D8%A7%D8%B7%20BOROFONE.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 14,
-    "name": "زيت دوار الشمس 5 ليتر Plein Soleil",
-    "price": 11.997,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-05-23%20at%206.49.02%20PM.jpeg&w=1920&q=75",
-    "cat": "oils"
+    "name": "شاحن سيارة مع وصلة 1 متر BOROFONE TYPE C BZ12A",
+    "price": 2.31,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb481cbb7-5847-487a-bd6a-1efa030cd4b9.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 15,
-    "name": "زيت دوار الشمس 5 ليتر Prime",
-    "price": 9.855,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4c53433b-c29d-496e-8e47-1e14d03b8257.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "شاحن سيارة مع وصلة 1 متر BOROFONE SAMSUNG BZ12A",
+    "price": 2.31,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe8b1dcb9-5c0d-4c13-a877-d50bedd00fb9.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 16,
-    "name": "زيت دوار الشمس 5ل Holiday",
-    "price": 9.972,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F53a51ce4-a2f2-4e63-8f48-ee97d0802b73.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "شاحن سيارة مع وصلة BOROFONE IPHONE BZ12",
+    "price": 2.31,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc029d968-9a60-42d2-9996-0cb975e58c3b.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 17,
-    "name": "زيت دوار الشمس 8.8 ليتر Gamal",
-    "price": 16.5,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9bb25a7b-428f-46cb-985e-7eacd781e8c7.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "شاحن مع وصلة 18 واط MOXOM SAMSUNG",
+    "price": 3.5,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd8babc68-0ad9-4c38-9acd-a316c1aa8e88.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 18,
-    "name": "زيت دوار الشمس 9 ليتر Prime Line",
-    "price": 17.28,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8a962039-b9cc-4c60-8297-5f8f76ad471f.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "شاحن مع وصلة 18 واط MOXOM TYPE C",
+    "price": 3.5,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F58cf3637-e1bf-4b75-807b-3a13d62775f5.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 19,
-    "name": "زيت دوار الشمس أوبا 8.8 ل",
-    "price": 16.47,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%AF%D9%88%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3%208.8%20%D9%84%D9%8A%D8%AA%D8%B1%20OBA.jfif&w=1920&q=75",
-    "cat": "oils"
+    "name": "شاحن مع وصلة 20 واط BOROFONE BA81A C TO C",
+    "price": 3.99,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F6600345f-7f5e-433e-944b-2fb1be19b20b.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 20,
-    "name": "زيت دوار الشمس اوبا 5ليتر",
-    "price": 9.9,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D9%88%D8%A8%D8%A7.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة اوكس 1 متر BOROFONE BL19",
+    "price": 0.98,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%88%D8%B5%D9%84%D8%A9%20%D8%A7%D9%88%D9%83%D8%B3%20BOROFONE.jfif&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 21,
-    "name": "زيت دوار الشمس جيرسي 5 ليتر",
-    "price": 9.413,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F469.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة اوكس 1 متر BOROFONE BL25B TYPE C",
+    "price": 2.275,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F111babd0-3545-43f8-9b84-998e6fe0cd37.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 22,
-    "name": "زيت دوار الشمس دعبول 5 ليتر",
-    "price": 9.99,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%AF%D9%88%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84%205%20%D9%84%D9%8A%D8%AA%D8%B1.jfif&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة تايب-سي ايفون 1م Coye",
+    "price": 4.83,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8201b47c-15e4-4688-beb0-93dfc131fe4d.jfif&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 23,
-    "name": "زيت دوار الشمس ديروني 5 ليتر",
-    "price": 10.002,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdfa3a37d-8707-4650-951c-fefe51e9b929.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة شاحن 2 متر BOROFONE BX87 IPHONE",
+    "price": 2.45,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fcc6a2d74-ec32-4e20-bfec-97f0894f8810.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 24,
-    "name": "زيت دوار الشمس سليم 1.8ليتر",
-    "price": 4.32,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fsmall%20slim.jpeg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة شاحن 4 رؤوس 65 واط Flat wire",
+    "price": 5.026,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2d3b73b9-999c-4357-9bb5-5e90feb443e7.jfif&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 25,
-    "name": "زيت دوار الشمس سليم 4 ليتر",
-    "price": 9.45,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-06-19%20at%2010.52.24.jpeg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 1 متر BOROFONE BX19 IPHONE",
+    "price": 0.91,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F091f1f80-8ed4-4913-8393-13cc43938823.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 26,
-    "name": "زيت دوار الشمس عافية 9 ليتر 20%",
-    "price": 29.967,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb0bc82d7-4e02-4539-8b2d-e2dcef17794d.jfif&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 1 متر BOROFONE BX111 USB-C TO IPHONE",
+    "price": 1.12,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9475e50d-8eb7-443f-80a8-4a1f9a8c608a.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 27,
-    "name": "زيت دوار الشمس غندور 0.75 ل",
-    "price": 2.3,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ffb0d5ba0-557c-4847-9dd4-ec3d48991a1c.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 1 متر BOROFONE BX19 SAMSUNG",
+    "price": 0.91,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F0ea90f32-0b5f-4ec4-b2ac-6c9d296a33e2.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 28,
-    "name": "زيت دوار الشمس غندور 1.6ليتر",
-    "price": 4.615,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd497695d-4d14-4f60-a6fe-677e901b0161.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 1 متر BOROFONE BX51 TYPE C TO IPHONE",
+    "price": 1.12,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F05743a42-5402-4834-9c1d-81d156ef9a69.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 29,
-    "name": "زيت دوار الشمس غندور 4 ليتر",
-    "price": 10.87,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F49cd5320-e4bc-432a-983c-c92e9e58c241.jfif&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 1 متر BOROFONE BX54 IPHONE",
+    "price": 0.84,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb2315362-03d9-464a-9463-72e126a88e1a.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 30,
-    "name": "زيت ذرة عافية 1.5 ليتر",
-    "price": 7.29,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F33ade9c2-afcb-411a-86b4-1de3014291d7.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 1 متر BOROFONE BX54 SAMSUNG",
+    "price": 0.84,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc3a1fbd4-ee82-4b23-831e-ea2cc82ffbc6.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 31,
-    "name": "زيت زيتون 400غ lebaytcom",
-    "price": 3.738,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%B2%D9%8A%D8%AA%D9%88%D9%86%20400%D8%BA%20lebaytcom.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 1 متر BOROFONE BX87 USBA-TO IPHONE",
+    "price": 0.91,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8bee7676-1db8-452b-a5d6-6944f713465b.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 32,
-    "name": "زيت زيتون بكر سعيفان مربعة 500مل",
-    "price": 7.207,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2f4ba4d2-0716-4a78-b0ee-74743989ce26.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 1 متر BOROFONE BX87 USBA-TO SAMSUNG",
+    "price": 0.91,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F7667c52e-5077-435d-86cb-05e53a295daa.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 33,
-    "name": "زيت زيتون سعيفان 250مل",
-    "price": 3.78,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F68e569d7-78ae-4ff4-9bea-44f64ca6913b.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 1 متر BOROFONE TYPE A TO C BX111",
+    "price": 0.845,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%88%D8%B5%D9%84%D8%A9%20%D9%87%D8%A7%D8%AA%D9%81%20BOROFONE%20TYPE%20C%20BX111.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 34,
-    "name": "زيت زيتون سعيفان 500مل",
-    "price": 6.955,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F5490a2fb-1001-44de-84e4-8ec8dae972ff.jpg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 1 متر BOROFONE TYPE C BX54",
+    "price": 0.84,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb09a4333-6cd0-4816-9a3c-763cb89baf18.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 35,
-    "name": "زيت صويا مكرر 490غ Iman",
-    "price": 1.466,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%B5%D9%88%D9%8A%D8%A7%20%D9%85%D9%83%D8%B1%D8%B1%20490%D8%BA%20Iman.jfif&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 2 متر BOROFONE SAMSUNG BX14",
+    "price": 2.275,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F24292157-0a73-4ee7-a798-699971255a66.jpg&w=1920&q=75",
+    "cat": "phones"
   },
   {
     "id": 36,
-    "name": "سمن بقري 800غ Golden plate",
-    "price": 19.842,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3e7e72ae-964c-4a1d-854a-a922ad0966ef.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 37,
-    "name": "سمن جوز الهند الصافي 1.8كلغ Rami Vegetal",
-    "price": 11.48,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F84ba96de-e212-410b-8864-9249b9267683.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 38,
-    "name": "سمن جوز الهند الصافي 3.5كغ Rami Vegetal",
-    "price": 21.84,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F84ba96de-e212-410b-8864-9249b9267683.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 39,
-    "name": "سمن نباتي قوت القلوب 4.25 كلغ",
-    "price": 12.32,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F92df3809-42cb-401d-a679-26068ec4d1c0.jfif&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 40,
-    "name": "سمنة نباتي غير مهدرج كريساتال 2.5 كلغ",
-    "price": 4.904,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F270804fd-b64b-4584-b63f-58f9e72e8370.jfif&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 41,
-    "name": "سمنة البقرة الحلوب 2 كلغ",
-    "price": 46.75,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb22fe978-fd4e-4a62-ae9e-04c4558a7732.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 42,
-    "name": "سمنة البقرة الحلوب 400غ",
-    "price": 12.604,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F843c976f-0b7a-4e40-a4dc-7ef69ebc6638.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 43,
-    "name": "سمنة البقرة الحلوب 800 غ",
-    "price": 25.209,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F83dd7fc8-3d3a-446d-b014-668db80c5189.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 44,
-    "name": "سمنة الراعي 1.4ل",
-    "price": 3.209,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa3b19f7a-bd80-4fb4-8862-4de9436a866e.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 45,
-    "name": "سمنة الراعي 5 ل",
-    "price": 11.55,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F6740dfa5-9299-4b78-ae7e-486473389d2b.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 46,
-    "name": "سمنة الراعي 700مل",
-    "price": 1.604,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff58c75fd-a326-4079-b402-1bcdb708057b.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 47,
-    "name": "سمنة الروابي 1.5 كلغ",
-    "price": 3.987,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-06-19%20at%2010.46.55.jpeg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 48,
-    "name": "سمنة حيواني خير وبركة 500غ",
-    "price": 9.894,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fed470a0c-3005-41cd-8465-c95d46c88ce9.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 49,
-    "name": "سمنة نباتي افت 1730غ",
-    "price": 6.6,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%86%D8%A9%20%D9%86%D8%A8%D8%A7%D8%AA%D9%8A%D8%A9%201975%D8%BA%20EVET.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 50,
-    "name": "سمنة نباتي افت 4كغ",
-    "price": 12.65,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc9ec8b73-b884-4786-87f9-37341e229325.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 51,
-    "name": "سمنة نباتي افت 910غ",
-    "price": 4.125,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%86%D8%A9%20%D9%86%D8%A8%D8%A7%D8%AA%D9%8A%D8%A9%20910%D8%BA%20EVET.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 52,
-    "name": "سمنة نباتي الهانم 700غ",
-    "price": 2.354,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F85bfa3d8-275d-4127-aeec-3a0ea912e72a.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 53,
-    "name": "سمنة نباتية اريج 900غ",
-    "price": 3.33,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-25%20at%207.35.10%20PM.jpeg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 54,
-    "name": "سمنة نباتية الهانم 1.5 كلغ",
-    "price": 4.813,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F950fc0ff-f5a2-4605-bf9d-37a630539fd9.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 55,
-    "name": "سمنة نباتية بطعم الزبدة الصفراء قوت 1.45كغ",
-    "price": 4.056,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%86%D8%A91-2.jpg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 56,
-    "name": "سمنة نباتية بطعم الزبدة الصفراء قوت 2.5 كلغ",
-    "price": 5.671,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-19%20at%209.32.38%20PM.jpeg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 57,
-    "name": "سمنة نباتية بطعم الزبدة الصفراء قوت 650غ",
-    "price": 2.013,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-22%20at%204.42.47%20PM.jpeg&w=1920&q=75",
-    "cat": "oils"
-  },
-  {
-    "id": 58,
-    "name": "مرغرين غولد 200غ Plein Soleil",
-    "price": 1.467,
-    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-17%20at%2012.18.04%20PM.jpeg&w=1920&q=75",
-    "cat": "oils"
+    "name": "وصلة هاتف 3 متر BOROFONE BX14 SAMSUNG",
+    "price": 2.6,
+    "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F36b6c563-dbf4-44ec-843e-9291003201b2.jpg&w=1920&q=75",
+    "cat": "phones"
   }
 ];
 let cart={},activeCat='all',searchTerm='';
