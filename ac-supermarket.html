@@ -1,120 +1,2286 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Souna | سونا</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Cairo',sans-serif;background:#f5f5f0;color:#1a1a1a;min-height:100vh}
-header{background:#fff;border-bottom:1px solid #e8e8e0;position:sticky;top:0;z-index:100;padding:0 1rem}
-.hi{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:60px}
-.lw span{font-size:26px;font-weight:800;color:#16a34a}.ls{font-size:11px;color:#888;display:block;margin-top:-4px}
-.cb2{display:flex;align-items:center;gap:6px;background:#16a34a;color:#fff;border:none;border-radius:10px;padding:8px 14px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600}
-.cc{background:#fff;color:#16a34a;border-radius:50%;width:18px;height:18px;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700}
-main{max-width:960px;margin:0 auto;padding:1rem}
-.hero{background:linear-gradient(135deg,#16a34a,#15803d);border-radius:14px;padding:1.5rem;margin-bottom:1rem;color:#fff;display:flex;align-items:center;justify-content:space-between}
-.hero h1{font-size:26px;font-weight:800}.hero p{font-size:13px;opacity:0.85}.hi2{font-size:48px}
-.sb{background:#fff;border:1.5px solid #e8e8e0;border-radius:10px;padding:8px 14px;display:flex;align-items:center;gap:8px;margin-bottom:1rem}
-.sb input{border:none;outline:none;font-family:'Cairo',sans-serif;font-size:14px;flex:1;background:transparent}
-.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px;margin-bottom:1rem}
-.cat{background:#fff;border:2px solid #e8e8e0;border-radius:10px;padding:8px 6px;cursor:pointer;font-size:11px;font-weight:600;color:#555;text-align:center;transition:all 0.15s}
-.ci3{font-size:20px;margin-bottom:3px}.cat.active,.cat:hover{border-color:#16a34a;color:#16a34a;background:#f0fdf4}
-.st{font-size:15px;font-weight:700;margin-bottom:0.75rem}.rc{font-size:12px;color:#888;margin-bottom:0.5rem}
-.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px}
-.pr{background:#fff;border-radius:12px;border:1px solid #e8e8e0;overflow:hidden;display:flex;flex-direction:column}
-.pi{width:100%;height:130px;object-fit:contain;background:#f8f8f8;padding:6px}
-.pb{padding:8px}.pn{font-size:11px;font-weight:600;color:#1a1a1a;margin-bottom:3px;line-height:1.4;min-height:32px}
-.pp{font-size:13px;font-weight:700;color:#16a34a;margin-bottom:8px}
-.ab{background:#16a34a;color:#fff;border:none;border-radius:7px;padding:7px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:11px;font-weight:600;width:100%}
-.ab.added{background:#dcfce7;color:#16a34a}
-.pg2{display:none}.pg2.active{display:block}
-.bk{background:none;border:none;color:#16a34a;cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;font-weight:600;margin-bottom:0.75rem;display:flex;align-items:center;gap:4px}
-.pt{font-size:16px;font-weight:700;margin-bottom:0.75rem}
-.cl{display:flex;flex-direction:column;gap:8px;margin-bottom:1rem}
-.ci2{background:#fff;border-radius:10px;border:1px solid #e8e8e0;padding:0.75rem;display:flex;align-items:center;gap:10px}
-.ci2 img{width:44px;height:44px;object-fit:contain;border-radius:6px;background:#f8f8f8;padding:3px;flex-shrink:0}
-.ci2 .in{flex:1}.in .nm{font-size:12px;font-weight:600}.in .pr2{font-size:11px;color:#888}
-.qc{display:flex;align-items:center;gap:6px}
-.qb{width:26px;height:26px;border:1.5px solid #e8e8e0;border-radius:6px;background:none;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;font-weight:600}
-.qn{font-size:13px;font-weight:700;min-width:18px;text-align:center}
-.sm{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;margin-bottom:0.75rem}
-.sr{display:flex;justify-content:space-between;font-size:13px;color:#666;padding:4px 0}
-.sr.tot{font-size:15px;font-weight:700;color:#1a1a1a;border-top:1px solid #e8e8e0;margin-top:6px;padding-top:10px}
-.wb{width:100%;background:#25D366;color:#fff;border:none;border-radius:10px;padding:12px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px}
-.fs{background:#fff;border-radius:12px;border:1px solid #e8e8e0;padding:1rem;margin-bottom:0.75rem}
-.fl{font-size:12px;color:#666;margin-bottom:4px;display:block;font-weight:500}
-.fi{width:100%;padding:8px 10px;border:1.5px solid #e8e8e0;border-radius:7px;font-family:'Cairo',sans-serif;font-size:13px;background:#fff;outline:none;margin-bottom:10px}
-.fi:focus{border-color:#16a34a}.fr{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.em{text-align:center;padding:2rem 1rem;color:#aaa}.sc{text-align:center;padding:2rem 1rem}
-.nb{background:#16a34a;color:#fff;border:none;border-radius:10px;padding:10px 20px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700}
-@media(max-width:500px){.hi2{display:none}.pg{grid-template-columns:repeat(2,1fr)}.fr{grid-template-columns:1fr}.cg{grid-template-columns:repeat(3,1fr)}}
-</style></head>
-<body>
-<header><div class="hi">
-<div class="lw"><span>Souna</span><span class="ls">سونا · توصيل سريع 🚀</span></div>
-<button class="cb2" onclick="sp('cart')">🛒 السلة<span class="cc" id="cnt">0</span></button>
-</div></header>
-<main>
-<div class="pg2 active" id="shopPage">
-<div class="hero"><div><h1>Souna 🛍️</h1><p>وصّلنا لبيتك بأسرع وقت ⚡</p></div><div class="hi2">🛍️</div></div>
-<div style="background:#fff;border:1px solid #bbf7d0;border-radius:10px;padding:10px 16px;margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px"><span style="font-size:13px;font-weight:700;color:#15803d">💱 سعر الصرف: <span id="rateDisplay"></span></span><span style="font-size:11px;color:#888">الأسعار قابلة للتعديل</span></div>
-<div class="sb"><span>🔍</span><input type="text" id="si" placeholder="ابحث عن منتج..." oninput="srch()"></div>
-<div class="cg" id="catList"></div>
-<div class="st" id="catTitle">كل المنتجات</div>
-<div class="rc" id="rc"></div>
-<div class="pg" id="productList"></div>
-</div>
-<div class="pg2" id="cartPage">
-<button class="bk" onclick="sp('shop')">← متابعة التسوق</button>
-<div class="pt">🛒 سلتك</div>
-<div class="cl" id="cartList"></div>
-<div class="sm" id="cartSummary"></div>
-<button class="wb" onclick="sp('checkout')">📦 إكمال الطلب</button>
-</div>
-<div class="pg2" id="checkoutPage">
-<button class="bk" onclick="sp('cart')">← الرجوع للسلة</button>
-<div class="pt">📋 بيانات التوصيل</div>
-<div class="fs">
-<div class="fr">
-<div><label class="fl">الاسم الأول</label><input class="fi" id="fn" placeholder="محمد"/></div>
-<div><label class="fl">الاسم الأخير</label><input class="fi" id="ln" placeholder="الأحمد"/></div>
-</div>
-<label class="fl">رقم الهاتف</label><input class="fi" id="ph" placeholder="+961 70 000 000"/>
-<label class="fl">العنوان</label><input class="fi" id="ad" placeholder="المنطقة، الشارع، المبنى"/>
-<div class="fr">
-<div><label class="fl">المدينة</label><input class="fi" id="ct" placeholder="طرابلس"/></div>
-<div><label class="fl">المنطقة</label><input class="fi" id="ar" placeholder="المنطقة"/></div>
-</div>
-<label class="fl">ملاحظات</label><input class="fi" id="nt" placeholder="أي تعليمات..."/>
-</div>
-<div class="sm" id="checkoutSummary"></div>
-<button class="wb" onclick="sendWA()">📱 أرسل الطلب على WhatsApp</button>
-</div>
-<div class="pg2" id="successPage">
-<div class="sc"><div style="font-size:56px;margin-bottom:0.75rem">✅</div>
-<h2 style="font-size:20px;font-weight:700;margin-bottom:6px">تم إرسال طلبك!</h2>
-<p style="font-size:13px;color:#666;margin-bottom:1rem">سيتم التواصل معك قريباً</p>
-<button class="nb" onclick="resetOrder()">طلب جديد</button></div>
-</div>
-</main>
-<script>
-const WA='96170258915';
-const RATE=90000;
-const CATS=[{"id":"phones","name":"مستلزمات هواتف","icon":"📱"},{"id":"grains","name":"حبوب","icon":"🌾"},{"id":"pasta","name":"نشويات","icon":"🍝"},{"id":"oils","name":"زيوت","icon":"🫙"},{"id":"canned","name":"معلبات","icon":"🥫"},{"id":"dairy","name":"ألبان وأجبان","icon":"🧀"},{"id":"vegs","name":"خضار وفواكه","icon":"🥦"},{"id":"meat","name":"دجاج ولحوم","icon":"🍗"},{"id":"herbs","name":"زعتر وملوخية","icon":"🌿"},{"id":"spices","name":"توابل","icon":"🫙"},{"id":"nuts","name":"تمور ومكسرات وعسل","icon":"🍯"},{"id":"pastry","name":"معجنات ومقبلات","icon":"🥐"},{"id":"sweets","name":"حلويات","icon":"🍰"},{"id":"snacks","name":"سكاكر وموالح","icon":"🍬"},{"id":"drinks","name":"مشروبات","icon":"🥤"},{"id":"frozen","name":"مفرزات","icon":"🧊"},{"id":"diapers","name":"محارم وحفاضات","icon":"🧻"},{"id":"cleaning","name":"منظفات","icon":"🧴"},{"id":"pyjamas","name":"بيجامات","icon":"👘"},{"id":"underwear","name":"ألبسة داخلية","icon":"👙"},{"id":"gifts","name":"أكسسوارات وهدايا","icon":"🎁"},{"id":"clothes","name":"ألبسة خارجية","icon":"👗"},{"id":"home","name":"أدوات منزلية","icon":"🏠"},{"id":"towels","name":"مناشف وبياضات","icon":"🛁"},{"id":"care","name":"عناية شخصية","icon":"💄"},{"id":"stationery","name":"قرطاسية","icon":"✏️"},{"id":"toys","name":"ألعاب","icon":"🧸"},{"id":"hijab","name":"مستلزمات حجاب","icon":"🧕"},{"id":"electric","name":"أدوات كهربائية","icon":"🔌"},{"id":"shoes","name":"أحذية","icon":"👟"},{"id":"books","name":"قصص تربوية","icon":"📚"},{"id":"consumable","name":"مواد استهلاكية","icon":"📦"},{"id":"bakery","name":"المخبوزات","icon":"🍞"},{"id":"daily","name":"الطبق اليومي","icon":"🍽️"},{"id":"cereal","name":"حليب وكورن فليكس","icon":"🥣"},{"id":"hotdrinks","name":"شاي وقهوة","icon":"☕"},{"id":"salads","name":"سلطات","icon":"🥗"},{"id":"perfume","name":"عطورات","icon":"🌸"},{"id":"pets","name":"مستلزمات حيوانات","icon":"🐾"},{"id":"cat_1780792875503","name":"مخللات","icon":"🍝"}];
-const PRODS=[{"id":1001,"name":"زبدة غير مملحة 1000غ golden plate","price":12.305,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fcee2e535-be55-4eed-87c4-ddbf407ea4fd.jpg&w=1920&q=75","cat":"oils"},{"id":1002,"name":"زبدة غير مملحة 100غ Lurpak","price":1.679,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-24%20at%205.06.52%20PM.jpeg&w=1920&q=75","cat":"oils"},{"id":1003,"name":"زبدة غير مملحة 200غ golden plate","price":2.396,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F859f8bf2-9af0-4cbe-8398-7f1fad691963.jfif&w=1920&q=75","cat":"oils"},{"id":1004,"name":"زبدة غير مملحة 200غ Lurpak","price":2.944,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-07%20at%206.40.41%20PM.jpeg&w=1920&q=75","cat":"oils"},{"id":1005,"name":"زبدة غير مملحة 200غ Plein Soleil","price":2.156,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-19%20at%209.31.08%20PM.jpeg&w=1920&q=75","cat":"oils"},{"id":1006,"name":"زبدة غير مملحة 200غ President","price":2.703,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2ed79a1d-729e-4af5-8bbc-2766b770ef49.jpg&w=1920&q=75","cat":"oils"},{"id":1007,"name":"زبدة غير مملحة 400غ Lurpak","price":5.704,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-24%20at%205.06.32%20PM.jpeg&w=1920&q=75","cat":"oils"},{"id":1008,"name":"زبدة فرنسية 10غ *10 President","price":0.863,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2ab7c990-7b9c-4768-9b87-6f79492f7a36.jpg&w=1920&q=75","cat":"oils"},{"id":1009,"name":"زبدة نباتية 200غ Luna","price":0.49,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%84%D9%88%D9%86%D8%A7%2014-12.jpg&w=1920&q=75","cat":"oils"},{"id":1010,"name":"زيت دوار الشمس 1.8 ل plein soleil","price":5.189,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F93cce37a-6660-41d2-b87e-8eade790ca53.jpg&w=1920&q=75","cat":"oils"},{"id":1011,"name":"زيت دوار الشمس 1ل Plein Soleil","price":3.194,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8e70b5c6-c026-4267-91fc-acefd9fb13ab.jpg&w=1920&q=75","cat":"oils"},{"id":1012,"name":"زيت دوار الشمس 3 ل Plein Soleil","price":8.434,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3566e03f-bdb8-4a97-b00b-35c93517cf77.jpg&w=1920&q=75","cat":"oils"},{"id":1013,"name":"زيت دوار الشمس 5 ليتر Mirasol","price":10.232,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F40b311cb-8ee0-4f28-9fea-60b7cacb9c34.jpg&w=1920&q=75","cat":"oils"},{"id":1014,"name":"زيت دوار الشمس 5 ليتر Plein Soleil","price":11.997,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-05-23%20at%206.49.02%20PM.jpeg&w=1920&q=75","cat":"oils"},{"id":1015,"name":"زيت دوار الشمس 5 ليتر Prime","price":9.855,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4c53433b-c29d-496e-8e47-1e14d03b8257.jpg&w=1920&q=75","cat":"oils"},{"id":1016,"name":"زيت دوار الشمس 5ل Holiday","price":9.972,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F53a51ce4-a2f2-4e63-8f48-ee97d0802b73.jpg&w=1920&q=75","cat":"oils"},{"id":1017,"name":"زيت دوار الشمس 8.8 ليتر Gamal","price":16.5,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9bb25a7b-428f-46cb-985e-7eacd781e8c7.jpg&w=1920&q=75","cat":"oils"},{"id":1018,"name":"زيت دوار الشمس 9 ليتر Prime Line","price":17.28,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8a962039-b9cc-4c60-8297-5f8f76ad471f.jpg&w=1920&q=75","cat":"oils"},{"id":1019,"name":"زيت دوار الشمس أوبا 8.8 ل","price":16.47,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%AF%D9%88%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3%208.8%20%D9%84%D9%8A%D8%AA%D8%B1%20OBA.jfif&w=1920&q=75","cat":"oils"},{"id":1020,"name":"زيت دوار الشمس اوبا 5ليتر","price":9.9,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D9%88%D8%A8%D8%A7.jpg&w=1920&q=75","cat":"oils"},{"id":1021,"name":"زيت دوار الشمس جيرسي 5 ليتر","price":9.413,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F469.jpg&w=1920&q=75","cat":"oils"},{"id":1022,"name":"زيت دوار الشمس دعبول 5 ليتر","price":9.99,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%AF%D9%88%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84%205%20%D9%84%D9%8A%D8%AA%D8%B1.jfif&w=1920&q=75","cat":"oils"},{"id":1023,"name":"زيت دوار الشمس ديروني 5 ليتر","price":10.002,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdfa3a37d-8707-4650-951c-fefe51e9b929.jpg&w=1920&q=75","cat":"oils"},{"id":1024,"name":"زيت دوار الشمس سليم 1.8ليتر","price":4.32,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fsmall%20slim.jpeg&w=1920&q=75","cat":"oils"},{"id":1025,"name":"زيت دوار الشمس سليم 4 ليتر","price":9.45,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-06-19%20at%2010.52.24.jpeg&w=1920&q=75","cat":"oils"},{"id":1026,"name":"زيت دوار الشمس عافية 9 ليتر 20%","price":29.967,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb0bc82d7-4e02-4539-8b2d-e2dcef17794d.jfif&w=1920&q=75","cat":"oils"},{"id":1027,"name":"زيت دوار الشمس غندور 0.75 ل","price":2.3,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ffb0d5ba0-557c-4847-9dd4-ec3d48991a1c.jpg&w=1920&q=75","cat":"oils"},{"id":1028,"name":"زيت دوار الشمس غندور 1.6ليتر","price":4.615,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd497695d-4d14-4f60-a6fe-677e901b0161.jpg&w=1920&q=75","cat":"oils"},{"id":1029,"name":"زيت دوار الشمس غندور 4 ليتر","price":10.87,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F49cd5320-e4bc-432a-983c-c92e9e58c241.jfif&w=1920&q=75","cat":"oils"},{"id":1030,"name":"زيت ذرة عافية 1.5 ليتر","price":7.29,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F33ade9c2-afcb-411a-86b4-1de3014291d7.jpg&w=1920&q=75","cat":"oils"},{"id":1031,"name":"زيت زيتون 400غ lebaytcom","price":3.738,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%B2%D9%8A%D8%AA%D9%88%D9%86%20400%D8%BA%20lebaytcom.jpg&w=1920&q=75","cat":"oils"},{"id":1032,"name":"زيت زيتون بكر سعيفان مربعة 500مل","price":7.207,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2f4ba4d2-0716-4a78-b0ee-74743989ce26.jpg&w=1920&q=75","cat":"oils"},{"id":1033,"name":"زيت زيتون سعيفان 250مل","price":3.78,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F68e569d7-78ae-4ff4-9bea-44f64ca6913b.jpg&w=1920&q=75","cat":"oils"},{"id":1034,"name":"زيت زيتون سعيفان 500مل","price":6.955,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F5490a2fb-1001-44de-84e4-8ec8dae972ff.jpg&w=1920&q=75","cat":"oils"},{"id":1035,"name":"زيت صويا مكرر 490غ Iman","price":1.466,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%B5%D9%88%D9%8A%D8%A7%20%D9%85%D9%83%D8%B1%D8%B1%20490%D8%BA%20Iman.jfif&w=1920&q=75","cat":"oils"},{"id":1036,"name":"سمن بقري 800غ Golden plate","price":19.842,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3e7e72ae-964c-4a1d-854a-a922ad0966ef.jpg&w=1920&q=75","cat":"oils"},{"id":1037,"name":"سمن جوز الهند الصافي 1.8كلغ Rami Vegetal","price":11.48,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F84ba96de-e212-410b-8864-9249b9267683.jpg&w=1920&q=75","cat":"oils"},{"id":1038,"name":"سمن جوز الهند الصافي 3.5كغ Rami Vegetal","price":21.84,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F84ba96de-e212-410b-8864-9249b9267683.jpg&w=1920&q=75","cat":"oils"},{"id":1039,"name":"سمن نباتي قوت القلوب 4.25 كلغ","price":12.32,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F92df3809-42cb-401d-a679-26068ec4d1c0.jfif&w=1920&q=75","cat":"oils"},{"id":1040,"name":"سمنة نباتي غير مهدرج كريساتال 2.5 كلغ","price":4.904,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F270804fd-b64b-4584-b63f-58f9e72e8370.jfif&w=1920&q=75","cat":"oils"},{"id":1041,"name":"سمنة البقرة الحلوب 2 كلغ","price":46.75,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb22fe978-fd4e-4a62-ae9e-04c4558a7732.jpg&w=1920&q=75","cat":"oils"},{"id":1042,"name":"سمنة البقرة الحلوب 400غ","price":12.604,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F843c976f-0b7a-4e40-a4dc-7ef69ebc6638.jpg&w=1920&q=75","cat":"oils"},{"id":1043,"name":"سمنة البقرة الحلوب 800 غ","price":25.209,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F83dd7fc8-3d3a-446d-b014-668db80c5189.jpg&w=1920&q=75","cat":"oils"},{"id":1044,"name":"سمنة الراعي 1.4ل","price":3.209,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa3b19f7a-bd80-4fb4-8862-4de9436a866e.jpg&w=1920&q=75","cat":"oils"},{"id":1045,"name":"سمنة الراعي 5 ل","price":11.55,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F6740dfa5-9299-4b78-ae7e-486473389d2b.jpg&w=1920&q=75","cat":"oils"},{"id":1046,"name":"سمنة الراعي 700مل","price":1.604,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff58c75fd-a326-4079-b402-1bcdb708057b.jpg&w=1920&q=75","cat":"oils"},{"id":1047,"name":"سمنة الروابي 1.5 كلغ","price":3.987,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-06-19%20at%2010.46.55.jpeg&w=1920&q=75","cat":"oils"},{"id":1048,"name":"سمنة حيواني خير وبركة 500غ","price":9.894,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fed470a0c-3005-41cd-8465-c95d46c88ce9.jpg&w=1920&q=75","cat":"oils"},{"id":1049,"name":"سمنة نباتي افت 1730غ","price":6.6,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%86%D8%A9%20%D9%86%D8%A8%D8%A7%D8%AA%D9%8A%D8%A9%201975%D8%BA%20EVET.jpg&w=1920&q=75","cat":"oils"},{"id":1050,"name":"سمنة نباتي افت 4كغ","price":12.65,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc9ec8b73-b884-4786-87f9-37341e229325.jpg&w=1920&q=75","cat":"oils"},{"id":1051,"name":"سمنة نباتي افت 910غ","price":4.125,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%86%D8%A9%20%D9%86%D8%A8%D8%A7%D8%AA%D9%8A%D8%A9%20910%D8%BA%20EVET.jpg&w=1920&q=75","cat":"oils"},{"id":1052,"name":"سمنة نباتي الهانم 700غ","price":2.354,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F85bfa3d8-275d-4127-aeec-3a0ea912e72a.jpg&w=1920&q=75","cat":"oils"},{"id":1053,"name":"سمنة نباتية اريج 900غ","price":3.33,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-25%20at%207.35.10%20PM.jpeg&w=1920&q=75","cat":"oils"},{"id":1054,"name":"سمنة نباتية الهانم 1.5 كلغ","price":4.813,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F950fc0ff-f5a2-4605-bf9d-37a630539fd9.jpg&w=1920&q=75","cat":"oils"},{"id":1055,"name":"سمنة نباتية بطعم الزبدة الصفراء قوت 1.45كغ","price":4.056,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%86%D8%A91-2.jpg&w=1920&q=75","cat":"oils"},{"id":1056,"name":"سمنة نباتية بطعم الزبدة الصفراء قوت 2.5 كلغ","price":5.671,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-19%20at%209.32.38%20PM.jpeg&w=1920&q=75","cat":"oils"},{"id":1057,"name":"سمنة نباتية بطعم الزبدة الصفراء قوت 650غ","price":2.013,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-22%20at%204.42.47%20PM.jpeg&w=1920&q=75","cat":"oils"},{"id":1058,"name":"مرغرين غولد 200غ Plein Soleil","price":1.467,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-17%20at%2012.18.04%20PM.jpeg&w=1920&q=75","cat":"oils"},{"id":2001,"name":"POWER BANK 10000 FAST CHARGING DP43 VDENMENV","price":5.525,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F71a77cb0-30b4-4b06-a03b-93d9aeadaadc.jpg&w=1920&q=75","cat":"phones"},{"id":2002,"name":"Power Bank With 2 Cable Type C+ Lightning Clever+","price":12.6,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9f0c30d6-4eea-47a9-a90e-b9623d3d4b1b.jpg&w=1920&q=75","cat":"phones"},{"id":2003,"name":"USB FLASH DRIVE 128GB BOROFONE","price":11.9,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F667363d8-8d6b-455d-8bea-5f9f74b42159.jpg&w=1920&q=75","cat":"phones"},{"id":2004,"name":"ادابتر سيارة 3 مخارج 55 واط Quick Charger","price":5.152,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Faa3bd519-c3bf-4b11-8d66-3ea39e235014.jfif&w=1920&q=75","cat":"phones"},{"id":2005,"name":"حاملة لتثبيت الهاتف ملونة","price":0.5,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4aa50e64-d655-4b32-9516-cd5b42aec7fa.jpg&w=1920&q=75","cat":"phones"},{"id":2006,"name":"سماعات BOROFONE WIRELESS B023","price":10.5,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F34c0fc2a-f369-43ca-be81-e233dba03a88.jpg&w=1920&q=75","cat":"phones"},{"id":2007,"name":"سماعات HOCO WIRELESS W35","price":12.6,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4deb042c-bf54-4d97-a828-df067f10f0ad.jpg&w=1920&q=75","cat":"phones"},{"id":2008,"name":"سماعات بلوتوث Borofone Noise Cancelation","price":10.5,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb924b5e0-2886-4773-890e-2f876510733c.jfif&w=1920&q=75","cat":"phones"},{"id":2009,"name":"سماعات بلوتوث شكل قطة HOCO EW46","price":11.7,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F63686032-eada-44e8-ad3b-2c2579baac97.jpg&w=1920&q=75","cat":"phones"},{"id":2010,"name":"شاحن 18 واط BOROFONE BAS72A","price":2.66,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F29f913ca-c157-4185-97e0-1cd80535ab5d.jpg&w=1920&q=75","cat":"phones"},{"id":2011,"name":"شاحن 30 واط BOROFONE BAS45A","price":5.25,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fcb0b2b82-d3c9-4b91-9edd-2ad2ccec8d18.jpg&w=1920&q=75","cat":"phones"},{"id":2012,"name":"شاحن حديث 20 واط BOROFONE TYPE C BA81","price":3.08,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F5bf2199f-9359-4be9-958d-d0e95a89fe92.jfif&w=1920&q=75","cat":"phones"},{"id":2013,"name":"شاحن حديث 20واط BOROFONE","price":2.94,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%AF%D8%A8%D8%AA%D8%B1%20%D8%AD%D8%AF%D9%8A%D8%AB%2020%D9%88%D8%A7%D8%B7%20BOROFONE.jpg&w=1920&q=75","cat":"phones"},{"id":2014,"name":"شاحن سيارة مع وصلة 1 متر BOROFONE TYPE C BZ12A","price":2.31,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb481cbb7-5847-487a-bd6a-1efa030cd4b9.jpg&w=1920&q=75","cat":"phones"},{"id":2015,"name":"شاحن سيارة مع وصلة 1 متر BOROFONE SAMSUNG BZ12A","price":2.31,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe8b1dcb9-5c0d-4c13-a877-d50bedd00fb9.jpg&w=1920&q=75","cat":"phones"},{"id":2016,"name":"شاحن سيارة مع وصلة BOROFONE IPHONE BZ12","price":2.31,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc029d968-9a60-42d2-9996-0cb975e58c3b.jpg&w=1920&q=75","cat":"phones"},{"id":2017,"name":"شاحن مع وصلة 18 واط MOXOM SAMSUNG","price":3.5,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd8babc68-0ad9-4c38-9acd-a316c1aa8e88.jpg&w=1920&q=75","cat":"phones"},{"id":2018,"name":"شاحن مع وصلة 18 واط MOXOM TYPE C","price":3.5,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F58cf3637-e1bf-4b75-807b-3a13d62775f5.jpg&w=1920&q=75","cat":"phones"},{"id":2019,"name":"شاحن مع وصلة 20 واط BOROFONE BA81A C TO C","price":3.99,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F6600345f-7f5e-433e-944b-2fb1be19b20b.jpg&w=1920&q=75","cat":"phones"},{"id":2020,"name":"وصلة اوكس 1 متر BOROFONE BL19","price":0.98,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%88%D8%B5%D9%84%D8%A9%20%D8%A7%D9%88%D9%83%D8%B3%20BOROFONE.jfif&w=1920&q=75","cat":"phones"},{"id":2021,"name":"وصلة اوكس 1 متر BOROFONE BL25B TYPE C","price":2.275,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F111babd0-3545-43f8-9b84-998e6fe0cd37.jpg&w=1920&q=75","cat":"phones"},{"id":2022,"name":"وصلة تايب-سي ايفون 1م Coye","price":4.83,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8201b47c-15e4-4688-beb0-93dfc131fe4d.jfif&w=1920&q=75","cat":"phones"},{"id":2023,"name":"وصلة شاحن 2 متر BOROFONE BX87 IPHONE","price":2.45,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fcc6a2d74-ec32-4e20-bfec-97f0894f8810.jpg&w=1920&q=75","cat":"phones"},{"id":2024,"name":"وصلة شاحن 4 رؤوس 65 واط Flat wire","price":5.026,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2d3b73b9-999c-4357-9bb5-5e90feb443e7.jfif&w=1920&q=75","cat":"phones"},{"id":2025,"name":"وصلة هاتف 1 متر BOROFONE BX19 IPHONE","price":0.91,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F091f1f80-8ed4-4913-8393-13cc43938823.jpg&w=1920&q=75","cat":"phones"},{"id":2026,"name":"وصلة هاتف 1 متر BOROFONE BX111 USB-C TO IPHONE","price":1.12,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9475e50d-8eb7-443f-80a8-4a1f9a8c608a.jpg&w=1920&q=75","cat":"phones"},{"id":2027,"name":"وصلة هاتف 1 متر BOROFONE BX19 SAMSUNG","price":0.91,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F0ea90f32-0b5f-4ec4-b2ac-6c9d296a33e2.jpg&w=1920&q=75","cat":"phones"},{"id":2028,"name":"وصلة هاتف 1 متر BOROFONE BX51 TYPE C TO IPHONE","price":1.12,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F05743a42-5402-4834-9c1d-81d156ef9a69.jpg&w=1920&q=75","cat":"phones"},{"id":2029,"name":"وصلة هاتف 1 متر BOROFONE BX54 IPHONE","price":0.84,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb2315362-03d9-464a-9463-72e126a88e1a.jpg&w=1920&q=75","cat":"phones"},{"id":2030,"name":"وصلة هاتف 1 متر BOROFONE BX54 SAMSUNG","price":0.84,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc3a1fbd4-ee82-4b23-831e-ea2cc82ffbc6.jpg&w=1920&q=75","cat":"phones"},{"id":2031,"name":"وصلة هاتف 1 متر BOROFONE BX87 USBA-TO IPHONE","price":0.91,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8bee7676-1db8-452b-a5d6-6944f713465b.jpg&w=1920&q=75","cat":"phones"},{"id":2032,"name":"وصلة هاتف 1 متر BOROFONE BX87 USBA-TO SAMSUNG","price":0.91,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F7667c52e-5077-435d-86cb-05e53a295daa.jpg&w=1920&q=75","cat":"phones"},{"id":2033,"name":"وصلة هاتف 1 متر BOROFONE TYPE A TO C BX111","price":0.845,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%88%D8%B5%D9%84%D8%A9%20%D9%87%D8%A7%D8%AA%D9%81%20BOROFONE%20TYPE%20C%20BX111.jpg&w=1920&q=75","cat":"phones"},{"id":2034,"name":"وصلة هاتف 1 متر BOROFONE TYPE C BX54","price":0.84,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb09a4333-6cd0-4816-9a3c-763cb89baf18.jpg&w=1920&q=75","cat":"phones"},{"id":2035,"name":"وصلة هاتف 2 متر BOROFONE SAMSUNG BX14","price":2.275,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F24292157-0a73-4ee7-a798-699971255a66.jpg&w=1920&q=75","cat":"phones"},{"id":2036,"name":"وصلة هاتف 3 متر BOROFONE BX14 SAMSUNG","price":2.6,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F36b6c563-dbf4-44ec-843e-9291003201b2.jpg&w=1920&q=75","cat":"phones"},{"id":2037,"name":"ارز احمر 500غ TAJ","price":3.68,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F07e3c84d-ad4a-4bb9-ab14-5f9aef669071.jpg&w=1920&q=75","cat":"grains"},{"id":2038,"name":"ارز اسمر 500غ TAJ","price":2.3,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F129aa241-fb8c-4ede-8455-248f89ad6a1a.jpg&w=1920&q=75","cat":"grains"},{"id":2039,"name":"ارز اسود 500غ TAJ","price":3.68,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F5fd6b870-b1f2-43fc-9aac-3a9af4957092.jpg&w=1920&q=75","cat":"grains"},{"id":2040,"name":"ارز اميركي الجودة 900غ","price":1.126,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe6fa3f99-5f2e-4da9-8547-574a4eefb20c.jfif&w=1920&q=75","cat":"grains"},{"id":2041,"name":"ارز ايطالي بالدو 900غ avila","price":2.471,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F54d57ea7-d5b0-4808-abf3-cb953b0631f7.jfif&w=1920&q=75","cat":"grains"},{"id":2042,"name":"ارز ايطالي 900غ Riso della famiglia","price":1.348,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-06-19%20at%2013.32.32%20(2).jpeg&w=1920&q=75","cat":"grains"},{"id":2043,"name":"ارز ايطالي بالدو 900غ Glob Garden","price":2.497,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F184.jpg&w=1920&q=75","cat":"grains"},{"id":2044,"name":"ارز ايطالي بالدو 900غ Holiday","price":1.617,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%B1%D8%B2%20%D8%A7%D8%A8%D8%B7%D8%A7%D9%84%D9%8A%20%D9%87%D9%88%D9%84%D9%8A%D8%AF%D9%8A%20900%D8%BA.jpg&w=1920&q=75","cat":"grains"},{"id":2045,"name":"ارز ايطالي بالدو الجودة 2 كغ","price":5.444,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F29a55c0a-f0f3-4be9-9dd1-9744b40d20af.jpg&w=1920&q=75","cat":"grains"},{"id":2046,"name":"ارز ايطالي بالدو الجودة 5 كيلو","price":13.565,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F33694ade-ac6e-42c6-b4c7-fd3d5475c12f.jfif&w=1920&q=75","cat":"grains"},{"id":2047,"name":"ارز ايطالي بالدو الجودة 900غ","price":2.454,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F33694ade-ac6e-42c6-b4c7-fd3d5475c12f.jfif&w=1920&q=75","cat":"grains"},{"id":2048,"name":"ارز ايطالي بالدو دعبول 5 كيلغ","price":9.603,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9c38b1af-1f2c-44e6-a56e-eb39b281d62b.jpg&w=1920&q=75","cat":"grains"},{"id":2049,"name":"ارز ايطالي بالدو دعبول 900غ","price":1.973,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F20d8294a-8d41-4531-8b2e-ac8e3ff0f0d9.jpg&w=1920&q=75","cat":"grains"},{"id":2050,"name":"ارز ايطالي دعبول 5 كيلو","price":7.822,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F10a4bab8-8b83-407b-9349-058f7332b2de.jpg&w=1920&q=75","cat":"grains"},{"id":2051,"name":"ارز ايطالي دعبول 900غ","price":1.494,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc7ac2a83-30b2-4a3b-a106-1a2aef0d322f.jpg&w=1920&q=75","cat":"grains"},{"id":2052,"name":"ارز ايطالي لوتو 900غ Glob Garden","price":1.848,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F173.jpg&w=1920&q=75","cat":"grains"},{"id":2053,"name":"ارز ايطالي لوتو الجودة 900غ","price":1.875,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fbc0068c4-4b0e-435e-b7c4-b3d4de7db272.jfif&w=1920&q=75","cat":"grains"},{"id":2054,"name":"ارز ايطالي لوتو دعبول 5 كغ","price":5.867,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe1196e55-7759-4fda-97f9-b5569f306695.jpg&w=1920&q=75","cat":"grains"},{"id":2055,"name":"ارز ايطالي لوتو ديروني 900غ","price":1.109,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-05-24%20at%209.52.44%20PM.jpeg&w=1920&q=75","cat":"grains"},{"id":2056,"name":"ارز بسمتي 4كغ Little India","price":6.912,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F16bbbd38-cb7b-4d78-bc96-d3cb22d472ef.jpg&w=1920&q=75","cat":"grains"},{"id":2057,"name":"ارز بسمتي 5 كغ Deroni","price":11.893,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3afd92d7-3480-40ee-994c-6b0c311a79d3.jpg&w=1920&q=75","cat":"grains"},{"id":2058,"name":"ارز بسمتي 800غ taj","price":2.596,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdb7313e2-cb00-4de9-b8be-8257d6f57f80.jfif&w=1920&q=75","cat":"grains"},{"id":2059,"name":"ارز بسمتي 900غ Glob Garden","price":2.178,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb7bebbef-946a-4ba5-82f4-a17549df4aed.jpg&w=1920&q=75","cat":"grains"},{"id":2060,"name":"ارز بسمتي ابو راشد 800غ","price":1.716,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-06-19%20at%2010.46.23.jpeg&w=1920&q=75","cat":"grains"},{"id":2061,"name":"ارز بسمتي اسمر 1كغ Little India","price":2.8,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8e6150e1-f8e5-4db0-8fa0-0d231cfd7a23.jpg&w=1920&q=75","cat":"grains"},{"id":2062,"name":"ارز بسمتي الماس ديروني 4كغ","price":8.659,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc0bca8ed-dfe3-4765-9b45-35fe3a913c31.jpg&w=1920&q=75","cat":"grains"},{"id":2063,"name":"ارز بسمتي الماس ديروني 800غ","price":1.848,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F76b2131e-8bcf-40d1-86c7-590f2b7c3067.jpg&w=1920&q=75","cat":"grains"},{"id":2064,"name":"ارز بسمتي سلام 5 كيلو","price":8.461,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%B1%D8%B2%20%D8%A8%D8%B3%D9%85%D8%AA%D9%8A%20%D8%B3%D9%84%D8%A7%D9%85%205%20%D9%83%D9%8A%D9%84%D9%88.jfif&w=1920&q=75","cat":"grains"},{"id":2065,"name":"ارز بسمتي سيلا فضي ديروني 4 كيلو","price":8.018,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F152b266e-0e5a-45e3-8e7f-e3642d836f51.jpg&w=1920&q=75","cat":"grains"},{"id":2066,"name":"ارز بسمتي هديل 900 غرام","price":2.025,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa8ea3aa3-608c-466e-a591-505162bdf5a3.jfif&w=1920&q=75","cat":"grains"},{"id":2067,"name":"ارز بسمتي هندي 1 كيلو Avila","price":1.966,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fea0a8611-0661-4c90-a4f8-5b66d72b83b2.jfif&w=1920&q=75","cat":"grains"},{"id":2068,"name":"ارز بسمتي هندي 1600غ TAJ","price":3.326,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdb7313e2-cb00-4de9-b8be-8257d6f57f80.jfif&w=1920&q=75","cat":"grains"},{"id":2069,"name":"ارز بسمتي هندي اكسترا 5 كلغ avila","price":10.454,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F01932098-53b8-488b-a323-921540efdf71.jpg&w=1920&q=75","cat":"grains"},{"id":2070,"name":"ارز تايلندي حبة طويلة دعبول 5 كلغ","price":5.205,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AA%D8%A7%D9%8A%D9%84%D9%86%D8%AF%D9%8A%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75","cat":"grains"},{"id":2071,"name":"ارز مصري 5كغ Glob Garden","price":7.02,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd9c4a628-025a-4bca-9228-cd4c1e0147be.jfif&w=1920&q=75","cat":"grains"},{"id":2072,"name":"ارز مصري 900غ Glob Garden","price":1.264,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F191.jpg&w=1920&q=75","cat":"grains"},{"id":2073,"name":"ارز مصري 900غ OBA","price":0.771,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa930e0a9-4587-43ca-a856-29cfc53daa16.jpg&w=1920&q=75","cat":"grains"},{"id":2074,"name":"ارز مصري الجودة 900غ","price":1.285,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe2860ca2-4985-42df-8d7d-bb66adbfc551.jfif&w=1920&q=75","cat":"grains"},{"id":2075,"name":"ارز مصري دعبول 5 كلغ","price":4.644,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%85%D8%B5%D8%B1%D9%8A%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75","cat":"grains"},{"id":2076,"name":"ارز مصري دعبول 900غ","price":0.891,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%B1%D8%B2%20%D9%85%D8%B5%D8%B1%D9%8A%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84900.png&w=1920&q=75","cat":"grains"},{"id":2077,"name":"ارز مصري نملية 5 كيلو","price":4.535,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%B1%D8%B2%20%D9%85%D8%B5%D8%B1%D9%8A%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%205%20%D9%83%D9%84%D8%BA.jfif&w=1920&q=75","cat":"grains"},{"id":2078,"name":"ارز مصري نملية 900غ","price":0.934,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fmasri.jfif&w=1920&q=75","cat":"grains"},{"id":2079,"name":"ارز مطحون ميسو 500غ","price":0.782,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F89b3bf17-df21-40c6-8eaf-40911dc0a615.jpg&w=1920&q=75","cat":"grains"},{"id":2080,"name":"ارز ناعم 400غ Glob Garden","price":0.792,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F415.jpg&w=1920&q=75","cat":"grains"},{"id":2081,"name":"برغل ابيض خشن 900غ Avila","price":1.102,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%BA%D9%84%20%D8%A7%D8%A8%D9%8A%D8%B6%20%D8%AE%D8%B4%D9%86%20900%D8%BA%20Avila.jfif&w=1920&q=75","cat":"grains"},{"id":2082,"name":"برغل ابيض خشن 900غ Glob Garden","price":1.232,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F192.jpg&w=1920&q=75","cat":"grains"},{"id":2083,"name":"برغل ابيض خشن دعبول 900غ","price":0.865,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F123ccd54-724c-4f2f-b0ec-f27289dca0e6.jfif&w=1920&q=75","cat":"grains"},{"id":2084,"name":"برغل ابيض خشن زماطي نملية 900غ","price":0.978,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84%20%D8%B2%D9%85%D8%A7%D8%B7%D9%8A.jfif&w=1920&q=75","cat":"grains"},{"id":2085,"name":"برغل ابيض زماطية 900غ Glob Garden","price":1.21,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F192.jpg&w=1920&q=75","cat":"grains"},{"id":2086,"name":"برغل ابيض ناعم 900غ avila","price":1.102,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F079b8147-44db-4cd6-b969-0a34396f0461.jpg&w=1920&q=75","cat":"grains"},{"id":2087,"name":"برغل ابيض ناعم 900غ Glob Garden","price":1.265,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F193.jpg&w=1920&q=75","cat":"grains"},{"id":2088,"name":"برغل ابيض ناعم دعبول 900غ","price":0.865,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F81d376a5-de0b-4939-b5d0-3ecd97645d57.jpg&w=1920&q=75","cat":"grains"},{"id":2089,"name":"برغل ابيض ناعم نملية 900غ","price":0.939,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84%20%D8%A7%D8%A8%D9%8A%D8%B6%20%D9%86%D8%A7%D8%B9%D9%85%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jpg&w=1920&q=75","cat":"grains"},{"id":2090,"name":"برغل اسمر خشن 900غ TRUST FOOD","price":0.67,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AE%D8%B4%D9%862-9.jpg&w=1920&q=75","cat":"grains"},{"id":2091,"name":"برغل اسمر خشن الجودة 900غ","price":1.088,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F95cd11ca-58e3-473e-bccf-b46080c12267.jfif&w=1920&q=75","cat":"grains"},{"id":2092,"name":"برغل اسمر خشن ديروني 900غ","price":0.779,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202022-07-29%20at%202.43.56%20PM.jpeg&w=1920&q=75","cat":"grains"},{"id":2093,"name":"برغل اسمر خشن نملية 900غ","price":1.022,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84%20%D8%A7%D8%B3%D9%85%D8%B1%20%D8%AE%D8%B4%D9%86%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75","cat":"grains"},{"id":2094,"name":"برغل اسمر ناعم 900غ Avila","price":0.958,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84%20%D8%A7%D8%B3%D9%85%D8%B1%20%D9%86%D8%A7%D8%B9%D9%85%20900%D8%BA%20Avila.jpg&w=1920&q=75","cat":"grains"},{"id":2095,"name":"برغل اسمر ناعم الجودة 900غ","price":1.044,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F15535dc0-c811-471a-9632-4ad7e6080e28.jfif&w=1920&q=75","cat":"grains"},{"id":2096,"name":"برغل اسمر ناعم دعبول 900غ","price":0.833,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%B3%D9%85%D8%B1.jpeg&w=1920&q=75","cat":"grains"},{"id":2097,"name":"برغل اسمر ناعم نملية 900غ","price":0.978,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84%20%D8%A7%D8%B3%D9%85%D8%B1%20%D9%86%D8%A7%D8%B9%D9%85%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75","cat":"grains"},{"id":2098,"name":"برغل خشن ابيض زماطي ديروني 900غ","price":0.905,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84.jfif&w=1920&q=75","cat":"grains"},{"id":2099,"name":"بوشار دعبول 450غ","price":0.467,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-06%20at%205.41.01%20PM.jpeg&w=1920&q=75","cat":"grains"},{"id":2100,"name":"بوشار دعبول 900غ","price":0.929,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-24%20at%206.41.09%20PM.jpeg&w=1920&q=75","cat":"grains"},{"id":2101,"name":"ترمس حلو 500غ Avila","price":1.137,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F24892140-eaeb-46f9-b1d2-af0b9f5ccb27.jpg&w=1920&q=75","cat":"grains"},{"id":2102,"name":"ترمس حلو نملية 900غ","price":1.327,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F321.jpg&w=1920&q=75","cat":"grains"},{"id":2103,"name":"حمص اميركي 900 غ Glob Garden","price":1.969,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AD%D9%85%D8%B5%20%D8%A7%D9%85%D9%8A%D8%B1%D9%83%D9%8A%20900%20%D8%BA%20Glob%20Gardeen14.3.2025.jfif&w=1920&q=75","cat":"grains"},{"id":2104,"name":"حمص حب 900غ Dila","price":0.972,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd5afeafa-18e0-40f8-8512-177e3deda040.jpg&w=1920&q=75","cat":"grains"},{"id":2105,"name":"حمص حب 900غ prime","price":0.972,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Faab37a55-c667-4246-bf5e-3dc3ce2ded89.jfif&w=1920&q=75","cat":"grains"},{"id":2106,"name":"حمص حب اكسترا ديروني 900غ","price":1.125,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AD%D9%85%D8%B5.jfif&w=1920&q=75","cat":"grains"},{"id":2107,"name":"حمص حب اوبا 900غ","price":0.95,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F341ddad6-6567-49e6-ba90-c51bb1d071f7.jpg&w=1920&q=75","cat":"grains"},{"id":2108,"name":"حمص حب دعبول 900غ","price":1.296,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AD%D9%85%D8%B5%20%D8%AD%D8%A8%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75","cat":"grains"},{"id":2109,"name":"حمص حب فحلي ديروني 900غ","price":2.493,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd66f67cd-efb9-494c-86b3-ae6f4475f596.jpg&w=1920&q=75","cat":"grains"},{"id":2110,"name":"حمص صغير 900غ Avila","price":1.575,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F15478053-4440-4ba0-9c7f-dd02f39b1d28.jfif&w=1920&q=75","cat":"grains"},{"id":2111,"name":"حمص فحلي 900غ Avila","price":2.944,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fab115a7d-4e7a-49fa-844a-e0cce7262294.jpg&w=1920&q=75","cat":"grains"},{"id":2112,"name":"حمص فحلي 900غ Glob Garden","price":3.047,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F6af2b944-08fe-4cae-b46f-dd3a0ddddbca.jpg&w=1920&q=75","cat":"grains"},{"id":2113,"name":"حمص فحلي الجودة 900غ","price":3.177,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdf906e32-7d60-433c-9a03-9c83e0aa8d6c.jfif&w=1920&q=75","cat":"grains"},{"id":2114,"name":"حمص فحلي دعبول 900غ","price":2.398,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AD%D9%85%D8%B5%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75","cat":"grains"},{"id":2115,"name":"حمص فحلي نملية 900غ","price":2.607,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%85%D8%B5%20%D9%81%D8%AD%D9%84%D9%8A%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75","cat":"grains"},{"id":2116,"name":"حمص كندي الجودة 900غ","price":1.589,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8843ed4a-b77a-4550-901e-f72cdef39e76.jpg&w=1920&q=75","cat":"grains"},{"id":2117,"name":"حمص مفقوش الجودة 500غ","price":1.654,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F22679ce3-61e0-4681-83b8-2b1512fab8a9.jpg&w=1920&q=75","cat":"grains"},{"id":2118,"name":"خل ابيض 1 ليتر Glob Garden","price":0.691,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F279.jpg&w=1920&q=75","cat":"cat_1780792875503"},{"id":2119,"name":"ذرة بوشار 400غ Glob Garden","price":0.702,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F634335f1-5ace-49f7-a47a-fd875234b5dd.jpg&w=1920&q=75","cat":"grains"},{"id":2120,"name":"ذرة بوشار 900غ Glob garden","price":1.458,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F634335f1-5ace-49f7-a47a-fd875234b5dd.jpg&w=1920&q=75","cat":"grains"},{"id":2121,"name":"ذرة بوشار الجودة 400غ","price":0.714,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc04f458d-5afe-4920-9784-30f5504f021a.jfif&w=1920&q=75","cat":"grains"},{"id":2122,"name":"ذرة بوشار الجودة 900غ","price":1.434,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4ec165a0-c13b-48a8-a077-9cfe29207b07.jfif&w=1920&q=75","cat":"grains"},{"id":2123,"name":"ذرة بوشار ديروني 450غ","price":0.499,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202022-07-29%20at%201.45.38%20PM.jpeg&w=1920&q=75","cat":"grains"},{"id":2124,"name":"ذرة بوشار نملية 500غ","price":0.586,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F7d534285-725e-4fd9-b284-c3374d0d09de.jpg&w=1920&q=75","cat":"phones"},{"id":2125,"name":"ذرة بوشار400غ Avila","price":0.567,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F104b65b4-b287-4c4a-b174-f44b0b14fb23.jpg&w=1920&q=75","cat":"grains"},{"id":2126,"name":"ذرة بوشار900غ OBA","price":0.762,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F417f014b-f4a4-4929-846f-923e3f43b1c0.jpg&w=1920&q=75","cat":"grains"},{"id":2127,"name":"رز بسمتي 900غ Little India","price":1.62,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B1%D8%B2%20%D8%A8%D8%B3%D9%85%D8%AA%D9%8A%20900%D8%BA%20Little%20India.jpg&w=1920&q=75","cat":"grains"},{"id":2128,"name":"رز بسمتي براق 1كغ","price":1.72,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fac47d6a8-f790-41b5-a658-bd4439f9315f.jpg&w=1920&q=75","cat":"grains"},{"id":2129,"name":"رز بسمتي براق 5كغ","price":8.336,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F22daf9e4-ef7f-462b-94c1-bdb5223e54ed.jpg&w=1920&q=75","cat":"grains"},{"id":2130,"name":"رز بسمتي سيلا فضي ديروني 800غ","price":1.632,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F976b83a7-cfb5-4182-91bf-c718764d3d2a.jpg&w=1920&q=75","cat":"grains"},{"id":2131,"name":"زعتر احمر اكسترا نكهة حلب 400غ","price":2.745,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F1ba4ca4d-a748-48f6-83dd-2979e81fc88d.jpg&w=1920&q=75","cat":"grains"},{"id":2132,"name":"سكر ابيض 5كلغ PRIME LINE","price":3.528,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fafb2a862-6279-4bfb-89a3-3888f95a4567.jpg&w=1920&q=75","cat":"grains"},{"id":2133,"name":"سكر ابيض 900غ dila","price":0.644,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff60a9d03-ccbe-46fa-89d2-61ef03ea6e64.jpg&w=1920&q=75","cat":"grains"},{"id":2134,"name":"سكر ابيض 900غ TRUST FOOD","price":0.61,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb8a4e97c-2964-4223-98ac-7cf7ec8d5379.jpg&w=1920&q=75","cat":"grains"},{"id":2135,"name":"سكر ابيض الاسرة 2 كلغ","price":1.671,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%83%D8%B1%20%D8%A7%D8%A8%D9%8A%D8%B6%20%D8%A7%D9%84%D8%A7%D8%B3%D8%B1%D8%A9%202%20%D9%83%D9%84%D8%BA.jfif&w=1920&q=75","cat":"grains"},{"id":2136,"name":"سكر ابيض الاسرة 5 كلغ","price":4.177,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F41b5dd6c-4e48-4913-b450-09a45cb189bd.jpg&w=1920&q=75","cat":"grains"},{"id":2137,"name":"سكر ابيض ديروني 5 كلغ","price":3.931,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F0e419a98-3fbe-46b5-aa08-1e8ff3fbda39.jpg&w=1920&q=75","cat":"grains"},{"id":2138,"name":"سكر ابيض ديروني 900غ","price":0.698,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202022-08-01%20at%2011.45.32%20AM.jpeg&w=1920&q=75","cat":"grains"},{"id":2139,"name":"سكر ابيض فرنسي 5كغ Avila","price":4.749,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3a384e3d-3517-4866-b25e-bbf4e1a582ab58.jfif&w=1920&q=75","cat":"grains"},{"id":2140,"name":"سكر ابيض فرنسي الجودة 900غ","price":0.843,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F96aa3c05-e34f-417d-a019-c7e571741c3a.jfif&w=1920&q=75","cat":"grains"},{"id":2141,"name":"سكر ابيض مكعبات كريستال 1كغ","price":2.705,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2a36ad95-2b6e-4c78-9770-3207b916f1ff.jpg&w=1920&q=75","cat":"grains"},{"id":2142,"name":"سكر ابيض نمليه 5 كيلو","price":3.841,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9d8ba09f-b25e-46ca-99a2-5acfb85f9a92.jfif&w=1920&q=75","cat":"grains"},{"id":2143,"name":"سكر اسمر 500غ Avila","price":1.505,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%83%D8%B1%20%D8%A7%D8%B3%D9%85%D8%B1%20500%D8%BA%20Avila.jfif&w=1920&q=75","cat":"grains"},{"id":2144,"name":"سكر اسمر 500غ Mauricio","price":1.95,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F230.jpg&w=1920&q=75","cat":"grains"},{"id":2145,"name":"سكر اسمر مكعبات الاسرة 500غ","price":2.854,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff8d2af73-54b6-4834-873b-332cf37f3452.jpg&w=1920&q=75","cat":"grains"},{"id":2146,"name":"سكر اسمر مكعبات كريستال 1كغ","price":3.073,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fce54d274-d4d7-4f98-a9ea-a5de68da9e55.jpg&w=1920&q=75","cat":"grains"},{"id":2147,"name":"سكر فرنسي 900غ Glob Garden","price":0.869,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F203.jpg&w=1920&q=75","cat":"grains"},{"id":2148,"name":"سكر قصب ابيض 10 كلغ الاسرة","price":7.546,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8476b8df-c4b8-4c12-b7c6-0eeffa331d90.jpg&w=1920&q=75","cat":"grains"},{"id":2149,"name":"سكر لايت Mauricio 500 غرام","price":1.95,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F233.jpg&w=1920&q=75","cat":"grains"},{"id":2150,"name":"سكر من قصب السكر 500غ Mauricio","price":1.756,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F221.jpg&w=1920&q=75","cat":"grains"},{"id":2151,"name":"سكر ناعم 400غ Glob Garden","price":0.745,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4a925fa3-d122-4268-9d2e-0d7b67b3577d.jpg&w=1920&q=75","cat":"grains"},{"id":2152,"name":"سكر ناعم 900غ Glob Garden","price":1.624,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F808b5f0a-ca0c-433a-bc3a-5b153a9cd439.jpg&w=1920&q=75","cat":"grains"},{"id":2153,"name":"سكر ناعم الجودة 500غ","price":0.67,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9686f8e0-cb80-4013-946b-670fd959e4dc.jfif&w=1920&q=75","cat":"grains"},{"id":2154,"name":"سكر ناعم جوده 900غ","price":1.172,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa5368511-f827-43fa-9959-f56ae8238a64.jpg&w=1920&q=75","cat":"grains"},{"id":2155,"name":"سمسم مقشور 200غ glob garden","price":1.109,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fca4e0c15-fba2-4008-9533-6033bd2d1e0b.jpg&w=1920&q=75","cat":"grains"},{"id":2156,"name":"سميد خشن 1 كغ Avila","price":1.392,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%8A%D8%AF%20%D8%AE%D8%B4%D9%86%201%20%D9%83%D9%8A%D9%84%D9%88%20Avila.jfif&w=1920&q=75","cat":"grains"},{"id":2157,"name":"سميد خشن 900غ Glob Garden","price":1.288,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F186.jpg&w=1920&q=75","cat":"grains"},{"id":2158,"name":"سميد خشن الجودة 900غ","price":1.31,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F1d5317b0-568d-4750-a800-7c8bd54ee367.jfif&w=1920&q=75","cat":"phones"},{"id":2159,"name":"سميد خشن حقول شتورة 900غ","price":1.183,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%8A%D8%AF%20%D8%AE%D8%B4%D9%86%20%D8%AD%D9%82%D9%88%D9%84%20%D8%B4%D8%AA%D9%88%D8%B1%D8%A9%20900%D8%BA.jfif&w=1920&q=75","cat":"grains"},{"id":2160,"name":"سميد خشن نملية 900غ","price":1.018,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2e7fbc3e-cdae-4bb2-9026-7bdcb89f2fbe.jpg&w=1920&q=75","cat":"grains"},{"id":2161,"name":"سميد فرخة 900 غرام Glob Garden","price":1.288,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Faf500d82-72d0-4d18-ae57-de3a4fa30872.jpg&w=1920&q=75","cat":"grains"},{"id":2162,"name":"سميد ناعم دعبول 900غ","price":1.032,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F78956d95-eab2-4dae-9af6-fcd988273518.jpg&w=1920&q=75","cat":"grains"},{"id":2163,"name":"سميد ناعم 900غ Glob Garden","price":1.288,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe8b14072-b447-4176-96fc-d639bd140fab.jpg&w=1920&q=75","cat":"grains"},{"id":2164,"name":"سميد ناعم حقول شتورة 900غ","price":1.152,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8c643d1a-3a97-4c9f-b9fa-a4d40a1e2ae0.jpg&w=1920&q=75","cat":"grains"},{"id":2165,"name":"شوفان 700غ GLOB Garden","price":2.016,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F63a2696f-f3f6-4e05-868f-932340e5043c.jpg&w=1920&q=75","cat":"grains"},{"id":2166,"name":"شوفان ابيض 500غ Healthy u","price":1.86,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F103f4a3a-47cf-4dda-af2d-10275b4e7d3d.jpg&w=1920&q=75","cat":"grains"},{"id":2167,"name":"شوفان الجودة 700غ","price":2.247,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F77f72cfd-4cbd-4708-8502-d4b6b4953e60.jfif&w=1920&q=75","cat":"grains"},{"id":2168,"name":"طحين ابيض 900غ Flona","price":0.679,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B7%D8%AD%D9%8A%D9%86%20%D8%A7%D8%A8%D9%8A%D8%B6%20900%D8%BA%20Flona.jfif&w=1920&q=75","cat":"grains"},{"id":2169,"name":"طحين ابيض كاتو 1كغ Avila","price":1.281,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F7693bf3d-0d11-4117-8992-b4180c14e41a.jpg&w=1920&q=75","cat":"grains"},{"id":2170,"name":"طحين فرخة 900غ دعبول","price":1.003,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe242e41a-4214-41dd-ac7e-6e9433f3c962.jpg&w=1920&q=75","cat":"grains"},{"id":2171,"name":"طحين فرخة الجودة 900غ","price":1.31,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-11%20at%209.05.54%20AM.jpeg&w=1920&q=75","cat":"grains"},{"id":2172,"name":"طحين قمح اسمر الجودة 750غ","price":0.956,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-09%20at%206.08.12%20PM.jpeg&w=1920&q=75","cat":"grains"},{"id":2173,"name":"عدس احمر مجروش 900غ Avila","price":1.677,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B9%D8%AF%D8%B3%20%D8%A7%D8%AD%D9%85%D8%B1%20%D9%85%D8%AC%D8%B1%D9%88%D8%B4.jfif&w=1920&q=75","cat":"grains"},{"id":2174,"name":"عدس احمر مجروش اوبا 900غ","price":1.112,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202022-02-28%20at%2012.01.17.jpeg&w=1920&q=75","cat":"grains"},{"id":2175,"name":"عدس احمر مجروش ديروني 900غ","price":1.035,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B9%D8%AF%D8%B3%20%D9%85%D8%AC%D8%B1%D9%88%D8%B4.jfif&w=1920&q=75","cat":"grains"},{"id":2176,"name":"عدس احمر مجروش نملية 900غ","price":1.2,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B9%D8%AF%D8%B3%20%D8%A7%D8%AD%D9%85%D8%B1%20%D9%85%D8%AC%D8%B1%D9%88%D8%B4%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75","cat":"grains"},{"id":2177,"name":"عدس احمر مقشور الجودة 900غ","price":1.799,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff1ce9a65-6b1f-4ab8-852d-859f1937622f.jfif&w=1920&q=75","cat":"grains"},{"id":2178,"name":"عدس اخضر 900غ Avila","price":1.608,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc80a23fe-9391-4686-bb3d-4bf17de0d277.jpg&w=1920&q=75","cat":"grains"},{"id":2179,"name":"عدس اخضر عريض 900غ Glob Garden","price":1.836,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F177.jpg&w=1920&q=75","cat":"grains"},{"id":2180,"name":"عدس اخضر عريض الجودة 900غ","price":1.965,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9cc317a1-931e-4d04-889c-33f9ed76fdff.jfif&w=1920&q=75","cat":"grains"},{"id":2181,"name":"عدس اخضر عريض دعبول 900غ","price":1.54,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F38c67f61-95b3-4c96-a073-231a19057941.jpg&w=1920&q=75","cat":"grains"},{"id":2182,"name":"عدس مجروش 900غ Glob Garden","price":1.68,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F199.jpg&w=1920&q=75","cat":"grains"},{"id":2183,"name":"عرض ارز امريكي ديروني 4+1 كغ","price":4.371,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fbb6c2be2-9a82-4963-89d6-82764bb238a6.jpg&w=1920&q=75","cat":"grains"},{"id":2184,"name":"عرض رز ايطالي بالدو هوليدي 5كغ+سكر ناعم 1كلغ + ظرف قهوة هلا","price":10.428,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ffd96c03f-b2a7-42b9-9db8-7376df9c8e62.jpg&w=1920&q=75","cat":"grains"},{"id":2185,"name":"عرض رز مصري ديروني 4+1 كغ","price":4.62,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F18bd9cba-91bd-448c-83c8-1a3d001a2b66.jfif&w=1920&q=75","cat":"grains"},{"id":2186,"name":"فاصوليا بيضاء ديروني 900غ","price":1.555,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D8%A7%D8%B5%D9%88%D9%84%D9%8A%D8%A7.jfif&w=1920&q=75","cat":"grains"},{"id":2187,"name":"فاصوليا بيضاء صنوبرية 900غ Glob Garden","price":2.31,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F411.jpg&w=1920&q=75","cat":"grains"},{"id":2188,"name":"فاصوليا بيضاء عريضة 400غ Glob Garden","price":2.052,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8bee0c66-1898-4ccb-8945-edfb559e0830.jpg&w=1920&q=75","cat":"grains"},{"id":2189,"name":"فاصوليا بيضاء عريضة دعبول 400غ","price":1.244,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb31bc389-4c79-4881-bcbe-af83fbe5667c.jpg&w=1920&q=75","cat":"grains"},{"id":2190,"name":"فاصوليا بيضاء عريضة دعبول 800غ","price":2.65,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3e97cfb0-115f-4227-84a7-ad1ed1ad682d.jpg&w=1920&q=75","cat":"grains"},{"id":2191,"name":"فاصوليا بيضاء نملية 900غ","price":1.86,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D8%A7%D8%B5%D9%88%D9%84%D9%8A%D8%A7%20%D8%A8%D9%8A%D8%B6%D8%A7%D8%A1%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75","cat":"grains"},{"id":2192,"name":"فاصوليا حمراء طويلة ديروني 900غ","price":1.879,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd9faebcf-e895-4e1b-965a-b00ba0c199b4.jpg&w=1920&q=75","cat":"grains"},{"id":2193,"name":"فاصوليا حمراء مدعبلة 900غ Avila","price":2.86,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F5ca9b8eb-2abb-4c91-90b1-019c9a61987d.jpg&w=1920&q=75","cat":"grains"},{"id":2194,"name":"فاصوليا حمراء مدعبلة 900غ Glob Garden","price":2.86,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F410.jpg&w=1920&q=75","cat":"grains"},{"id":2195,"name":"فاصوليا حمراء مدعبلة دعبول 900غ","price":2.294,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D8%A7%D8%B5%D9%88%D9%84%D9%8A%D8%A7%20%D8%AD%D9%85%D8%B1%D8%A7%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75","cat":"grains"},{"id":2196,"name":"فاصوليا حمراء مدعبلة ديروني 900غ","price":2.131,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F454dc6dc-9937-4418-a775-f9460f2984f2.jpg&w=1920&q=75","cat":"grains"},{"id":2197,"name":"فاصوليا حمراء نملية 900غ","price":2.361,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D8%A7%D8%B5%D9%88%D9%84%D9%8A%D8%A7%20%D8%AD%D9%85%D8%B1%D8%A7%D8%A1%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75","cat":"grains"},{"id":2198,"name":"فاصوليا رفييعة مسلات 400غ Glob Garden","price":1.595,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202026-02-13%20at%2011.11.46%20AM.jpeg&w=1920&q=75","cat":"grains"},{"id":2199,"name":"فاصولياء صنوبرية حقول شتورة 900غ","price":1.465,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb1084d46-b656-4ff6-9745-28bb956f07b2.jpg&w=1920&q=75","cat":"grains"},{"id":2200,"name":"فريكة 500غ Avila","price":1.985,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D8%B1%D9%8A%D9%83%D8%A9%20500%D8%BA%20Avila.jfif&w=1920&q=75","cat":"grains"},{"id":2201,"name":"فول ابيض حب الجودة 900 غ","price":1.387,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D9%88%D9%84%20%D8%A7%D8%A8%D9%8A%D8%B6%20%D8%AD%D8%A8%20%D8%A7%D9%84%D8%AC%D9%88%D8%AF%D8%A9%20900%20%D8%BA.jfif&w=1920&q=75","cat":"phones"},{"id":2202,"name":"فول انجليزي دعبول 900غ","price":1.12,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-30%20at%206.02.27%20PM%20(1).jpeg&w=1920&q=75","cat":"grains"},{"id":2203,"name":"فول حب 1 كغ Avila","price":1.613,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F09b2f81c-d984-48b9-98e9-c56e66e09e86.jpg&w=1920&q=75","cat":"grains"},{"id":2204,"name":"فول ديروني 900غ","price":1.157,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F46021419-61d7-40f3-ac3c-2caa53461b81.jpg&w=1920&q=75","cat":"grains"},{"id":2205,"name":"فول عريض 900غAvila","price":2.3,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F247.jpg&w=1920&q=75","cat":"grains"},{"id":2206,"name":"فول عريض دعبول 700غ","price":1.494,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-30%20at%206.02.27%20PM%20(2).jpeg&w=1920&q=75","cat":"grains"},{"id":2207,"name":"قمح حب 900غ Glob Garden","price":1.089,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fbda4b34b-5e29-4729-bd89-bb534fe66bfe.jpg&w=1920&q=75","cat":"grains"},{"id":2208,"name":"قمح مقشور 900غ Avila","price":0.976,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2ad217f9-b13d-4de0-8fc6-cd4e8c9c3bdd.jpg&w=1920&q=75","cat":"grains"},{"id":2209,"name":"قمح مقشور 900غ Glob Garden","price":1.133,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F196.jpg&w=1920&q=75","cat":"phones"},{"id":2210,"name":"قمح مقشور الجودة 900غ","price":1.088,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F078e11f6-f2fd-4d54-a789-082ff4989ad6.jfif&w=1920&q=75","cat":"grains"},{"id":2211,"name":"قمح مقشور دعبول 900غ","price":0.869,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%82%D9%85%D8%AD%20%D9%85%D9%82%D8%B4%D9%88%D8%B1%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75","cat":"grains"},{"id":2212,"name":"كشك بلدي الجودة 500غ","price":6.805,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdd7ba70a-1b0a-45da-ba38-44ed5e27e502.jfif&w=1920&q=75","cat":"grains"},{"id":2213,"name":"لوبية حب نملية 500غ","price":1.272,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa79dba59-44e3-4398-9449-481834e67675.jpg&w=1920&q=75","cat":"grains"},{"id":2214,"name":"لوبية مسلات 500غ Avila","price":1.27,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F09fdc5df-2d6c-4793-8f5f-4467c4847598.jpg&w=1920&q=75","cat":"grains"},{"id":2215,"name":"ماش الجودة 500غ","price":2.231,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F990724a9-3541-4ee1-832d-bbe088fce054.jpg&w=1920&q=75","cat":"grains"},{"id":2216,"name":"مغربية 900غ Glob Garden","price":1.889,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff79cb099-49ae-4d38-a02d-4acd5522ebe4.jpg&w=1920&q=75","cat":"grains"},{"id":2217,"name":"مغربية دعبول 900غ","price":1.451,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75","cat":"grains"},{"id":2218,"name":"مغربية ديروني 900غ","price":1.553,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F51b727e4-c390-44f2-b3a1-c966f1e4432e.jpg&w=1920&q=75","cat":"grains"},{"id":2219,"name":"مغربية نملية 500غ","price":0.859,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8542934c-a088-40eb-8733-bbfd2fc1dae6.jpg&w=1920&q=75","cat":"grains"},{"id":2220,"name":"ملح الهيمالايا الوردي الخشن دعبول 500غ","price":0.728,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F73e3edc2-5da4-4280-9a93-5a2800906f5f.jfif&w=1920&q=75","cat":"grains"},{"id":2221,"name":"ملح خشن 1ك GLOB","price":0.264,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F21da5278-2f31-4f47-8356-bae063d725b2.jpg&w=1920&q=75","cat":"grains"},{"id":2222,"name":"ملح ناعم دعبول 1كلغ","price":0.142,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-07-17%20at%2010.41.01.jpeg&w=1920&q=75","cat":"grains"},{"id":2223,"name":"ملح ناعم دعبول 5كغ","price":0.768,"img":"https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa566015d-9c5b-46de-9216-4d8a869e2bca.jpg&w=1920&q=75","cat":"grains"}];
-let cart={},ac='all',st='';
-function rCats(){document.getElementById('catList').innerHTML=[{id:'all',name:'الكل',icon:'🛒'},...CATS].map(c=>`<div class="cat ${c.id===ac?'active':''}" onclick="fc('${c.id}','${c.name}')"><div class="ci3">${c.icon}</div><div>${c.name}</div></div>`).join('');}
-function fc(id,name){ac=id;document.getElementById('si').value='';st='';rCats();rProds();document.getElementById('rateDisplay').textContent=RATE.toLocaleString()+' ليرة';document.getElementById('catTitle').textContent=id==='all'?'كل المنتجات':name;}
-function srch(){st=document.getElementById('si').value.trim();ac='all';rCats();rProds();document.getElementById('rateDisplay').textContent=RATE.toLocaleString()+' ليرة';document.getElementById('catTitle').textContent=st?`نتائج: "${st}"`:'كل المنتجات';}
-function gf(){let l=PRODS;if(ac!=='all')l=l.filter(p=>p.cat===ac);if(st)l=l.filter(p=>p.name.toLowerCase().includes(st.toLowerCase()));return l;}
-function rProds(){const l=gf();document.getElementById('rc').textContent=l.length?`${l.length} منتج`:'';if(!l.length){document.getElementById('productList').innerHTML='<div class="em">📦 لا يوجد منتجات</div>';return;}document.getElementById('productList').innerHTML=l.map(p=>`<div class="pr"><img class="pi" src="${p.img||''}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&q=80'"><div class="pb"><div class="pn">${p.name}</div><div class="pp">$${p.price.toFixed(2)}</div><div style="font-size:10px;color:#888;margin-bottom:8px">${Math.round(p.price*RATE).toLocaleString()} ل.ل.</div><button class="ab" onclick="addCart(${p.id},this)">+ أضف للسلة</button></div></div>`).join('');}
-function addCart(id,btn){cart[id]=(cart[id]||0)+1;uc();btn.textContent='✓ تمت الإضافة';btn.classList.add('added');setTimeout(()=>{btn.textContent='+ أضف للسلة';btn.classList.remove('added');},1200);}
-function uc(){document.getElementById('cnt').textContent=Object.values(cart).reduce((a,b)=>a+b,0);}
-function rCart(){const it=Object.entries(cart).filter(([,q])=>q>0);const el=document.getElementById('cartList');if(!it.length){el.innerHTML='<div class="em">🛒 السلة فارغة</div>';document.getElementById('cartSummary').innerHTML='';return;}el.innerHTML=it.map(([id,qty])=>{const p=PRODS.find(x=>x.id==id);return `<div class="ci2"><img src="${p.img||''}" onerror="this.style.display='none'"><div class="in"><div class="nm">${p.name}</div><div class="pr2">$${p.price.toFixed(2)}</div></div><div class="qc"><button class="qb" onclick="cq(${id},-1)">−</button><span class="qn">${qty}</span><button class="qb" onclick="cq(${id},1)">+</button></div></div>`;}).join('');rSum('cartSummary');}
-function cq(id,d){cart[id]=Math.max(0,(cart[id]||0)+d);if(!cart[id])delete cart[id];uc();rCart();}
-function rSum(el){const sub=Object.entries(cart).reduce((s,[id,q])=>{const p=PRODS.find(x=>x.id==id);return s+(p?p.price*q:0);},0);const del=sub>0?2:0;document.getElementById(el).innerHTML=`<div class="sr"><span>المجموع الفرعي</span><span>$${sub.toFixed(2)}</span></div><div class="sr"><span>رسوم التوصيل</span><span>$${del.toFixed(2)}</span></div><div class="sr tot"><span>المجموع الكلي</span><span>$${(sub+del).toFixed(2)}</span></div>`;}
-function sendWA(){const fn=document.getElementById('fn').value;const ph=document.getElementById('ph').value;const ad=document.getElementById('ad').value;if(!fn||!ph||!ad){alert('يرجى تعبئة الاسم ورقم الهاتف والعنوان');return;}const it=Object.entries(cart).filter(([,q])=>q>0);const sub=it.reduce((s,[id,q])=>{const p=PRODS.find(x=>x.id==id);return s+(p?p.price*q:0);},0);let msg=`🛒 *طلب جديد - Souna*\n\n👤 *الاسم:* ${fn} ${document.getElementById('ln').value}\n📞 *الهاتف:* ${ph}\n📍 *العنوان:* ${ad}، ${document.getElementById('ar').value}، ${document.getElementById('ct').value}\n`;const nt=document.getElementById('nt').value;if(nt)msg+=`📝 *ملاحظات:* ${nt}\n`;msg+=`\n*المنتجات:*\n`;it.forEach(([id,qty])=>{const p=PRODS.find(x=>x.id==id);msg+=`• ${p.name} × ${qty} = $${(p.price*qty).toFixed(2)}\n`;});msg+=`\n💰 *المجموع:* $${(sub+2).toFixed(2)} (شامل التوصيل)`;window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,'_blank');sp('success');}
-function sp(name){document.querySelectorAll('.pg2').forEach(p=>p.classList.remove('active'));document.getElementById(name+'Page').classList.add('active');if(name==='cart')rCart();if(name==='checkout')rSum('checkoutSummary');window.scrollTo(0,0);}
-function resetOrder(){cart={};uc();sp('shop');}
-rCats();rProds();document.getElementById('rateDisplay').textContent=RATE.toLocaleString()+' ليرة';
-</script></body></html>
+{
+  "products": [
+    {
+      "id": 1001,
+      "name": "زبدة غير مملحة 1000غ golden plate",
+      "price": 12.305,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fcee2e535-be55-4eed-87c4-ddbf407ea4fd.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1002,
+      "name": "زبدة غير مملحة 100غ Lurpak",
+      "price": 1.679,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-24%20at%205.06.52%20PM.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1003,
+      "name": "زبدة غير مملحة 200غ golden plate",
+      "price": 2.396,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F859f8bf2-9af0-4cbe-8398-7f1fad691963.jfif&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1004,
+      "name": "زبدة غير مملحة 200غ Lurpak",
+      "price": 2.944,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-07%20at%206.40.41%20PM.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1005,
+      "name": "زبدة غير مملحة 200غ Plein Soleil",
+      "price": 2.156,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-19%20at%209.31.08%20PM.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1006,
+      "name": "زبدة غير مملحة 200غ President",
+      "price": 2.703,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2ed79a1d-729e-4af5-8bbc-2766b770ef49.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1007,
+      "name": "زبدة غير مملحة 400غ Lurpak",
+      "price": 5.704,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-24%20at%205.06.32%20PM.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1008,
+      "name": "زبدة فرنسية 10غ *10 President",
+      "price": 0.863,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2ab7c990-7b9c-4768-9b87-6f79492f7a36.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1009,
+      "name": "زبدة نباتية 200غ Luna",
+      "price": 0.49,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%84%D9%88%D9%86%D8%A7%2014-12.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1010,
+      "name": "زيت دوار الشمس 1.8 ل plein soleil",
+      "price": 5.189,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F93cce37a-6660-41d2-b87e-8eade790ca53.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1011,
+      "name": "زيت دوار الشمس 1ل Plein Soleil",
+      "price": 3.194,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8e70b5c6-c026-4267-91fc-acefd9fb13ab.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1012,
+      "name": "زيت دوار الشمس 3 ل Plein Soleil",
+      "price": 8.434,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3566e03f-bdb8-4a97-b00b-35c93517cf77.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1013,
+      "name": "زيت دوار الشمس 5 ليتر Mirasol",
+      "price": 10.232,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F40b311cb-8ee0-4f28-9fea-60b7cacb9c34.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1014,
+      "name": "زيت دوار الشمس 5 ليتر Plein Soleil",
+      "price": 11.997,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-05-23%20at%206.49.02%20PM.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1015,
+      "name": "زيت دوار الشمس 5 ليتر Prime",
+      "price": 9.855,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4c53433b-c29d-496e-8e47-1e14d03b8257.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1016,
+      "name": "زيت دوار الشمس 5ل Holiday",
+      "price": 9.972,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F53a51ce4-a2f2-4e63-8f48-ee97d0802b73.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1017,
+      "name": "زيت دوار الشمس 8.8 ليتر Gamal",
+      "price": 16.5,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9bb25a7b-428f-46cb-985e-7eacd781e8c7.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1018,
+      "name": "زيت دوار الشمس 9 ليتر Prime Line",
+      "price": 17.28,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8a962039-b9cc-4c60-8297-5f8f76ad471f.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1019,
+      "name": "زيت دوار الشمس أوبا 8.8 ل",
+      "price": 16.47,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%AF%D9%88%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3%208.8%20%D9%84%D9%8A%D8%AA%D8%B1%20OBA.jfif&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1020,
+      "name": "زيت دوار الشمس اوبا 5ليتر",
+      "price": 9.9,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D9%88%D8%A8%D8%A7.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1021,
+      "name": "زيت دوار الشمس جيرسي 5 ليتر",
+      "price": 9.413,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F469.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1022,
+      "name": "زيت دوار الشمس دعبول 5 ليتر",
+      "price": 9.99,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%AF%D9%88%D8%A7%D8%B1%20%D8%A7%D9%84%D8%B4%D9%85%D8%B3%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84%205%20%D9%84%D9%8A%D8%AA%D8%B1.jfif&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1023,
+      "name": "زيت دوار الشمس ديروني 5 ليتر",
+      "price": 10.002,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdfa3a37d-8707-4650-951c-fefe51e9b929.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1024,
+      "name": "زيت دوار الشمس سليم 1.8ليتر",
+      "price": 4.32,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fsmall%20slim.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1025,
+      "name": "زيت دوار الشمس سليم 4 ليتر",
+      "price": 9.45,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-06-19%20at%2010.52.24.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1026,
+      "name": "زيت دوار الشمس عافية 9 ليتر 20%",
+      "price": 29.967,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb0bc82d7-4e02-4539-8b2d-e2dcef17794d.jfif&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1027,
+      "name": "زيت دوار الشمس غندور 0.75 ل",
+      "price": 2.3,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ffb0d5ba0-557c-4847-9dd4-ec3d48991a1c.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1028,
+      "name": "زيت دوار الشمس غندور 1.6ليتر",
+      "price": 4.615,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd497695d-4d14-4f60-a6fe-677e901b0161.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1029,
+      "name": "زيت دوار الشمس غندور 4 ليتر",
+      "price": 10.87,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F49cd5320-e4bc-432a-983c-c92e9e58c241.jfif&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1030,
+      "name": "زيت ذرة عافية 1.5 ليتر",
+      "price": 7.29,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F33ade9c2-afcb-411a-86b4-1de3014291d7.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1031,
+      "name": "زيت زيتون 400غ lebaytcom",
+      "price": 3.738,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%B2%D9%8A%D8%AA%D9%88%D9%86%20400%D8%BA%20lebaytcom.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1032,
+      "name": "زيت زيتون بكر سعيفان مربعة 500مل",
+      "price": 7.207,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2f4ba4d2-0716-4a78-b0ee-74743989ce26.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1033,
+      "name": "زيت زيتون سعيفان 250مل",
+      "price": 3.78,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F68e569d7-78ae-4ff4-9bea-44f64ca6913b.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1034,
+      "name": "زيت زيتون سعيفان 500مل",
+      "price": 6.955,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F5490a2fb-1001-44de-84e4-8ec8dae972ff.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1035,
+      "name": "زيت صويا مكرر 490غ Iman",
+      "price": 1.466,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B2%D9%8A%D8%AA%20%D8%B5%D9%88%D9%8A%D8%A7%20%D9%85%D9%83%D8%B1%D8%B1%20490%D8%BA%20Iman.jfif&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1036,
+      "name": "سمن بقري 800غ Golden plate",
+      "price": 19.842,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3e7e72ae-964c-4a1d-854a-a922ad0966ef.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1037,
+      "name": "سمن جوز الهند الصافي 1.8كلغ Rami Vegetal",
+      "price": 11.48,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F84ba96de-e212-410b-8864-9249b9267683.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1038,
+      "name": "سمن جوز الهند الصافي 3.5كغ Rami Vegetal",
+      "price": 21.84,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F84ba96de-e212-410b-8864-9249b9267683.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1039,
+      "name": "سمن نباتي قوت القلوب 4.25 كلغ",
+      "price": 12.32,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F92df3809-42cb-401d-a679-26068ec4d1c0.jfif&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1040,
+      "name": "سمنة نباتي غير مهدرج كريساتال 2.5 كلغ",
+      "price": 4.904,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F270804fd-b64b-4584-b63f-58f9e72e8370.jfif&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1041,
+      "name": "سمنة البقرة الحلوب 2 كلغ",
+      "price": 46.75,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb22fe978-fd4e-4a62-ae9e-04c4558a7732.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1042,
+      "name": "سمنة البقرة الحلوب 400غ",
+      "price": 12.604,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F843c976f-0b7a-4e40-a4dc-7ef69ebc6638.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1043,
+      "name": "سمنة البقرة الحلوب 800 غ",
+      "price": 25.209,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F83dd7fc8-3d3a-446d-b014-668db80c5189.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1044,
+      "name": "سمنة الراعي 1.4ل",
+      "price": 3.209,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa3b19f7a-bd80-4fb4-8862-4de9436a866e.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1045,
+      "name": "سمنة الراعي 5 ل",
+      "price": 11.55,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F6740dfa5-9299-4b78-ae7e-486473389d2b.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1046,
+      "name": "سمنة الراعي 700مل",
+      "price": 1.604,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff58c75fd-a326-4079-b402-1bcdb708057b.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1047,
+      "name": "سمنة الروابي 1.5 كلغ",
+      "price": 3.987,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-06-19%20at%2010.46.55.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1048,
+      "name": "سمنة حيواني خير وبركة 500غ",
+      "price": 9.894,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fed470a0c-3005-41cd-8465-c95d46c88ce9.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1049,
+      "name": "سمنة نباتي افت 1730غ",
+      "price": 6.6,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%86%D8%A9%20%D9%86%D8%A8%D8%A7%D8%AA%D9%8A%D8%A9%201975%D8%BA%20EVET.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1050,
+      "name": "سمنة نباتي افت 4كغ",
+      "price": 12.65,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc9ec8b73-b884-4786-87f9-37341e229325.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1051,
+      "name": "سمنة نباتي افت 910غ",
+      "price": 4.125,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%86%D8%A9%20%D9%86%D8%A8%D8%A7%D8%AA%D9%8A%D8%A9%20910%D8%BA%20EVET.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1052,
+      "name": "سمنة نباتي الهانم 700غ",
+      "price": 2.354,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F85bfa3d8-275d-4127-aeec-3a0ea912e72a.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1053,
+      "name": "سمنة نباتية اريج 900غ",
+      "price": 3.33,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-25%20at%207.35.10%20PM.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1054,
+      "name": "سمنة نباتية الهانم 1.5 كلغ",
+      "price": 4.813,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F950fc0ff-f5a2-4605-bf9d-37a630539fd9.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1055,
+      "name": "سمنة نباتية بطعم الزبدة الصفراء قوت 1.45كغ",
+      "price": 4.056,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%86%D8%A91-2.jpg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1056,
+      "name": "سمنة نباتية بطعم الزبدة الصفراء قوت 2.5 كلغ",
+      "price": 5.671,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-19%20at%209.32.38%20PM.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1057,
+      "name": "سمنة نباتية بطعم الزبدة الصفراء قوت 650غ",
+      "price": 2.013,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-22%20at%204.42.47%20PM.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 1058,
+      "name": "مرغرين غولد 200غ Plein Soleil",
+      "price": 1.467,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-17%20at%2012.18.04%20PM.jpeg&w=1920&q=75",
+      "cat": "oils"
+    },
+    {
+      "id": 2001,
+      "name": "POWER BANK 10000 FAST CHARGING DP43 VDENMENV",
+      "price": 5.525,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F71a77cb0-30b4-4b06-a03b-93d9aeadaadc.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2002,
+      "name": "Power Bank With 2 Cable Type C+ Lightning Clever+",
+      "price": 12.6,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9f0c30d6-4eea-47a9-a90e-b9623d3d4b1b.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2003,
+      "name": "USB FLASH DRIVE 128GB BOROFONE",
+      "price": 11.9,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F667363d8-8d6b-455d-8bea-5f9f74b42159.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2004,
+      "name": "ادابتر سيارة 3 مخارج 55 واط Quick Charger",
+      "price": 5.152,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Faa3bd519-c3bf-4b11-8d66-3ea39e235014.jfif&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2005,
+      "name": "حاملة لتثبيت الهاتف ملونة",
+      "price": 0.5,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4aa50e64-d655-4b32-9516-cd5b42aec7fa.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2006,
+      "name": "سماعات BOROFONE WIRELESS B023",
+      "price": 10.5,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F34c0fc2a-f369-43ca-be81-e233dba03a88.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2007,
+      "name": "سماعات HOCO WIRELESS W35",
+      "price": 12.6,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4deb042c-bf54-4d97-a828-df067f10f0ad.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2008,
+      "name": "سماعات بلوتوث Borofone Noise Cancelation",
+      "price": 10.5,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb924b5e0-2886-4773-890e-2f876510733c.jfif&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2009,
+      "name": "سماعات بلوتوث شكل قطة HOCO EW46",
+      "price": 11.7,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F63686032-eada-44e8-ad3b-2c2579baac97.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2010,
+      "name": "شاحن 18 واط BOROFONE BAS72A",
+      "price": 2.66,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F29f913ca-c157-4185-97e0-1cd80535ab5d.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2011,
+      "name": "شاحن 30 واط BOROFONE BAS45A",
+      "price": 5.25,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fcb0b2b82-d3c9-4b91-9edd-2ad2ccec8d18.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2012,
+      "name": "شاحن حديث 20 واط BOROFONE TYPE C BA81",
+      "price": 3.08,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F5bf2199f-9359-4be9-958d-d0e95a89fe92.jfif&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2013,
+      "name": "شاحن حديث 20واط BOROFONE",
+      "price": 2.94,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%AF%D8%A8%D8%AA%D8%B1%20%D8%AD%D8%AF%D9%8A%D8%AB%2020%D9%88%D8%A7%D8%B7%20BOROFONE.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2014,
+      "name": "شاحن سيارة مع وصلة 1 متر BOROFONE TYPE C BZ12A",
+      "price": 2.31,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb481cbb7-5847-487a-bd6a-1efa030cd4b9.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2015,
+      "name": "شاحن سيارة مع وصلة 1 متر BOROFONE SAMSUNG BZ12A",
+      "price": 2.31,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe8b1dcb9-5c0d-4c13-a877-d50bedd00fb9.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2016,
+      "name": "شاحن سيارة مع وصلة BOROFONE IPHONE BZ12",
+      "price": 2.31,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc029d968-9a60-42d2-9996-0cb975e58c3b.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2017,
+      "name": "شاحن مع وصلة 18 واط MOXOM SAMSUNG",
+      "price": 3.5,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd8babc68-0ad9-4c38-9acd-a316c1aa8e88.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2018,
+      "name": "شاحن مع وصلة 18 واط MOXOM TYPE C",
+      "price": 3.5,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F58cf3637-e1bf-4b75-807b-3a13d62775f5.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2019,
+      "name": "شاحن مع وصلة 20 واط BOROFONE BA81A C TO C",
+      "price": 3.99,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F6600345f-7f5e-433e-944b-2fb1be19b20b.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2020,
+      "name": "وصلة اوكس 1 متر BOROFONE BL19",
+      "price": 0.98,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%88%D8%B5%D9%84%D8%A9%20%D8%A7%D9%88%D9%83%D8%B3%20BOROFONE.jfif&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2021,
+      "name": "وصلة اوكس 1 متر BOROFONE BL25B TYPE C",
+      "price": 2.275,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F111babd0-3545-43f8-9b84-998e6fe0cd37.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2022,
+      "name": "وصلة تايب-سي ايفون 1م Coye",
+      "price": 4.83,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8201b47c-15e4-4688-beb0-93dfc131fe4d.jfif&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2023,
+      "name": "وصلة شاحن 2 متر BOROFONE BX87 IPHONE",
+      "price": 2.45,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fcc6a2d74-ec32-4e20-bfec-97f0894f8810.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2024,
+      "name": "وصلة شاحن 4 رؤوس 65 واط Flat wire",
+      "price": 5.026,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2d3b73b9-999c-4357-9bb5-5e90feb443e7.jfif&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2025,
+      "name": "وصلة هاتف 1 متر BOROFONE BX19 IPHONE",
+      "price": 0.91,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F091f1f80-8ed4-4913-8393-13cc43938823.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2026,
+      "name": "وصلة هاتف 1 متر BOROFONE BX111 USB-C TO IPHONE",
+      "price": 1.12,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9475e50d-8eb7-443f-80a8-4a1f9a8c608a.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2027,
+      "name": "وصلة هاتف 1 متر BOROFONE BX19 SAMSUNG",
+      "price": 0.91,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F0ea90f32-0b5f-4ec4-b2ac-6c9d296a33e2.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2028,
+      "name": "وصلة هاتف 1 متر BOROFONE BX51 TYPE C TO IPHONE",
+      "price": 1.12,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F05743a42-5402-4834-9c1d-81d156ef9a69.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2029,
+      "name": "وصلة هاتف 1 متر BOROFONE BX54 IPHONE",
+      "price": 0.84,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb2315362-03d9-464a-9463-72e126a88e1a.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2030,
+      "name": "وصلة هاتف 1 متر BOROFONE BX54 SAMSUNG",
+      "price": 0.84,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc3a1fbd4-ee82-4b23-831e-ea2cc82ffbc6.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2031,
+      "name": "وصلة هاتف 1 متر BOROFONE BX87 USBA-TO IPHONE",
+      "price": 0.91,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8bee7676-1db8-452b-a5d6-6944f713465b.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2032,
+      "name": "وصلة هاتف 1 متر BOROFONE BX87 USBA-TO SAMSUNG",
+      "price": 0.91,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F7667c52e-5077-435d-86cb-05e53a295daa.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2033,
+      "name": "وصلة هاتف 1 متر BOROFONE TYPE A TO C BX111",
+      "price": 0.845,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%88%D8%B5%D9%84%D8%A9%20%D9%87%D8%A7%D8%AA%D9%81%20BOROFONE%20TYPE%20C%20BX111.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2034,
+      "name": "وصلة هاتف 1 متر BOROFONE TYPE C BX54",
+      "price": 0.84,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb09a4333-6cd0-4816-9a3c-763cb89baf18.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2035,
+      "name": "وصلة هاتف 2 متر BOROFONE SAMSUNG BX14",
+      "price": 2.275,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F24292157-0a73-4ee7-a798-699971255a66.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2036,
+      "name": "وصلة هاتف 3 متر BOROFONE BX14 SAMSUNG",
+      "price": 2.6,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F36b6c563-dbf4-44ec-843e-9291003201b2.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2037,
+      "name": "ارز احمر 500غ TAJ",
+      "price": 3.68,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F07e3c84d-ad4a-4bb9-ab14-5f9aef669071.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2038,
+      "name": "ارز اسمر 500غ TAJ",
+      "price": 2.3,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F129aa241-fb8c-4ede-8455-248f89ad6a1a.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2039,
+      "name": "ارز اسود 500غ TAJ",
+      "price": 3.68,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F5fd6b870-b1f2-43fc-9aac-3a9af4957092.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2040,
+      "name": "ارز اميركي الجودة 900غ",
+      "price": 1.126,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe6fa3f99-5f2e-4da9-8547-574a4eefb20c.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2041,
+      "name": "ارز ايطالي بالدو 900غ avila",
+      "price": 2.471,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F54d57ea7-d5b0-4808-abf3-cb953b0631f7.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2042,
+      "name": "ارز ايطالي 900غ Riso della famiglia",
+      "price": 1.348,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-06-19%20at%2013.32.32%20(2).jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2043,
+      "name": "ارز ايطالي بالدو 900غ Glob Garden",
+      "price": 2.497,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F184.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2044,
+      "name": "ارز ايطالي بالدو 900غ Holiday",
+      "price": 1.617,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%B1%D8%B2%20%D8%A7%D8%A8%D8%B7%D8%A7%D9%84%D9%8A%20%D9%87%D9%88%D9%84%D9%8A%D8%AF%D9%8A%20900%D8%BA.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2045,
+      "name": "ارز ايطالي بالدو الجودة 2 كغ",
+      "price": 5.444,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F29a55c0a-f0f3-4be9-9dd1-9744b40d20af.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2046,
+      "name": "ارز ايطالي بالدو الجودة 5 كيلو",
+      "price": 13.565,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F33694ade-ac6e-42c6-b4c7-fd3d5475c12f.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2047,
+      "name": "ارز ايطالي بالدو الجودة 900غ",
+      "price": 2.454,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F33694ade-ac6e-42c6-b4c7-fd3d5475c12f.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2048,
+      "name": "ارز ايطالي بالدو دعبول 5 كيلغ",
+      "price": 9.603,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9c38b1af-1f2c-44e6-a56e-eb39b281d62b.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2049,
+      "name": "ارز ايطالي بالدو دعبول 900غ",
+      "price": 1.973,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F20d8294a-8d41-4531-8b2e-ac8e3ff0f0d9.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2050,
+      "name": "ارز ايطالي دعبول 5 كيلو",
+      "price": 7.822,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F10a4bab8-8b83-407b-9349-058f7332b2de.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2051,
+      "name": "ارز ايطالي دعبول 900غ",
+      "price": 1.494,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc7ac2a83-30b2-4a3b-a106-1a2aef0d322f.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2052,
+      "name": "ارز ايطالي لوتو 900غ Glob Garden",
+      "price": 1.848,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F173.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2053,
+      "name": "ارز ايطالي لوتو الجودة 900غ",
+      "price": 1.875,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fbc0068c4-4b0e-435e-b7c4-b3d4de7db272.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2054,
+      "name": "ارز ايطالي لوتو دعبول 5 كغ",
+      "price": 5.867,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe1196e55-7759-4fda-97f9-b5569f306695.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2055,
+      "name": "ارز ايطالي لوتو ديروني 900غ",
+      "price": 1.109,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-05-24%20at%209.52.44%20PM.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2056,
+      "name": "ارز بسمتي 4كغ Little India",
+      "price": 6.912,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F16bbbd38-cb7b-4d78-bc96-d3cb22d472ef.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2057,
+      "name": "ارز بسمتي 5 كغ Deroni",
+      "price": 11.893,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3afd92d7-3480-40ee-994c-6b0c311a79d3.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2058,
+      "name": "ارز بسمتي 800غ taj",
+      "price": 2.596,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdb7313e2-cb00-4de9-b8be-8257d6f57f80.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2059,
+      "name": "ارز بسمتي 900غ Glob Garden",
+      "price": 2.178,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb7bebbef-946a-4ba5-82f4-a17549df4aed.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2060,
+      "name": "ارز بسمتي ابو راشد 800غ",
+      "price": 1.716,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-06-19%20at%2010.46.23.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2061,
+      "name": "ارز بسمتي اسمر 1كغ Little India",
+      "price": 2.8,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8e6150e1-f8e5-4db0-8fa0-0d231cfd7a23.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2062,
+      "name": "ارز بسمتي الماس ديروني 4كغ",
+      "price": 8.659,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc0bca8ed-dfe3-4765-9b45-35fe3a913c31.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2063,
+      "name": "ارز بسمتي الماس ديروني 800غ",
+      "price": 1.848,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F76b2131e-8bcf-40d1-86c7-590f2b7c3067.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2064,
+      "name": "ارز بسمتي سلام 5 كيلو",
+      "price": 8.461,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%B1%D8%B2%20%D8%A8%D8%B3%D9%85%D8%AA%D9%8A%20%D8%B3%D9%84%D8%A7%D9%85%205%20%D9%83%D9%8A%D9%84%D9%88.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2065,
+      "name": "ارز بسمتي سيلا فضي ديروني 4 كيلو",
+      "price": 8.018,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F152b266e-0e5a-45e3-8e7f-e3642d836f51.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2066,
+      "name": "ارز بسمتي هديل 900 غرام",
+      "price": 2.025,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa8ea3aa3-608c-466e-a591-505162bdf5a3.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2067,
+      "name": "ارز بسمتي هندي 1 كيلو Avila",
+      "price": 1.966,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fea0a8611-0661-4c90-a4f8-5b66d72b83b2.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2068,
+      "name": "ارز بسمتي هندي 1600غ TAJ",
+      "price": 3.326,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdb7313e2-cb00-4de9-b8be-8257d6f57f80.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2069,
+      "name": "ارز بسمتي هندي اكسترا 5 كلغ avila",
+      "price": 10.454,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F01932098-53b8-488b-a323-921540efdf71.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2070,
+      "name": "ارز تايلندي حبة طويلة دعبول 5 كلغ",
+      "price": 5.205,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AA%D8%A7%D9%8A%D9%84%D9%86%D8%AF%D9%8A%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2071,
+      "name": "ارز مصري 5كغ Glob Garden",
+      "price": 7.02,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd9c4a628-025a-4bca-9228-cd4c1e0147be.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2072,
+      "name": "ارز مصري 900غ Glob Garden",
+      "price": 1.264,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F191.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2073,
+      "name": "ارز مصري 900غ OBA",
+      "price": 0.771,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa930e0a9-4587-43ca-a856-29cfc53daa16.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2074,
+      "name": "ارز مصري الجودة 900غ",
+      "price": 1.285,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe2860ca2-4985-42df-8d7d-bb66adbfc551.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2075,
+      "name": "ارز مصري دعبول 5 كلغ",
+      "price": 4.644,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%85%D8%B5%D8%B1%D9%8A%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2076,
+      "name": "ارز مصري دعبول 900غ",
+      "price": 0.891,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%B1%D8%B2%20%D9%85%D8%B5%D8%B1%D9%8A%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84900.png&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2077,
+      "name": "ارز مصري نملية 5 كيلو",
+      "price": 4.535,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%B1%D8%B2%20%D9%85%D8%B5%D8%B1%D9%8A%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%205%20%D9%83%D9%84%D8%BA.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2078,
+      "name": "ارز مصري نملية 900غ",
+      "price": 0.934,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fmasri.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2079,
+      "name": "ارز مطحون ميسو 500غ",
+      "price": 0.782,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F89b3bf17-df21-40c6-8eaf-40911dc0a615.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2080,
+      "name": "ارز ناعم 400غ Glob Garden",
+      "price": 0.792,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F415.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2081,
+      "name": "برغل ابيض خشن 900غ Avila",
+      "price": 1.102,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%BA%D9%84%20%D8%A7%D8%A8%D9%8A%D8%B6%20%D8%AE%D8%B4%D9%86%20900%D8%BA%20Avila.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2082,
+      "name": "برغل ابيض خشن 900غ Glob Garden",
+      "price": 1.232,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F192.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2083,
+      "name": "برغل ابيض خشن دعبول 900غ",
+      "price": 0.865,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F123ccd54-724c-4f2f-b0ec-f27289dca0e6.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2084,
+      "name": "برغل ابيض خشن زماطي نملية 900غ",
+      "price": 0.978,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84%20%D8%B2%D9%85%D8%A7%D8%B7%D9%8A.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2085,
+      "name": "برغل ابيض زماطية 900غ Glob Garden",
+      "price": 1.21,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F192.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2086,
+      "name": "برغل ابيض ناعم 900غ avila",
+      "price": 1.102,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F079b8147-44db-4cd6-b969-0a34396f0461.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2087,
+      "name": "برغل ابيض ناعم 900غ Glob Garden",
+      "price": 1.265,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F193.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2088,
+      "name": "برغل ابيض ناعم دعبول 900غ",
+      "price": 0.865,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F81d376a5-de0b-4939-b5d0-3ecd97645d57.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2089,
+      "name": "برغل ابيض ناعم نملية 900غ",
+      "price": 0.939,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84%20%D8%A7%D8%A8%D9%8A%D8%B6%20%D9%86%D8%A7%D8%B9%D9%85%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2090,
+      "name": "برغل اسمر خشن 900غ TRUST FOOD",
+      "price": 0.67,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AE%D8%B4%D9%862-9.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2091,
+      "name": "برغل اسمر خشن الجودة 900غ",
+      "price": 1.088,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F95cd11ca-58e3-473e-bccf-b46080c12267.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2092,
+      "name": "برغل اسمر خشن ديروني 900غ",
+      "price": 0.779,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202022-07-29%20at%202.43.56%20PM.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2093,
+      "name": "برغل اسمر خشن نملية 900غ",
+      "price": 1.022,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84%20%D8%A7%D8%B3%D9%85%D8%B1%20%D8%AE%D8%B4%D9%86%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2094,
+      "name": "برغل اسمر ناعم 900غ Avila",
+      "price": 0.958,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84%20%D8%A7%D8%B3%D9%85%D8%B1%20%D9%86%D8%A7%D8%B9%D9%85%20900%D8%BA%20Avila.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2095,
+      "name": "برغل اسمر ناعم الجودة 900غ",
+      "price": 1.044,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F15535dc0-c811-471a-9632-4ad7e6080e28.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2096,
+      "name": "برغل اسمر ناعم دعبول 900غ",
+      "price": 0.833,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A7%D8%B3%D9%85%D8%B1.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2097,
+      "name": "برغل اسمر ناعم نملية 900غ",
+      "price": 0.978,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84%20%D8%A7%D8%B3%D9%85%D8%B1%20%D9%86%D8%A7%D8%B9%D9%85%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2098,
+      "name": "برغل خشن ابيض زماطي ديروني 900غ",
+      "price": 0.905,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%A8%D8%B1%D8%BA%D9%84.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2099,
+      "name": "بوشار دعبول 450غ",
+      "price": 0.467,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-06%20at%205.41.01%20PM.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2100,
+      "name": "بوشار دعبول 900غ",
+      "price": 0.929,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-24%20at%206.41.09%20PM.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2101,
+      "name": "ترمس حلو 500غ Avila",
+      "price": 1.137,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F24892140-eaeb-46f9-b1d2-af0b9f5ccb27.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2102,
+      "name": "ترمس حلو نملية 900غ",
+      "price": 1.327,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F321.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2103,
+      "name": "حمص اميركي 900 غ Glob Garden",
+      "price": 1.969,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AD%D9%85%D8%B5%20%D8%A7%D9%85%D9%8A%D8%B1%D9%83%D9%8A%20900%20%D8%BA%20Glob%20Gardeen14.3.2025.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2104,
+      "name": "حمص حب 900غ Dila",
+      "price": 0.972,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd5afeafa-18e0-40f8-8512-177e3deda040.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2105,
+      "name": "حمص حب 900غ prime",
+      "price": 0.972,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Faab37a55-c667-4246-bf5e-3dc3ce2ded89.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2106,
+      "name": "حمص حب اكسترا ديروني 900غ",
+      "price": 1.125,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AD%D9%85%D8%B5.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2107,
+      "name": "حمص حب اوبا 900غ",
+      "price": 0.95,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F341ddad6-6567-49e6-ba90-c51bb1d071f7.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2108,
+      "name": "حمص حب دعبول 900غ",
+      "price": 1.296,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AD%D9%85%D8%B5%20%D8%AD%D8%A8%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2109,
+      "name": "حمص حب فحلي ديروني 900غ",
+      "price": 2.493,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd66f67cd-efb9-494c-86b3-ae6f4475f596.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2110,
+      "name": "حمص صغير 900غ Avila",
+      "price": 1.575,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F15478053-4440-4ba0-9c7f-dd02f39b1d28.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2111,
+      "name": "حمص فحلي 900غ Avila",
+      "price": 2.944,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fab115a7d-4e7a-49fa-844a-e0cce7262294.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2112,
+      "name": "حمص فحلي 900غ Glob Garden",
+      "price": 3.047,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F6af2b944-08fe-4cae-b46f-dd3a0ddddbca.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2113,
+      "name": "حمص فحلي الجودة 900غ",
+      "price": 3.177,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdf906e32-7d60-433c-9a03-9c83e0aa8d6c.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2114,
+      "name": "حمص فحلي دعبول 900غ",
+      "price": 2.398,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AD%D9%85%D8%B5%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2115,
+      "name": "حمص فحلي نملية 900غ",
+      "price": 2.607,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%85%D8%B5%20%D9%81%D8%AD%D9%84%D9%8A%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2116,
+      "name": "حمص كندي الجودة 900غ",
+      "price": 1.589,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8843ed4a-b77a-4550-901e-f72cdef39e76.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2117,
+      "name": "حمص مفقوش الجودة 500غ",
+      "price": 1.654,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F22679ce3-61e0-4681-83b8-2b1512fab8a9.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2118,
+      "name": "خل ابيض 1 ليتر Glob Garden",
+      "price": 0.691,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F279.jpg&w=1920&q=75",
+      "cat": "cat_1780792875503"
+    },
+    {
+      "id": 2119,
+      "name": "ذرة بوشار 400غ Glob Garden",
+      "price": 0.702,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F634335f1-5ace-49f7-a47a-fd875234b5dd.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2120,
+      "name": "ذرة بوشار 900غ Glob garden",
+      "price": 1.458,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F634335f1-5ace-49f7-a47a-fd875234b5dd.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2121,
+      "name": "ذرة بوشار الجودة 400غ",
+      "price": 0.714,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc04f458d-5afe-4920-9784-30f5504f021a.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2122,
+      "name": "ذرة بوشار الجودة 900غ",
+      "price": 1.434,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4ec165a0-c13b-48a8-a077-9cfe29207b07.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2123,
+      "name": "ذرة بوشار ديروني 450غ",
+      "price": 0.499,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202022-07-29%20at%201.45.38%20PM.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2124,
+      "name": "ذرة بوشار نملية 500غ",
+      "price": 0.586,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F7d534285-725e-4fd9-b284-c3374d0d09de.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2125,
+      "name": "ذرة بوشار400غ Avila",
+      "price": 0.567,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F104b65b4-b287-4c4a-b174-f44b0b14fb23.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2126,
+      "name": "ذرة بوشار900غ OBA",
+      "price": 0.762,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F417f014b-f4a4-4929-846f-923e3f43b1c0.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2127,
+      "name": "رز بسمتي 900غ Little India",
+      "price": 1.62,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B1%D8%B2%20%D8%A8%D8%B3%D9%85%D8%AA%D9%8A%20900%D8%BA%20Little%20India.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2128,
+      "name": "رز بسمتي براق 1كغ",
+      "price": 1.72,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fac47d6a8-f790-41b5-a658-bd4439f9315f.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2129,
+      "name": "رز بسمتي براق 5كغ",
+      "price": 8.336,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F22daf9e4-ef7f-462b-94c1-bdb5223e54ed.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2130,
+      "name": "رز بسمتي سيلا فضي ديروني 800غ",
+      "price": 1.632,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F976b83a7-cfb5-4182-91bf-c718764d3d2a.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2131,
+      "name": "زعتر احمر اكسترا نكهة حلب 400غ",
+      "price": 2.745,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F1ba4ca4d-a748-48f6-83dd-2979e81fc88d.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2132,
+      "name": "سكر ابيض 5كلغ PRIME LINE",
+      "price": 3.528,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fafb2a862-6279-4bfb-89a3-3888f95a4567.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2133,
+      "name": "سكر ابيض 900غ dila",
+      "price": 0.644,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff60a9d03-ccbe-46fa-89d2-61ef03ea6e64.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2134,
+      "name": "سكر ابيض 900غ TRUST FOOD",
+      "price": 0.61,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb8a4e97c-2964-4223-98ac-7cf7ec8d5379.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2135,
+      "name": "سكر ابيض الاسرة 2 كلغ",
+      "price": 1.671,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%83%D8%B1%20%D8%A7%D8%A8%D9%8A%D8%B6%20%D8%A7%D9%84%D8%A7%D8%B3%D8%B1%D8%A9%202%20%D9%83%D9%84%D8%BA.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2136,
+      "name": "سكر ابيض الاسرة 5 كلغ",
+      "price": 4.177,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F41b5dd6c-4e48-4913-b450-09a45cb189bd.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2137,
+      "name": "سكر ابيض ديروني 5 كلغ",
+      "price": 3.931,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F0e419a98-3fbe-46b5-aa08-1e8ff3fbda39.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2138,
+      "name": "سكر ابيض ديروني 900غ",
+      "price": 0.698,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202022-08-01%20at%2011.45.32%20AM.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2139,
+      "name": "سكر ابيض فرنسي 5كغ Avila",
+      "price": 4.749,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3a384e3d-3517-4866-b25e-bbf4e1a582ab58.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2140,
+      "name": "سكر ابيض فرنسي الجودة 900غ",
+      "price": 0.843,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F96aa3c05-e34f-417d-a019-c7e571741c3a.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2141,
+      "name": "سكر ابيض مكعبات كريستال 1كغ",
+      "price": 2.705,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2a36ad95-2b6e-4c78-9770-3207b916f1ff.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2142,
+      "name": "سكر ابيض نمليه 5 كيلو",
+      "price": 3.841,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9d8ba09f-b25e-46ca-99a2-5acfb85f9a92.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2143,
+      "name": "سكر اسمر 500غ Avila",
+      "price": 1.505,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%83%D8%B1%20%D8%A7%D8%B3%D9%85%D8%B1%20500%D8%BA%20Avila.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2144,
+      "name": "سكر اسمر 500غ Mauricio",
+      "price": 1.95,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F230.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2145,
+      "name": "سكر اسمر مكعبات الاسرة 500غ",
+      "price": 2.854,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff8d2af73-54b6-4834-873b-332cf37f3452.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2146,
+      "name": "سكر اسمر مكعبات كريستال 1كغ",
+      "price": 3.073,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fce54d274-d4d7-4f98-a9ea-a5de68da9e55.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2147,
+      "name": "سكر فرنسي 900غ Glob Garden",
+      "price": 0.869,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F203.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2148,
+      "name": "سكر قصب ابيض 10 كلغ الاسرة",
+      "price": 7.546,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8476b8df-c4b8-4c12-b7c6-0eeffa331d90.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2149,
+      "name": "سكر لايت Mauricio 500 غرام",
+      "price": 1.95,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F233.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2150,
+      "name": "سكر من قصب السكر 500غ Mauricio",
+      "price": 1.756,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F221.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2151,
+      "name": "سكر ناعم 400غ Glob Garden",
+      "price": 0.745,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4a925fa3-d122-4268-9d2e-0d7b67b3577d.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2152,
+      "name": "سكر ناعم 900غ Glob Garden",
+      "price": 1.624,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F808b5f0a-ca0c-433a-bc3a-5b153a9cd439.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2153,
+      "name": "سكر ناعم الجودة 500غ",
+      "price": 0.67,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9686f8e0-cb80-4013-946b-670fd959e4dc.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2154,
+      "name": "سكر ناعم جوده 900غ",
+      "price": 1.172,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa5368511-f827-43fa-9959-f56ae8238a64.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2155,
+      "name": "سمسم مقشور 200غ glob garden",
+      "price": 1.109,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fca4e0c15-fba2-4008-9533-6033bd2d1e0b.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2156,
+      "name": "سميد خشن 1 كغ Avila",
+      "price": 1.392,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%8A%D8%AF%20%D8%AE%D8%B4%D9%86%201%20%D9%83%D9%8A%D9%84%D9%88%20Avila.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2157,
+      "name": "سميد خشن 900غ Glob Garden",
+      "price": 1.288,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F186.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2158,
+      "name": "سميد خشن الجودة 900غ",
+      "price": 1.31,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F1d5317b0-568d-4750-a800-7c8bd54ee367.jfif&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2159,
+      "name": "سميد خشن حقول شتورة 900غ",
+      "price": 1.183,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D9%85%D9%8A%D8%AF%20%D8%AE%D8%B4%D9%86%20%D8%AD%D9%82%D9%88%D9%84%20%D8%B4%D8%AA%D9%88%D8%B1%D8%A9%20900%D8%BA.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2160,
+      "name": "سميد خشن نملية 900غ",
+      "price": 1.018,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2e7fbc3e-cdae-4bb2-9026-7bdcb89f2fbe.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2161,
+      "name": "سميد فرخة 900 غرام Glob Garden",
+      "price": 1.288,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Faf500d82-72d0-4d18-ae57-de3a4fa30872.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2162,
+      "name": "سميد ناعم دعبول 900غ",
+      "price": 1.032,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F78956d95-eab2-4dae-9af6-fcd988273518.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2163,
+      "name": "سميد ناعم 900غ Glob Garden",
+      "price": 1.288,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe8b14072-b447-4176-96fc-d639bd140fab.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2164,
+      "name": "سميد ناعم حقول شتورة 900غ",
+      "price": 1.152,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8c643d1a-3a97-4c9f-b9fa-a4d40a1e2ae0.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2165,
+      "name": "شوفان 700غ GLOB Garden",
+      "price": 2.016,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F63a2696f-f3f6-4e05-868f-932340e5043c.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2166,
+      "name": "شوفان ابيض 500غ Healthy u",
+      "price": 1.86,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F103f4a3a-47cf-4dda-af2d-10275b4e7d3d.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2167,
+      "name": "شوفان الجودة 700غ",
+      "price": 2.247,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F77f72cfd-4cbd-4708-8502-d4b6b4953e60.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2168,
+      "name": "طحين ابيض 900غ Flona",
+      "price": 0.679,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B7%D8%AD%D9%8A%D9%86%20%D8%A7%D8%A8%D9%8A%D8%B6%20900%D8%BA%20Flona.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2169,
+      "name": "طحين ابيض كاتو 1كغ Avila",
+      "price": 1.281,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F7693bf3d-0d11-4117-8992-b4180c14e41a.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2170,
+      "name": "طحين فرخة 900غ دعبول",
+      "price": 1.003,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fe242e41a-4214-41dd-ac7e-6e9433f3c962.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2171,
+      "name": "طحين فرخة الجودة 900غ",
+      "price": 1.31,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-11%20at%209.05.54%20AM.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2172,
+      "name": "طحين قمح اسمر الجودة 750غ",
+      "price": 0.956,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-08-09%20at%206.08.12%20PM.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2173,
+      "name": "عدس احمر مجروش 900غ Avila",
+      "price": 1.677,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B9%D8%AF%D8%B3%20%D8%A7%D8%AD%D9%85%D8%B1%20%D9%85%D8%AC%D8%B1%D9%88%D8%B4.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2174,
+      "name": "عدس احمر مجروش اوبا 900غ",
+      "price": 1.112,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202022-02-28%20at%2012.01.17.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2175,
+      "name": "عدس احمر مجروش ديروني 900غ",
+      "price": 1.035,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B9%D8%AF%D8%B3%20%D9%85%D8%AC%D8%B1%D9%88%D8%B4.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2176,
+      "name": "عدس احمر مجروش نملية 900غ",
+      "price": 1.2,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B9%D8%AF%D8%B3%20%D8%A7%D8%AD%D9%85%D8%B1%20%D9%85%D8%AC%D8%B1%D9%88%D8%B4%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2177,
+      "name": "عدس احمر مقشور الجودة 900غ",
+      "price": 1.799,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff1ce9a65-6b1f-4ab8-852d-859f1937622f.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2178,
+      "name": "عدس اخضر 900غ Avila",
+      "price": 1.608,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fc80a23fe-9391-4686-bb3d-4bf17de0d277.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2179,
+      "name": "عدس اخضر عريض 900غ Glob Garden",
+      "price": 1.836,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F177.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2180,
+      "name": "عدس اخضر عريض الجودة 900غ",
+      "price": 1.965,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F9cc317a1-931e-4d04-889c-33f9ed76fdff.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2181,
+      "name": "عدس اخضر عريض دعبول 900غ",
+      "price": 1.54,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F38c67f61-95b3-4c96-a073-231a19057941.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2182,
+      "name": "عدس مجروش 900غ Glob Garden",
+      "price": 1.68,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F199.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2183,
+      "name": "عرض ارز امريكي ديروني 4+1 كغ",
+      "price": 4.371,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fbb6c2be2-9a82-4963-89d6-82764bb238a6.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2184,
+      "name": "عرض رز ايطالي بالدو هوليدي 5كغ+سكر ناعم 1كلغ + ظرف قهوة هلا",
+      "price": 10.428,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ffd96c03f-b2a7-42b9-9db8-7376df9c8e62.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2185,
+      "name": "عرض رز مصري ديروني 4+1 كغ",
+      "price": 4.62,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F18bd9cba-91bd-448c-83c8-1a3d001a2b66.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2186,
+      "name": "فاصوليا بيضاء ديروني 900غ",
+      "price": 1.555,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D8%A7%D8%B5%D9%88%D9%84%D9%8A%D8%A7.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2187,
+      "name": "فاصوليا بيضاء صنوبرية 900غ Glob Garden",
+      "price": 2.31,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F411.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2188,
+      "name": "فاصوليا بيضاء عريضة 400غ Glob Garden",
+      "price": 2.052,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8bee0c66-1898-4ccb-8945-edfb559e0830.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2189,
+      "name": "فاصوليا بيضاء عريضة دعبول 400غ",
+      "price": 1.244,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb31bc389-4c79-4881-bcbe-af83fbe5667c.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2190,
+      "name": "فاصوليا بيضاء عريضة دعبول 800غ",
+      "price": 2.65,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F3e97cfb0-115f-4227-84a7-ad1ed1ad682d.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2191,
+      "name": "فاصوليا بيضاء نملية 900غ",
+      "price": 1.86,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D8%A7%D8%B5%D9%88%D9%84%D9%8A%D8%A7%20%D8%A8%D9%8A%D8%B6%D8%A7%D8%A1%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2192,
+      "name": "فاصوليا حمراء طويلة ديروني 900غ",
+      "price": 1.879,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fd9faebcf-e895-4e1b-965a-b00ba0c199b4.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2193,
+      "name": "فاصوليا حمراء مدعبلة 900غ Avila",
+      "price": 2.86,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F5ca9b8eb-2abb-4c91-90b1-019c9a61987d.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2194,
+      "name": "فاصوليا حمراء مدعبلة 900غ Glob Garden",
+      "price": 2.86,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F410.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2195,
+      "name": "فاصوليا حمراء مدعبلة دعبول 900غ",
+      "price": 2.294,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D8%A7%D8%B5%D9%88%D9%84%D9%8A%D8%A7%20%D8%AD%D9%85%D8%B1%D8%A7%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2196,
+      "name": "فاصوليا حمراء مدعبلة ديروني 900غ",
+      "price": 2.131,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F454dc6dc-9937-4418-a775-f9460f2984f2.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2197,
+      "name": "فاصوليا حمراء نملية 900غ",
+      "price": 2.361,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D8%A7%D8%B5%D9%88%D9%84%D9%8A%D8%A7%20%D8%AD%D9%85%D8%B1%D8%A7%D8%A1%20%D9%86%D9%85%D9%84%D9%8A%D8%A9%20900%D8%BA.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2198,
+      "name": "فاصوليا رفييعة مسلات 400غ Glob Garden",
+      "price": 1.595,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202026-02-13%20at%2011.11.46%20AM.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2199,
+      "name": "فاصولياء صنوبرية حقول شتورة 900غ",
+      "price": 1.465,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fb1084d46-b656-4ff6-9745-28bb956f07b2.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2200,
+      "name": "فريكة 500غ Avila",
+      "price": 1.985,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D8%B1%D9%8A%D9%83%D8%A9%20500%D8%BA%20Avila.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2201,
+      "name": "فول ابيض حب الجودة 900 غ",
+      "price": 1.387,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%81%D9%88%D9%84%20%D8%A7%D8%A8%D9%8A%D8%B6%20%D8%AD%D8%A8%20%D8%A7%D9%84%D8%AC%D9%88%D8%AF%D8%A9%20900%20%D8%BA.jfif&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2202,
+      "name": "فول انجليزي دعبول 900غ",
+      "price": 1.12,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-30%20at%206.02.27%20PM%20(1).jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2203,
+      "name": "فول حب 1 كغ Avila",
+      "price": 1.613,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F09b2f81c-d984-48b9-98e9-c56e66e09e86.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2204,
+      "name": "فول ديروني 900غ",
+      "price": 1.157,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F46021419-61d7-40f3-ac3c-2caa53461b81.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2205,
+      "name": "فول عريض 900غAvila",
+      "price": 2.3,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F247.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2206,
+      "name": "فول عريض دعبول 700غ",
+      "price": 1.494,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-07-30%20at%206.02.27%20PM%20(2).jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2207,
+      "name": "قمح حب 900غ Glob Garden",
+      "price": 1.089,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fbda4b34b-5e29-4729-bd89-bb534fe66bfe.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2208,
+      "name": "قمح مقشور 900غ Avila",
+      "price": 0.976,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F2ad217f9-b13d-4de0-8fc6-cd4e8c9c3bdd.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2209,
+      "name": "قمح مقشور 900غ Glob Garden",
+      "price": 1.133,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F196.jpg&w=1920&q=75",
+      "cat": "phones"
+    },
+    {
+      "id": 2210,
+      "name": "قمح مقشور الجودة 900غ",
+      "price": 1.088,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F078e11f6-f2fd-4d54-a789-082ff4989ad6.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2211,
+      "name": "قمح مقشور دعبول 900غ",
+      "price": 0.869,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%82%D9%85%D8%AD%20%D9%85%D9%82%D8%B4%D9%88%D8%B1%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2212,
+      "name": "كشك بلدي الجودة 500غ",
+      "price": 6.805,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fdd7ba70a-1b0a-45da-ba38-44ed5e27e502.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2213,
+      "name": "لوبية حب نملية 500غ",
+      "price": 1.272,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa79dba59-44e3-4398-9449-481834e67675.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2214,
+      "name": "لوبية مسلات 500غ Avila",
+      "price": 1.27,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F09fdc5df-2d6c-4793-8f5f-4467c4847598.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2215,
+      "name": "ماش الجودة 500غ",
+      "price": 2.231,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F990724a9-3541-4ee1-832d-bbe088fce054.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2216,
+      "name": "مغربية 900غ Glob Garden",
+      "price": 1.889,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff79cb099-49ae-4d38-a02d-4acd5522ebe4.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2217,
+      "name": "مغربية دعبول 900غ",
+      "price": 1.451,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%85%D8%BA%D8%B1%D8%A8%D9%8A%D8%A9%20%D8%AF%D8%B9%D8%A8%D9%88%D9%84.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2218,
+      "name": "مغربية ديروني 900غ",
+      "price": 1.553,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F51b727e4-c390-44f2-b3a1-c966f1e4432e.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2219,
+      "name": "مغربية نملية 500غ",
+      "price": 0.859,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F8542934c-a088-40eb-8733-bbfd2fc1dae6.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2220,
+      "name": "ملح الهيمالايا الوردي الخشن دعبول 500غ",
+      "price": 0.728,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F73e3edc2-5da4-4280-9a93-5a2800906f5f.jfif&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2221,
+      "name": "ملح خشن 1ك GLOB",
+      "price": 0.264,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F21da5278-2f31-4f47-8356-bae063d725b2.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2222,
+      "name": "ملح ناعم دعبول 1كلغ",
+      "price": 0.142,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202023-07-17%20at%2010.41.01.jpeg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2223,
+      "name": "ملح ناعم دعبول 5كغ",
+      "price": 0.768,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Fa566015d-9c5b-46de-9216-4d8a869e2bca.jpg&w=1920&q=75",
+      "cat": "grains"
+    },
+    {
+      "id": 2224,
+      "name": "جانح دجاج 1 كيلو غرام",
+      "price": 2.243,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%AC%D9%88%D8%A7%D9%86%D8%AD%20%D8%AF%D8%AC%D8%A7%D8%AC.jpg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2226,
+      "name": "سجق  500 غرام",
+      "price": 6.613,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D8%B3%D8%AC%D9%82%206-12.jpeg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2227,
+      "name": "فاهيتا 1كيلوغرام",
+      "price": 8.888,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202024-06-29%20at%204.45.59%20PM.jpeg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2228,
+      "name": "كريسبي مفرز 500غ",
+      "price": 4.2,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%83%D8%B1%D9%8A%D8%B3%D8%A8%D9%8A.jpg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2229,
+      "name": "لحمة بفتاك 500غ",
+      "price": 8.05,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F4548abe5-e072-4ad9-9993-d6626b2c2119.jpg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2230,
+      "name": "لحمة شرحات  500غ",
+      "price": 7.188,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2Ff6d79572-7507-462b-9dba-1e6b5afbee4b.jpg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2231,
+      "name": "لحمة شقف  200غ",
+      "price": 2.875,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F0548a2e0-4980-48d2-8cdb-347a9dac60f3.jpg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2232,
+      "name": "لحمة شقف خير وبركة 500غ",
+      "price": 7.188,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2FWhatsApp%20Image%202021-10-01%20at%2012.23.47%20PM.jpeg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2233,
+      "name": "لحمة كفتة خير وبركة 500غ",
+      "price": 6.613,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%83%D9%81%D8%AA%D8%A9%206-12.jpeg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2234,
+      "name": "لحمة مفرومة 200غ",
+      "price": 2.645,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%84%D8%AD%D9%85%D8%A9%20%D9%85%D9%81%D8%B1%D9%88%D9%85%D8%A9%20500%20%D8%BA%D8%B1%D8%A7%D9%85%206-12.jpeg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2235,
+      "name": "لحمة مفرومة 500غ",
+      "price": 6.613,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%84%D8%AD%D9%85%D8%A9%20%D9%85%D9%81%D8%B1%D9%88%D9%85%D8%A9%20500%20%D8%BA%D8%B1%D8%A7%D9%85%206-12.jpeg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2236,
+      "name": "لحمة هبرة خير وبركة 500غ",
+      "price": 7.188,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%84%D8%AD%D9%85%D8%A9%20%D9%87%D8%A8%D8%B1%D8%A9.jpg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2237,
+      "name": "لية  200غ",
+      "price": 3.105,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F7c29abff-54f9-410d-9c4a-d96239afb615.jpg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2238,
+      "name": "نقانق  500غ",
+      "price": 6.613,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%85%D9%82%D8%A7%D9%86%D9%82%206-12.jpeg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2239,
+      "name": "همبرغر  500غ",
+      "price": 6.613,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F%D9%87%D9%85%D8%A8%D8%B1%D8%BA%D8%B1%206-12.jpeg&w=1920&q=75",
+      "cat": "meat"
+    },
+    {
+      "id": 2240,
+      "name": "صدر مسحب",
+      "price": 6.005,
+      "img": "https://www.kheirwbarake.com/_next/image?url=http%3A%2F%2Fapp.antisoftlb.com%2FPics%2FBHomaysi%2FItemFile%2F09f55218-db25-4b01-b47f-216061b2e5e1.jpg&w=1920&q=75",
+      "cat": "meat"
+    }
+  ],
+  "cats": [
+    {
+      "id": "phones",
+      "name": "مستلزمات هواتف",
+      "icon": "📱"
+    },
+    {
+      "id": "grains",
+      "name": "حبوب",
+      "icon": "🌾"
+    },
+    {
+      "id": "pasta",
+      "name": "نشويات",
+      "icon": "🍝"
+    },
+    {
+      "id": "oils",
+      "name": "زيوت",
+      "icon": "🫙"
+    },
+    {
+      "id": "canned",
+      "name": "معلبات",
+      "icon": "🥫"
+    },
+    {
+      "id": "dairy",
+      "name": "ألبان وأجبان",
+      "icon": "🧀"
+    },
+    {
+      "id": "vegs",
+      "name": "خضار وفواكه",
+      "icon": "🥦"
+    },
+    {
+      "id": "meat",
+      "name": "دجاج ولحوم",
+      "icon": "🍗"
+    },
+    {
+      "id": "herbs",
+      "name": "زعتر وملوخية",
+      "icon": "🌿"
+    },
+    {
+      "id": "spices",
+      "name": "توابل",
+      "icon": "🫙"
+    },
+    {
+      "id": "nuts",
+      "name": "تمور ومكسرات وعسل",
+      "icon": "🍯"
+    },
+    {
+      "id": "pastry",
+      "name": "معجنات ومقبلات",
+      "icon": "🥐"
+    },
+    {
+      "id": "sweets",
+      "name": "حلويات",
+      "icon": "🍰"
+    },
+    {
+      "id": "snacks",
+      "name": "سكاكر وموالح",
+      "icon": "🍬"
+    },
+    {
+      "id": "drinks",
+      "name": "مشروبات",
+      "icon": "🥤"
+    },
+    {
+      "id": "frozen",
+      "name": "مفرزات",
+      "icon": "🧊"
+    },
+    {
+      "id": "diapers",
+      "name": "محارم وحفاضات",
+      "icon": "🧻"
+    },
+    {
+      "id": "cleaning",
+      "name": "منظفات",
+      "icon": "🧴"
+    },
+    {
+      "id": "pyjamas",
+      "name": "بيجامات",
+      "icon": "👘"
+    },
+    {
+      "id": "underwear",
+      "name": "ألبسة داخلية",
+      "icon": "👙"
+    },
+    {
+      "id": "gifts",
+      "name": "أكسسوارات وهدايا",
+      "icon": "🎁"
+    },
+    {
+      "id": "clothes",
+      "name": "ألبسة خارجية",
+      "icon": "👗"
+    },
+    {
+      "id": "home",
+      "name": "أدوات منزلية",
+      "icon": "🏠"
+    },
+    {
+      "id": "towels",
+      "name": "مناشف وبياضات",
+      "icon": "🛁"
+    },
+    {
+      "id": "care",
+      "name": "عناية شخصية",
+      "icon": "💄"
+    },
+    {
+      "id": "stationery",
+      "name": "قرطاسية",
+      "icon": "✏️"
+    },
+    {
+      "id": "toys",
+      "name": "ألعاب",
+      "icon": "🧸"
+    },
+    {
+      "id": "hijab",
+      "name": "مستلزمات حجاب",
+      "icon": "🧕"
+    },
+    {
+      "id": "electric",
+      "name": "أدوات كهربائية",
+      "icon": "🔌"
+    },
+    {
+      "id": "shoes",
+      "name": "أحذية",
+      "icon": "👟"
+    },
+    {
+      "id": "books",
+      "name": "قصص تربوية",
+      "icon": "📚"
+    },
+    {
+      "id": "consumable",
+      "name": "مواد استهلاكية",
+      "icon": "📦"
+    },
+    {
+      "id": "bakery",
+      "name": "المخبوزات",
+      "icon": "🍞"
+    },
+    {
+      "id": "daily",
+      "name": "الطبق اليومي",
+      "icon": "🍽️"
+    },
+    {
+      "id": "cereal",
+      "name": "حليب وكورن فليكس",
+      "icon": "🥣"
+    },
+    {
+      "id": "hotdrinks",
+      "name": "شاي وقهوة",
+      "icon": "☕"
+    },
+    {
+      "id": "salads",
+      "name": "سلطات",
+      "icon": "🥗"
+    },
+    {
+      "id": "perfume",
+      "name": "عطورات",
+      "icon": "🌸"
+    },
+    {
+      "id": "pets",
+      "name": "مستلزمات حيوانات",
+      "icon": "🐾"
+    },
+    {
+      "id": "cat_1780792875503",
+      "name": "مخللات",
+      "icon": "🍝"
+    }
+  ],
+  "exportDate": "2026-06-07T21:06:00.690Z"
+}
