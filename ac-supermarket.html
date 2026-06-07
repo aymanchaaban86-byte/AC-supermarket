@@ -175,7 +175,6 @@ function rCats(){
     '<div class="cats-sidebar-title">الفئات</div>'+
     [{id:'all',name:'كل المنتجات',icon:'🛒'},...CATS].map(c=>{
       const cnt=c.id==='all'?PRODS.length:(counts[c.id]||0);
-      if(c.id!=='all'&&cnt===0)return'';
       return `<div class="cat-item ${c.id===ac?'active':''}" onclick="fc('${c.id}','${c.name}')">
         <span class="ci">${c.icon}</span>
         <span class="cn">${c.name}</span>
