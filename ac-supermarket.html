@@ -137,7 +137,7 @@ canvas{border-radius:12px;width:100%;height:auto;display:block;margin-bottom:12p
     </div>
     <div class="shop-layout">
       <div class="cats-sidebar" id="catList"></div>
-      <div id="productsArea" style="display:none">
+      <div id="productsArea">
         <div class="products-area">
           <div class="top-bar">
             <div class="section-title" id="catTitle">كل المنتجات</div>
@@ -231,7 +231,7 @@ function rCats(){
     }).join('');
 }
 
-function fc(id,name){ac=id;document.getElementById('si').value='';st='';rCats();rProds();if(document.getElementById('prodCount'))document.getElementById('prodCount').textContent=PRODS.length;document.getElementById('catTitle').textContent=id==='all'?'كل المنتجات':name;}
+function fc(id,name){ac=id;document.getElementById('si').value='';st='';try{rCats();}catch(e){console.log('rCats error:',e);}try{rProds();}catch(e){console.log('rProds error:',e);}if(document.getElementById('prodCount'))document.getElementById('prodCount').textContent=PRODS.length;document.getElementById('catTitle').textContent=id==='all'?'كل المنتجات':name;}
 function srch(){st=document.getElementById('si').value.trim();ac='all';rCats();rProds();document.getElementById('catTitle').textContent=st?`نتائج: "${st}"`:'كل المنتجات';}
 function gf(){let l=PRODS;if(ac!=='all')l=l.filter(p=>p.cat===ac);if(st)l=l.filter(p=>p.name.toLowerCase().includes(st.toLowerCase()));return l;}
 function rProds(){
@@ -465,7 +465,7 @@ function drawCard(name, price, lbp, imgSrc){
   ctx.fillStyle='rgba(255,255,255,0.04)';
   for(let x=0;x<600;x+=30)for(let y=0;y<340;y+=30){ctx.beginPath();ctx.arc(x,y,6,0,Math.PI*2);ctx.fill();}
   // Logo area
-  ctx.fillStyle='rgba(255,255,255,0.1)';ctx.beginPath();ctx.roundRect(20,20,160,50,10);ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,0.1)';ctx.beginPath();ctx.rect(20,20,160,50);ctx.fill();
   ctx.fillStyle='#fff';ctx.font='bold 20px Cairo, Arial';ctx.textAlign='right';
   ctx.fillText('سونا 🚀',165,52);
   ctx.fillStyle='rgba(255,255,255,0.6)';ctx.font='11px Cairo, Arial';
@@ -493,7 +493,7 @@ function drawCard(name, price, lbp, imgSrc){
   // Load product image
   const img=new Image();img.crossOrigin='anonymous';
   img.onload=function(){
-    ctx.save();ctx.beginPath();ctx.roundRect(310,80,260,200,16);ctx.clip();
+    ctx.save();ctx.beginPath();ctx.rect(310,80,260,200);ctx.clip();
     ctx.drawImage(img,310,80,260,200);ctx.restore();
   };
   img.src=imgSrc;
