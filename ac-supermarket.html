@@ -512,8 +512,87 @@ function shareCardWA(){
 // ====== WHISH MONEY ======
 function openWhish(){
   const sub=Object.entries(cart).reduce((s,[id,q])=>{const p=PRODS.find(x=>x.id==id);return s+(p?p.price*q:0);},0);
-  const total=sub+2;
-  window.open(`https://www.wishmoney.com/pay?number=70258915&amount=${total.toFixed(2)}`,'_blank');
+  const total=(sub+2).toFixed(2);
+  const num='70258915';
+  // Show payment modal
+  document.body.insertAdjacentHTML('beforeend',`
+    <div id="whishModal" style="position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:500;display:flex;align-items:flex-end;justify-content:center">
+      <div style="background:#fff;border-radius:20px 20px 0 0;padding:24px;width:100%;max-width:460px;animation:slideUp 0.3s ease">
+        <div style="text-align:center;margin-bottom:16px">
+          <div style="font-size:40px;margin-bottom:8px">💳</div>
+          <div style="font-size:16px;font-weight:800;color:#1a1a1a">الدفع عبر Whish Money</div>
+        </div>
+        <div style="background:linear-gradient(135deg,#7c3aed,#5b21b6);border-radius:14px;padding:20px;color:#fff;text-align:center;margin-bottom:16px">
+          <div style="font-size:12px;opacity:0.8;margin-bottom:4px">المبلغ المطلوب</div>
+          <div style="font-size:36px;font-weight:900;color:#fbbf24">$${total}</div>
+          <div style="font-size:12px;opacity:0.8;margin-top:4px">(شامل رسوم التوصيل)</div>
+        </div>
+        <div style="background:#f5f5f0;border-radius:12px;padding:14px;margin-bottom:16px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <span style="font-size:13px;color:#666">رقم المستلم</span>
+            <span style="font-size:18px;font-weight:800;color:#7c3aed;letter-spacing:2px">${num}</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between">
+            <span style="font-size:13px;color:#666">المبلغ</span>
+            <span style="font-size:18px;font-weight:800;color:#7c3aed">$${total}</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <button onclick="tryOpenWhishApp('${num}','${total}')" style="width:100%;background:linear-gradient(135deg,#7c3aed,#5b21b6);color:#fff;border:none;border-radius:12px;padding:14px;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;cursor:pointer">
+            📱 افتح تطبيق Whish
+          </button>
+          <button onclick="copyWhishDetails('${num}','${total}')" style="width:100%;background:#f0fdf4;color:#16a34a;border:1px solid #16a34a;border-radius:12px;padding:12px;font-family:'Cairo',sans-serif;font-size:14px;font-weight:700;cursor:pointer">
+            📋 انسخ المعلومات
+          </button>
+          <button onclick="document.getElementById('whishModal').remove()" style="width:100%;background:#f5f5f0;color:#555;border:none;border-radius:12px;padding:12px;font-family:'Cairo',sans-serif;font-size:14px;font-weight:600;cursor:pointer">
+            إغلاق
+          </button>
+        </div>
+        <div style="text-align:center;margin-top:12px;font-size:11px;color:#aaa">
+          افتح Whish ← حول ← ادخل الرقم والمبلغ
+        </div>
+      </div>
+    </div>`);
+}
+
+function tryOpenWhishApp(num, amount){
+  // Try Android intent first
+  const intentUrl=`intent://send#Intent;scheme=whish;package=money.whish.android;end`;
+  const fallbackUrl=`https://play.google.com/store/apps/details?id=money.whish.android`;
+  // Copy info first so user has it ready
+  copyWhishDetails(num, amount, false);
+  // Try to open app
+  const start=Date.now();
+  const iframe=document.createElement('iframe');
+  iframe.style.display='none';
+  iframe.src=`whish://`;
+  document.body.appendChild(iframe);
+  setTimeout(()=>{
+    document.body.removeChild(iframe);
+    if(Date.now()-start < 1500){
+      // App not installed, go to store
+      if(/iPhone|iPad/i.test(navigator.userAgent)){
+        window.open('https://apps.apple.com/us/app/whish-money/id1284243483','_blank');
+      } else {
+        window.open(fallbackUrl,'_blank');
+      }
+    }
+  },1000);
+  document.getElementById('whishModal').remove();
+}
+
+function copyWhishDetails(num, amount, showAlert=true){
+  const txt=`💳 Whish Money
+الرقم: ${num}
+المبلغ: $${amount}`;
+  navigator.clipboard.writeText(txt).catch(()=>{
+    const ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);
+  });
+  if(showAlert){
+    alert('✅ تم نسخ المعلومات!
+افتح Whish والصق الرقم والمبلغ');
+    document.getElementById('whishModal').remove();
+  }
 }
 
 function copyWhishInfo(){
